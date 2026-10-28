@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#262b21">
+<meta property="og:title" content="Juquehy Residencial · Panamby">
+<meta property="og:description" content="Fotos, plantas de 70 a 110 m² e detalhes do Juquehy, com o corretor Lucas · Kairós.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Juquehy Residencial Panamby</title>
+<meta name="description" content="Fotos, plantas e detalhes do Juquehy Residencial, no Panamby, enviados por Lucas · Kairós Negócios Imobiliários.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: photo-first vitrine — full-bleed carousel, then a narrow reading column; plantas on a paper band, contact pinned at the bottom */
+:root{
+  --forest:#262b21;      /* the book's deep green, page ground */
+  --forest-2:#30362a;    /* raised surfaces */
+  --line:#454c3c;        /* hairlines on green */
+  --sun:#e8893a;         /* the logo's sunset orange, the one accent */
+  --sun-ink:#2a1a0c;     /* text on orange */
+  --paper:#f2efe7;       /* plantas band */
+  --paper-ink:#262b21;
+  --paper-mute:#6a6d5f;
+  --cream:#f3efe6;       /* text on green */
+  --mute:#b7b9a8;        /* secondary text on green */
+  --wa:#25d366;
+  --display:"Marcellus", "Cormorant Garamond", Georgia, serif;
+  --body:"Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--forest);color:var(--cream);font-family:var(--body);font-size:16px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--forest)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:720px}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sun);font-weight:500}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:clamp(1.6rem,4.5vw,2.2rem);letter-spacing:.01em}
+p{margin:0}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--forest) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.broker{display:flex;flex-direction:column;line-height:1.2;min-width:0}
+.broker b{font-weight:500;font-size:.95rem}
+.broker span{font-size:.72rem;color:var(--mute);letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font:500 .92rem/1 var(--body);text-decoration:none;padding:12px 18px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#08260f}
+.btn-sun{background:var(--sun);color:var(--sun-ink)}
+.btn-ghost{background:transparent;color:var(--cream);border-color:var(--line)}
+.btn-sm{padding:9px 14px;font-size:.85rem}
+
+/* carousel */
+.gallery{position:relative;background:#1b1f17}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;margin:0;aspect-ratio:4/3;max-height:78vh;width:100%}
+@media (min-width:760px){.slide{aspect-ratio:16/9}}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px max(16px,env(safe-area-inset-left,0px)) 14px;background:linear-gradient(transparent,rgba(20,24,17,.78));font-size:.9rem;letter-spacing:.02em;pointer-events:none}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(38,43,33,.72);color:var(--cream);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(4px)}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:max(12px,env(safe-area-inset-left,0px))}
+.nav.next{right:max(12px,env(safe-area-inset-right,0px))}
+.count{position:absolute;top:12px;right:max(12px,env(safe-area-inset-right,0px));background:rgba(38,43,33,.72);border-radius:999px;padding:4px 12px;font-size:.8rem;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px max(16px,env(safe-area-inset-left,0px));scrollbar-width:none;background:var(--forest)}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 auto;width:64px;height:46px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;opacity:.55;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--sun);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* intro */
+.intro{padding-block:28px 36px;display:grid;gap:18px}
+.title{display:grid;gap:8px}
+.title h1{font-size:clamp(2.4rem,9vw,3.6rem);letter-spacing:.06em;text-transform:uppercase}
+.title .sub{color:var(--mute);font-size:1rem}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media (min-width:640px){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fact{background:var(--forest-2);padding:14px 16px;display:grid;gap:2px;min-width:0}
+.fact .v{font-family:var(--display);font-size:1.45rem;line-height:1.15;font-variant-numeric:tabular-nums}
+.fact .k{font-size:.78rem;color:var(--mute);letter-spacing:.03em}
+.lede{color:var(--cream);font-weight:300;font-size:1.08rem;max-width:62ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* sections */
+section{padding-block:44px}
+.sec-head{display:grid;gap:8px;margin-bottom:22px}
+.sec-head p{color:var(--mute);max-width:60ch}
+
+/* plantas band */
+.paper{background:var(--paper);color:var(--paper-ink)}
+.paper .eyebrow{color:#b8641f}
+.paper .sec-head p{color:var(--paper-mute)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font:500 .95rem/1 var(--body);padding:11px 18px;border-radius:999px;border:1px solid #cfcabb;background:transparent;color:var(--paper-ink);cursor:pointer;font-variant-numeric:tabular-nums}
+.tab[aria-selected="true"]{background:var(--paper-ink);border-color:var(--paper-ink);color:var(--paper)}
+.plan{display:grid;gap:20px;align-items:start}
+@media (min-width:760px){.plan{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.plan-img{background:#fff;border-radius:14px;padding:12px;border:1px solid #e2ddd0;cursor:zoom-in;display:block;width:100%}
+.plan-img img{display:block;width:100%;height:auto;border-radius:6px}
+.plan-info{display:grid;gap:14px;min-width:0}
+.plan-info .area{font-family:var(--display);font-size:3.2rem;line-height:1;color:#b8641f;font-variant-numeric:tabular-nums}
+.plan-info .area small{font-size:1.4rem}
+.specs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.specs li{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid #e2ddd0;padding-bottom:8px}
+.specs li span:first-child{color:var(--paper-mute);font-size:.85rem;min-width:7.5em}
+.plan-note{font-size:.88rem;color:var(--paper-mute)}
+.hint{font-size:.8rem;color:var(--paper-mute);margin-top:8px}
+.special{margin-top:26px;border-top:1px solid #d9d4c5;padding-top:18px;display:grid;gap:6px}
+.special b{font-weight:500}
+
+/* lists */
+.cols{display:grid;gap:10px 28px}
+@media (min-width:640px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.check li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:8px;height:8px;margin-top:.6em;border-radius:50%;background:var(--sun)}
+.lazer{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.lazer li{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.92rem;background:var(--forest-2)}
+
+/* location */
+.loc{display:grid;gap:22px}
+@media (min-width:760px){.loc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.addr{background:var(--forest-2);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+.addr .street{font-family:var(--display);font-size:1.35rem;line-height:1.25}
+.near h3{font-family:var(--body);font-weight:500;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 8px}
+.near{display:grid;gap:18px}
+.near ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+
+/* ficha */
+.ficha{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+@media (min-width:640px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}}
+.ficha div{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font-size:.78rem;color:var(--mute);letter-spacing:.03em}
+.ficha dd{margin:0}
+
+/* closing */
+.closing{background:var(--forest-2);border-top:1px solid var(--line)}
+.closing .wrap{display:grid;gap:18px}
+.card-broker{display:grid;gap:4px}
+.card-broker .name{font-family:var(--display);font-size:1.6rem}
+.phone{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone code{font:500 1.05rem var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.legal{font-size:.75rem;color:var(--mute);line-height:1.5;max-width:70ch}
+
+/* sticky bottom bar */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--forest) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dock .in{max-width:980px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.dock .btn{width:100%;padding:13px 10px}
+
+/* lightbox */
+.lb[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(14,16,12,.96);display:flex;flex-direction:column}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));font-size:.9rem;color:var(--mute);gap:12px}
+.lb-bar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--cream);cursor:pointer;display:grid;place-items:center;flex:none}
+.lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lb-track::-webkit-scrollbar{display:none}
+.lb-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;padding:8px max(8px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-slide img{max-width:100%;max-height:100%;object-fit:contain;touch-action:pinch-zoom}
+.lb.paperbg .lb-slide img{background:#fff;border-radius:8px;padding:8px}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="broker">
+      <b>Lucas · Kairós Negócios Imobiliários</b>
+      <span>Corretor · CRECI 190.339-F</span>
+    </div>
+    <a class="btn btn-wa btn-sm" id="wa-top" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="gallery" aria-roledescription="carrossel" aria-label="Fotos do Juquehy">
+  <div class="track" id="track" tabindex="0"></div>
+  <button class="nav prev" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="nav next" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="count" id="count" aria-live="polite">1 / 20</div>
+</div>
+<div class="thumbs" id="thumbs" aria-label="Miniaturas"></div>
+
+<main>
+  <div class="wrap narrow intro">
+    <div class="title">
+      <span class="eyebrow">Lançamento · Stéfani Nogueira</span>
+      <h1>Juquehy</h1>
+      <p class="sub">Residencial · Panamby, Ribeirão Preto</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="v">70 a 110 m²</span><span class="k">área privativa</span></div>
+      <div class="fact"><span class="v">2 e 3 dorms</span><span class="k">todos com suíte</span></div>
+      <div class="fact"><span class="v">1 ou 2 vagas</span><span class="k">até 3 nas penthouses</span></div>
+      <div class="fact"><span class="v">+20 itens</span><span class="k">de lazer · condomínio clube</span></div>
+    </div>
+    <p class="lede">Duas torres numa rua sem saída, no ponto mais alto do Panamby, ao lado do Parque Curupira. Menos movimento na porta, verde na vista e acesso rápido às principais avenidas da cidade.</p>
+    <div class="cta-row">
+      <a class="btn btn-sun" id="wa-tabela" href="#" target="_blank" rel="noopener">Quero a tabela atualizada</a>
+      <a class="btn btn-ghost" href="#plantas">Ver as plantas</a>
+    </div>
+  </div>
+
+  <section class="paper" id="plantas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Plantas</span>
+        <h2>Três tamanhos de apartamento</h2>
+        <p>Escolha a metragem para ver a planta. Toque na imagem para ampliar.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Metragens">
+        <button class="tab" role="tab" id="tab-70" aria-controls="plan" aria-selected="true" data-p="70">70 m²</button>
+        <button class="tab" role="tab" id="tab-85" aria-controls="plan" aria-selected="false" data-p="85">85 m²</button>
+        <button class="tab" role="tab" id="tab-110" aria-controls="plan" aria-selected="false" data-p="110">110 m²</button>
+      </div>
+      <div class="plan" id="plan" role="tabpanel">
+        <div>
+          <button class="plan-img" id="plan-open" aria-label="Ampliar planta"><img id="plan-img" src="img/planta-70.jpg" alt="Planta humanizada do apartamento de 70 m²" width="1500" height="972"></button>
+          <p class="hint">Planta humanizada. Móveis e decoração são sugestões e não fazem parte do contrato.</p>
+        </div>
+        <div class="plan-info" id="plan-info"></div>
+      </div>
+      <div class="special">
+        <b>Unidades especiais, em número limitado</b>
+        <p class="plan-note">Gardens de 140,71 m² no térreo, com 3 dormitórios e 2 vagas. Penthouses de 102,48 m² (2 vagas) e de 166,55 m² e 169,09 m² (3 vagas), com varanda gourmet; a de 166 m² tem jacuzzi na varanda. Peça as plantas pelo WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <span class="eyebrow">Acabamento</span>
+        <h2>O que já vem no apartamento</h2>
+      </div>
+      <ul class="check cols">
+        <li>Porcelanato acetinado retificado de no mínimo 60 × 60 cm em todo o apartamento</li>
+        <li>Varanda gourmet com bancada em granito preto São Gabriel, cuba inox e churrasqueira</li>
+        <li>Piso da varanda nivelado com a sala, preparada para fechamento em vidro</li>
+        <li>Infraestrutura de ar-condicionado na sala, suíte e dormitórios</li>
+        <li>Persianas integradas nos dormitórios, com blackout total</li>
+        <li>Área de serviço separada, com porta de acesso</li>
+        <li>Banheiros social e suíte com ventilação e luz natural</li>
+        <li>Aquecimento a gás e área técnica para condensadora multisplit</li>
+      </ul>
+      <p class="legal" style="margin-top:16px">Churrasqueira a carvão nas plantas de 85 e 110 m²; no apartamento de 70 m², ponto de energia para churrasqueira elétrica.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <span class="eyebrow">Lazer</span>
+        <h2>Condomínio clube</h2>
+      </div>
+      <ul class="lazer">
+        <li>Piscina</li><li>Complexo de piscinas</li><li>Quadra esportiva</li><li>Espaço fitness</li><li>Fitness outdoor</li><li>Churrasqueira</li><li>Espaço gourmet</li><li>Salão de festas</li><li>Espaço games</li><li>Espaço kids</li><li>Playground</li><li>Espaço relax</li><li>Coworking</li><li>Mini market</li><li>Pet place</li><li>Pet care</li><li>Bicicletário</li><li>Espaço delivery</li><li>Hall social nas duas torres</li><li>Portaria</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Localização</span>
+        <h2>Ao lado do Parque Curupira</h2>
+        <p>O Panamby é um bairro planejado com calçadas arborizadas, fiação subterrânea e acesso a pé ao parque, sem atravessar avenida.</p>
+      </div>
+      <div class="loc">
+        <div class="addr">
+          <span class="street">Rua Kamel Lian, 291<br>Panamby · Ribeirão Preto</span>
+          <p style="color:var(--mute);font-size:.92rem">Rua sem saída, na mesma rua do Guaecá.</p>
+          <a class="btn btn-ghost" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=Rua%20Kamel%20Lian%2C%20291%20-%20Panamby%2C%20Ribeir%C3%A3o%20Preto%20-%20SP" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+        <div class="near">
+          <div>
+            <h3>Acesso rápido</h3>
+            <ul><li>Av. Costábile Romano</li><li>Av. Maurílio Biagi</li><li>Av. Francisco Junqueira</li><li>Av. Portugal</li><li>Av. Antônio Diederichsen e Av. Presidente Vargas</li></ul>
+          </div>
+          <div>
+            <h3>Por perto</h3>
+            <ul><li>Brooks Club, com quadras de beach tennis</li><li>Hospital São Paulo e Hospital São Lucas Ribeirânia</li><li>Unaerp e Escola SEB</li><li>Savegnago, Oba Hortifruti e Sam’s Club</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <span class="eyebrow">Ficha técnica</span>
+        <h2>O empreendimento</h2>
+      </div>
+      <dl class="ficha" style="margin:0">
+        <div><dt>Realização e construção</dt><dd>Stéfani Nogueira, idealizadora do Panamby</dd></div>
+        <div><dt>Arquitetura</dt><dd>Juliana Breda</dd></div>
+        <div><dt>Interiores</dt><dd>Coolab Design</dd></div>
+        <div><dt>Paisagismo</dt><dd>Juliana De Stéfani Titoto</dd></div>
+        <div><dt>Torres</dt><dd>2 torres, Marina e Enseada</dd></div>
+        <div><dt>Pavimentos</dt><dd>Térreo, 15 andares tipo e penthouse</dd></div>
+        <div><dt>Unidades</dt><dd>192, sendo 6 por andar</dd></div>
+        <div><dt>Terreno</dt><dd>7.237,74 m²</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap narrow">
+      <div class="card-broker">
+        <span class="eyebrow">Seu corretor</span>
+        <span class="name">Lucas</span>
+        <span style="color:var(--mute)">Kairós Negócios Imobiliários · CRECI 190.339-F</span>
+      </div>
+      <p>Te mando a tabela do dia, simulo a forma de pagamento e marco uma visita ao estande de vendas quando quiser.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" id="wa-end" href="#" target="_blank" rel="noopener">Falar com o Lucas no WhatsApp</a>
+        <a class="btn btn-ghost" href="https://drive.google.com/file/d/1j1jXU1SB0LGev60XogtStPh9_Zi-kxWi/view" target="_blank" rel="noopener">Baixar o book (PDF)</a>
+      </div>
+      <p class="legal">O book tem 59 páginas e cerca de 250 MB. Vale abrir no Wi-Fi.</p>
+      <div class="phone">
+        <code id="phone">(16) 99455-8101</code>
+        <button class="btn btn-ghost btn-sm" id="copy" type="button">Copiar número</button>
+      </div>
+      <p class="legal">Imagens e perspectivas meramente ilustrativas. Móveis e objetos de decoração não fazem parte do contrato. O empreendimento será entregue conforme memorial descritivo. Juquehy Residencial Incorporadora Imobiliária SPE Ltda. Incorporação registrada sob o R.4 / 216.462 no 2º Oficial de Registro de Imóveis de Ribeirão Preto.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Contato">
+  <div class="in">
+    <a class="btn btn-sun" id="wa-dock-tabela" href="#" target="_blank" rel="noopener">Pedir a tabela</a>
+    <a class="btn btn-wa" id="wa-dock" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="lb-bar"><span id="lb-cap"></span><button class="lb-close" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lb-track" id="lb-track"></div>
+</div>
+
+<script>
+(function(){
+  var PHONE="5516994558101";
+  function wa(msg){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg);}
+  var hello="Oi Lucas! Vi as fotos do Juquehy, no Panamby, e quero saber mais.";
+  var tabela="Oi Lucas! Vi o Juquehy, no Panamby. Pode me mandar a tabela atualizada?";
+  ["wa-top","wa-end","wa-dock"].forEach(function(id){document.getElementById(id).href=wa(hello);});
+  ["wa-tabela","wa-dock-tabela"].forEach(function(id){document.getElementById(id).href=wa(tabela);});
+
+  var photos=[
+    ["EXT_Fachada1","Fachada · Torres Marina e Enseada"],
+    ["EXT_Piscina01","Piscina"],
+    ["APT_LivingTipo1Ampliado","Living, cozinha e varanda · 85 m²"],
+    ["APT_VarandaTipo05","Varanda gourmet · 110 m²"],
+    ["EXT_Piscina02","Complexo de piscinas"],
+    ["EXT_Guarita","Portaria"],
+    ["INT_LobbyTorreB","Hall social · Torre Enseada"],
+    ["INT_Gourmet","Espaço gourmet"],
+    ["EXT_Churrasqueira","Churrasqueira"],
+    ["INT_SlFestas","Salão de festas"],
+    ["EXT_Quadra","Quadra esportiva"],
+    ["INT_Academia","Espaço fitness"],
+    ["EXT_FitnessExterno","Fitness outdoor"],
+    ["EXT_Praca","Espaço relax no jardim"],
+    ["INT_Jogos","Espaço games"],
+    ["INT_LobbyTorreA","Hall social · Torre Marina"],
+    ["APT_LivingPenthouseFinal05","Living · Penthouse 169 m²"],
+    ["APT_PenthouseVaranda05","Varanda gourmet · Penthouse"],
+    ["EXT_Fachada2","Fachada"],
+    ["EXT_Fachada3","Fachada ao entardecer"]
+  ];
+  var track=document.getElementById("track"),thumbs=document.getElementById("thumbs"),count=document.getElementById("count");
+  photos.forEach(function(p,i){
+    var f=document.createElement("figure");f.className="slide";f.setAttribute("aria-label",(i+1)+" de "+photos.length);
+    var im=document.createElement("img");im.src="img/"+p[0]+".jpg";im.alt=p[1];im.loading=i<2?"eager":"lazy";im.decoding="async";
+    im.addEventListener("click",function(){openLB(photos.map(function(q){return ["img/"+q[0]+".jpg",q[1]];}),i,false);});
+    var c=document.createElement("figcaption");c.textContent=p[1];
+    f.appendChild(im);f.appendChild(c);track.appendChild(f);
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Ver foto "+(i+1)+": "+p[1]);
+    var ti=document.createElement("img");ti.src="img/"+p[0]+".jpg";ti.alt="";ti.loading="lazy";b.appendChild(ti);
+    b.addEventListener("click",function(){go(i);});thumbs.appendChild(b);
+  });
+  var cur=0;
+  function go(i){i=(i+photos.length)%photos.length;track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});}
+  function mark(i){
+    if(i===cur&&count.dataset.init)return;cur=i;count.dataset.init=1;
+    count.textContent=(i+1)+" / "+photos.length;
+    Array.prototype.forEach.call(thumbs.children,function(b,k){b.setAttribute("aria-current",k===i?"true":"false");});
+    var t=thumbs.children[i];if(t){var l=t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2;thumbs.scrollTo({left:l,behavior:"smooth"});}
+  }
+  var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(Math.round(track.scrollLeft/track.clientWidth));});});
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(cur+1);e.preventDefault();}if(e.key==="ArrowLeft"){go(cur-1);e.preventDefault();}});
+  mark(0);
+
+  /* plantas */
+  var plans={
+    "70":{img:"img/planta-70.jpg",w:1500,h:972,area:"70",title:"Apartamento de 2 dormitórios",
+      specs:[["Dormitórios","2, sendo 1 suíte"],["Vagas","1"],["Áreas exatas","69,99 m² (final 03) e 72,54 m² (final 06)"],["Varanda","Gourmet, com ponto para churrasqueira elétrica"]],
+      note:"Planta funcional para uma rotina prática: sala e cozinha integradas e varanda com espaço para mesa de seis lugares."},
+    "85":{img:"img/planta-85.jpg",w:1500,h:1198,area:"85",title:"Apartamento de 3 dormitórios",
+      specs:[["Dormitórios","3, sendo 1 suíte"],["Lavabo","Sim"],["Vagas","2"],["Área exata","85,77 m² (finais 01 e 02)"]],
+      note:"Também existe opção com 2 suítes, sala estendida e lavabo, e opção com chapelaria."},
+    "110":{img:"img/planta-110.jpg",w:1490,h:1460,area:"110",title:"Apartamento de 3 dormitórios",
+      specs:[["Dormitórios","3, sendo 1 suíte"],["Vagas","2"],["Área exata","110,91 m² (finais 04 e 05)"],["Varanda","Gourmet, com churrasqueira a carvão"]],
+      note:"A maior planta tipo, com sala ampla e varanda que recebe uma mesa grande de jantar. Há opção com 2 suítes e closet."}
+  };
+  var planImg=document.getElementById("plan-img"),info=document.getElementById("plan-info"),active="70";
+  function showPlan(k){
+    active=k;var p=plans[k];
+    planImg.src=p.img;planImg.width=p.w;planImg.height=p.h;planImg.alt="Planta humanizada do apartamento de "+k+" m²";
+    var html='<div class="area">'+p.area+'<small> m²</small></div><b style="font-weight:500">'+p.title+'</b><ul class="specs">';
+    p.specs.forEach(function(s){html+='<li><span>'+s[0]+'</span><span>'+s[1]+'</span></li>';});
+    html+='</ul><p class="plan-note">'+p.note+'</p>';
+    info.innerHTML=html;
+    document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",t.dataset.p===k?"true":"false");});
+  }
+  document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){showPlan(t.dataset.p);});});
+  document.getElementById("plan-open").addEventListener("click",function(){
+    var order=["70","85","110"];openLB(order.map(function(k){return [plans[k].img,"Planta "+k+" m²"];}),order.indexOf(active),true);
+  });
+  showPlan("70");
+
+  /* lightbox */
+  var lb=document.getElementById("lb"),lbt=document.getElementById("lb-track"),lbc=document.getElementById("lb-cap"),items=[],lastFocus;
+  function openLB(list,start,paper){
+    items=list;lastFocus=document.activeElement;lbt.innerHTML="";
+    lb.classList.toggle("paperbg",!!paper);
+    list.forEach(function(it){var s=document.createElement("div");s.className="lb-slide";var im=document.createElement("img");im.src=it[0];im.alt=it[1];s.appendChild(im);lbt.appendChild(s);});
+    lb.hidden=false;document.body.style.overflow="hidden";
+    requestAnimationFrame(function(){lbt.scrollLeft=start*lbt.clientWidth;cap(start);document.getElementById("lb-close").focus();});
+  }
+  function cap(i){if(items[i])lbc.textContent=items[i][1]+"  ·  "+(i+1)+" / "+items.length;}
+  lbt.addEventListener("scroll",function(){cap(Math.round(lbt.scrollLeft/lbt.clientWidth));});
+  function closeLB(){lb.hidden=true;document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
+  document.getElementById("lb-close").onclick=closeLB;
+  document.addEventListener("keydown",function(e){
+    if(lb.hidden)return;
+    if(e.key==="Escape")closeLB();
+    if(e.key==="ArrowRight")lbt.scrollBy({left:lbt.clientWidth,behavior:"smooth"});
+    if(e.key==="ArrowLeft")lbt.scrollBy({left:-lbt.clientWidth,behavior:"smooth"});
+  });
+
+  /* copy */
+  var copyBtn=document.getElementById("copy");
+  copyBtn.addEventListener("click",function(){
+    var t="16994558101";
+    var done=function(){copyBtn.textContent="Número copiado";setTimeout(function(){copyBtn.textContent="Copiar número";},2000);};
+    try{navigator.clipboard.writeText(t).then(done,function(){sel();});}catch(e){sel();}
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("phone"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  });
+})();
+</script>
+
+</body>
+</html>
