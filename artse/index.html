@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#143530">
+<title>Artse by Tarraf · Ilhas do Sul</title>
+<meta name="description" content="Artse by Tarraf: apartamentos de 183 e 237 m² no Ilhas do Sul, com arquitetura Königsberger Vannucchi, interiores Carlos Rossi e paisagismo Burle Marx. Com o corretor Lucas · Kairós.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucaskairosimoveis.vercel.app/artse/">
+<meta property="og:title" content="Artse by Tarraf · Ilhas do Sul">
+<meta property="og:description" content="183 e 237 m², 3 e 4 suítes, 3 vagas. Arquitetura Königsberger Vannucchi, no bairro fechado Ilhas do Sul.">
+<meta property="og:image" content="https://lucaskairosimoveis.vercel.app/artse/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: editorial, slow page. Deep-green hero with the night tower, then paper sections; architecture credits, generous plan numbers, the gated neighborhood with the route video */
+:root{
+  --paper:#f4f2ec;        /* the book's textured white */
+  --paper-2:#ebe8df;
+  --card:#fbfaf6;
+  --green:#143530;        /* the book's deep green */
+  --green-2:#0d2622;
+  --olive:#a9a57c;        /* the book's olive line */
+  --olive-deep:#77734e;
+  --ink:#1b2925;
+  --mute:#68716b;
+  --line:#d8d4c6;
+  --on-green:#eef0ea;
+  --on-green-mute:#a9b5ae;
+  --wa:#25d366;
+  --display:"Italiana", "Didot", "Bodoni 72", Georgia, serif;
+  --body:"Instrument Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--green)}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.narrow{max-width:720px}
+.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--olive-deep);font-weight:600}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+h2{font-family:var(--display);font-size:clamp(2rem,6vw,3.1rem);line-height:1.08;letter-spacing:.02em}
+p{margin:0}
+.rule{display:block;width:56px;height:1px;background:var(--olive)}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--green) 94%,transparent);backdrop-filter:blur(8px);color:var(--on-green);border-bottom:1px solid rgba(169,165,124,.25)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.broker{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.broker b{font-weight:600;font-size:.86rem}
+.broker span{font-size:.7rem;color:var(--on-green-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font:600 .84rem/1 var(--body);letter-spacing:.04em;text-decoration:none;padding:14px 20px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#08260f}
+.btn-olive{background:var(--olive);color:var(--green-2)}
+.btn-line{background:transparent;color:inherit;border-color:currentColor}
+.btn-sm{padding:9px 14px;font-size:.78rem}
+
+/* hero */
+.hero{background:var(--green);color:var(--on-green)}
+.hero-grid{display:grid}
+@media (min-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}}
+.hero-img{margin:0;position:relative;cursor:zoom-in;background:var(--green-2)}
+.hero-img img{display:block;width:100%;height:100%;max-height:86vh;object-fit:cover;object-position:50% 30%;aspect-ratio:4/5}
+@media (min-width:900px){.hero-img img{aspect-ratio:auto;max-height:none;min-height:640px}}
+.hero-img figcaption{position:absolute;left:14px;bottom:12px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,240,234,.75)}
+.hero-copy{padding:40px max(20px,env(safe-area-inset-right,0px)) 44px max(20px,env(safe-area-inset-left,0px));display:grid;gap:22px;align-content:center}
+@media (min-width:900px){.hero-copy{padding:56px 56px}}
+.hero .eyebrow{color:var(--olive)}
+.name{display:grid;gap:4px}
+.name h1{font-family:var(--display);font-size:clamp(4rem,17vw,7rem);line-height:.9;letter-spacing:.08em}
+.name .by{font-family:var(--display);font-size:1.2rem;letter-spacing:.1em;color:var(--olive);padding-left:.3em}
+.motto{font-family:var(--display);font-size:clamp(1.35rem,4vw,1.7rem);line-height:1.3;color:var(--on-green)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(169,165,124,.4)}
+.facts div{padding:14px 0;border-bottom:1px solid rgba(169,165,124,.4);display:grid;gap:2px;min-width:0}
+.facts div:nth-child(odd){padding-right:14px}
+.facts div:nth-child(even){padding-left:14px;border-left:1px solid rgba(169,165,124,.4)}
+.facts .v{font-family:var(--display);font-size:1.6rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.facts .k{font-size:.72rem;letter-spacing:.06em;color:var(--on-green-mute)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+section{padding-block:64px}
+.sec-head{display:grid;gap:14px;margin-bottom:32px}
+.sec-head p{color:var(--mute);max-width:60ch}
+
+/* architecture */
+.arch-grid{display:grid;gap:32px}
+@media (min-width:900px){.arch-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start}}
+.arch-img{margin:0;border-radius:2px;overflow:hidden;cursor:zoom-in}
+.arch-img img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;object-position:30% 20%}
+.credits{display:grid;gap:0;border-top:1px solid var(--line)}
+.credit{display:grid;gap:10px;padding:24px 0;border-bottom:1px solid var(--line)}
+.credit .role{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--olive-deep);font-weight:600}
+.credit img{height:46px;width:auto;object-fit:contain;object-position:left center}
+.credit p{color:var(--mute);font-size:.95rem;max-width:56ch}
+.credit .works{font-size:.82rem;color:var(--ink)}
+.archline{margin-top:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.archline div{background:var(--paper);padding:16px 12px;display:grid;gap:2px;text-align:center;min-width:0}
+.archline b{font-family:var(--display);font-weight:400;font-size:1.7rem;line-height:1;color:var(--green)}
+.archline span{font-size:.7rem;color:var(--mute)}
+
+/* plans */
+.plans{background:var(--paper-2)}
+.sizes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.size{all:unset;cursor:pointer;display:grid;gap:4px;padding:18px 18px 16px;border:1px solid var(--line);background:var(--card);border-radius:2px;position:relative}
+.size:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.size .n{font-family:var(--display);font-size:clamp(2.8rem,11vw,4.4rem);line-height:.95;color:var(--green);font-variant-numeric:tabular-nums}
+.size .n small{font-size:.4em;margin-left:4px}
+.size .d{font-size:.78rem;letter-spacing:.06em;color:var(--mute)}
+.size[aria-selected="true"]{background:var(--green);border-color:var(--green)}
+.size[aria-selected="true"] .n{color:var(--on-green)}
+.size[aria-selected="true"] .d{color:var(--on-green-mute)}
+.variant{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.variant button{font:600 .78rem/1 var(--body);letter-spacing:.04em;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.variant button[aria-pressed="true"]{background:var(--olive);border-color:var(--olive);color:var(--green-2)}
+.plan{display:grid;gap:26px;align-items:start}
+@media (min-width:900px){.plan{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.plan-img{display:block;width:100%;padding:12px;border:1px solid var(--line);background:#fff;border-radius:2px;cursor:zoom-in}
+.plan-img img{display:block;width:100%;height:auto}
+.hint{font-size:.74rem;color:var(--mute);margin-top:8px}
+.plan-info{display:grid;gap:16px;min-width:0}
+.plan-info h3{font-family:var(--display);font-size:1.9rem;line-height:1.15;color:var(--green)}
+.specs{list-style:none;margin:0;padding:0;display:grid}
+.specs li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0}
+.specs li span:first-child{color:var(--mute);font-size:.8rem}
+.specs li span:last-child{text-align:right}
+.plan-note{font-size:.9rem;color:var(--mute)}
+.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:34px}
+@media (min-width:760px){.rooms{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.rooms button{all:unset;cursor:zoom-in;display:grid;gap:8px}
+.rooms button:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.rooms img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:2px}
+.rooms span{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+
+/* neighborhood */
+.bairro{background:var(--green);color:var(--on-green)}
+.bairro .eyebrow{color:var(--olive)}
+.bairro .sec-head p{color:var(--on-green-mute)}
+.b-grid{display:grid;gap:30px;align-items:start}
+@media (min-width:900px){.b-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(169,165,124,.35);border:1px solid rgba(169,165,124,.35)}
+.stats div{background:var(--green);padding:18px 14px;display:grid;gap:4px;min-width:0}
+.stats b{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,6vw,2.3rem);line-height:1;color:var(--on-green)}
+.stats span{font-size:.76rem;color:var(--on-green-mute)}
+.b-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.b-list li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
+.b-list li::before{content:"";width:12px;height:1px;background:var(--olive);margin-top:.85em}
+.video-card{display:grid;gap:12px;justify-items:center}
+.phone{width:min(100%,320px);aspect-ratio:9/16;border-radius:30px;padding:8px;background:var(--green-2);border:1px solid rgba(169,165,124,.4);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.phone video{display:block;width:100%;height:100%;object-fit:cover;border-radius:23px;background:#000}
+.video-card p{font-size:.8rem;color:var(--on-green-mute);text-align:center;max-width:32ch}
+.b-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:34px}
+@media (min-width:760px){.b-photos{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.b-photos button{all:unset;cursor:zoom-in;position:relative;display:block;overflow:hidden;border-radius:2px}
+.b-photos button:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.b-photos button.wide{grid-column:span 2}
+.b-photos img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.b-photos button.wide img{aspect-ratio:16/9}
+.b-photos span{position:absolute;left:10px;bottom:8px;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.near{margin-top:34px;display:grid;gap:14px;border-top:1px solid rgba(169,165,124,.35);padding-top:24px}
+.near ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.near li{border:1px solid rgba(169,165,124,.45);border-radius:999px;padding:6px 14px;font-size:.82rem}
+
+/* amenities carousel */
+.gallery{position:relative;background:var(--green-2);border-radius:2px;overflow:hidden}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;margin:0;aspect-ratio:4/3;width:100%}
+@media (min-width:760px){.slide{aspect-ratio:16/9}}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 16px;background:linear-gradient(transparent,rgba(13,38,34,.8));color:#fff;display:grid;gap:2px;pointer-events:none}
+.slide figcaption b{font-family:var(--display);font-weight:400;font-size:1.4rem;letter-spacing:.04em}
+.slide figcaption span{font-size:.78rem;opacity:.85}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(244,242,236,.9);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:12px}.nav.next{right:12px}
+.count{position:absolute;top:12px;right:12px;background:rgba(244,242,236,.9);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.76rem;font-variant-numeric:tabular-nums}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px 0 0;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 auto;width:64px;height:46px;padding:0;border:2px solid transparent;border-radius:2px;overflow:hidden;opacity:.5;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--green);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.chips{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.82rem;background:var(--card)}
+
+/* lists */
+.cols{display:grid;gap:12px 36px}
+@media (min-width:760px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.check li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:12px;height:1px;background:var(--olive-deep);margin-top:.85em}
+.ficha{margin:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+@media (min-width:640px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:36px}}
+.ficha div{display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font-size:.72rem;letter-spacing:.06em;color:var(--mute)}
+.ficha dd{margin:0}
+
+.closing{background:var(--green-2);color:var(--on-green)}
+.closing .wrap{display:grid;gap:20px}
+.closing .eyebrow{color:var(--olive)}
+.cname{font-family:var(--display);font-size:2.6rem;line-height:1}
+.phone-num{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone-num code{font:600 1.05rem var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.legal{font-size:.72rem;line-height:1.6;color:var(--on-green-mute);max-width:74ch}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dock .in{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.dock .btn{width:100%;padding:14px 10px}
+.dock .btn-green{background:var(--green);color:var(--on-green)}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,24,21,.97);display:flex;flex-direction:column;color:var(--on-green)}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));font-size:.85rem;color:var(--on-green-mute)}
+.lb-bar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{width:44px;height:44px;border-radius:50%;border:1px solid rgba(169,165,124,.5);background:transparent;color:inherit;cursor:pointer;display:grid;place-items:center;flex:none}
+.lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lb-track::-webkit-scrollbar{display:none}
+.lb-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;padding:8px max(8px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-slide img{max-width:100%;max-height:100%;object-fit:contain;touch-action:pinch-zoom}
+.lb.white .lb-slide img{background:#fff;padding:6px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="broker"><b>Lucas · Kairós Negócios Imobiliários</b><span>Corretor · CRECI 190.339-F</span></div>
+    <a class="btn btn-wa btn-sm" id="wa-top" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-grid">
+    <figure class="hero-img" id="hero-img"><img src="img/torre-noite.jpg" alt="Perspectiva da fachada do Artse ao entardecer, torre de 28 andares com varandas contínuas" width="1158" height="1425"><figcaption>Perspectiva ilustrada da fachada</figcaption></figure>
+    <div class="hero-copy">
+      <span class="eyebrow">Tarraf · Ilhas do Sul · Ribeirão Preto</span>
+      <div class="name"><h1>ARTSE</h1><span class="by">by Tarraf</span></div>
+      <p class="motto">Naturalmente sofisticado,<br>simplesmente elegante.</p>
+      <div class="facts">
+        <div><span class="v">183 e 237 m²</span><span class="k">área privativa</span></div>
+        <div><span class="v">3 e 4 suítes</span><span class="k">com escritório</span></div>
+        <div><span class="v">3 vagas</span><span class="k">por apartamento</span></div>
+        <div><span class="v">Out/2028</span><span class="k">entrega prevista</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-olive" id="wa-tabela" href="#" target="_blank" rel="noopener">Quero conhecer as condições</a>
+        <a class="btn btn-line" href="#plantas">Ver as plantas</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="arquitetura">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Arquitetura</span>
+        <h2>Uma curadoria de grandes nomes</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p>O Artse reúne três escritórios de referência nacional: um para a torre, outro para os interiores e outro para os jardins. Cada um assina a sua parte do projeto.</p>
+      </div>
+      <div class="arch-grid">
+        <figure class="arch-img" style="margin:0" id="arch-img"><img src="img/torre-dia.jpg" alt="Perspectiva da fachada do Artse de dia, com as varandas em linhas curvas" width="1389" height="1654" loading="lazy"></figure>
+        <div>
+          <div class="credits">
+            <div class="credit">
+              <span class="role">Arquitetura</span>
+              <img src="img/logo-kv.png" alt="Königsberger Vannucchi" width="340" height="120" loading="lazy">
+              <p>Escritório de São Paulo com cerca de 50 anos, fundado por Jorge Königsberger e Gianfranco Vannucchi. Desenha torres residenciais e corporativas de alto padrão e é várias vezes premiado no Master Imobiliário.</p>
+              <p class="works">Entre suas obras: Sesc Avenida Paulista, Brascan Century Plaza, Bueno Brandão 257 e, para a Tarraf, o Infinity Towers e o Tarraf Square, em São José do Rio Preto.</p>
+            </div>
+            <div class="credit">
+              <span class="role">Interiores</span>
+              <img src="img/logo-rossi.png" alt="Carlos Rossi Arquitetura, Interiores e Design" width="340" height="100" loading="lazy">
+              <p>Assina os interiores das áreas comuns, do lobby aos espaços de lazer, que são entregues equipados e decorados.</p>
+            </div>
+            <div class="credit">
+              <span class="role">Paisagismo</span>
+              <img src="img/logo-burlemarx.png" alt="Burle Marx Escritório de Paisagismo" width="370" height="120" loading="lazy">
+              <p>O escritório que leva o nome de Roberto Burle Marx, referência do paisagismo brasileiro, desenha os jardins do condomínio.</p>
+            </div>
+          </div>
+          <div class="archline">
+            <div><b>28</b><span>andares</span></div>
+            <div><b>4</b><span>apartamentos por andar</span></div>
+            <div><b>6</b><span>elevadores</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plans" id="plantas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Plantas</span>
+        <h2>Espaço de casa, no alto</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p>Plantas livres, com possibilidade de ampliar ambientes. Toque na planta para ver em tela cheia.</p>
+      </div>
+      <div class="sizes" role="tablist" aria-label="Metragens">
+        <button class="size" role="tab" id="tab-183" aria-controls="plan" aria-selected="true" data-p="183"><span class="n">183<small>m²</small></span><span class="d">3 suítes · 3 vagas</span></button>
+        <button class="size" role="tab" id="tab-237" aria-controls="plan" aria-selected="false" data-p="237"><span class="n">237<small>m²</small></span><span class="d">3 ou 4 suítes · 3 vagas</span></button>
+      </div>
+      <div class="variant" id="variant"></div>
+      <div class="plan" id="plan" role="tabpanel">
+        <div>
+          <button class="plan-img" id="plan-open" aria-label="Ampliar planta"><img id="plan-img" src="img/planta-183.jpg" alt="Planta do apartamento de 183 m²" width="1510" height="1229"></button>
+          <p class="hint">Planta humanizada. Móveis e decoração são sugestões e não fazem parte do contrato.</p>
+        </div>
+        <div class="plan-info" id="plan-info"></div>
+      </div>
+      <div class="rooms" id="rooms">
+        <button data-i="0"><img src="img/b26a.jpg" alt="Living do apartamento de 183 m²" loading="lazy" width="1800" height="716"><span>Living · 183 m²</span></button>
+        <button data-i="1"><img src="img/b27a.jpg" alt="Living ampliado do apartamento de 237 m²" loading="lazy" width="1800" height="717"><span>Living ampliado · 237 m²</span></button>
+        <button data-i="2"><img src="img/b29a.jpg" alt="Suíte master do apartamento de 183 m²" loading="lazy" width="1800" height="1274"><span>Suíte master</span></button>
+        <button data-i="3"><img src="img/b23a.jpg" alt="Vista da varanda com deck em madeira cumaru" loading="lazy" width="1800" height="1274"><span>Vista da varanda · deck cumaru</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bairro" id="bairro">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">O bairro</span>
+        <h2>Ilhas do Sul, fechado e exclusivo</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p>O Artse fica dentro do Ilhas do Sul, um bairro fechado e planejado na zona Sul, com portaria, monitoramento 24 horas e 35 mil m² de área verde desenhada pelo escritório Benedito Abbud.</p>
+      </div>
+      <div class="b-grid">
+        <div>
+          <div class="stats">
+            <div><b>35 mil m²</b><span>de área verde, parque e praças</span></div>
+            <div><b>Benedito Abbud</b><span>paisagismo do bairro</span></div>
+            <div><b>24 h</b><span>de monitoramento</span></div>
+            <div><b>5 min</b><span>do RibeirãoShopping</span></div>
+          </div>
+          <ul class="b-list">
+            <li>Bairro fechado, com acesso controlado na portaria de entrada</li>
+            <li>Pista de caminhada, parque, praças com pergolados e rotunda central arborizada</li>
+            <li>Redes subterrâneas de energia e gás natural encanado</li>
+            <li>Ao lado do Jardim Olhos D’Água e da Av. Prof. João Fiúsa, em área nobre e com alto potencial de valorização</li>
+          </ul>
+        </div>
+        <div class="video-card">
+          <div class="phone"><video id="trajeto" src="img/trajeto.mp4" poster="img/trajeto-poster.jpg" controls playsinline preload="none" aria-label="Vídeo do trajeto do RibeirãoShopping até o Ilhas do Sul"></video></div>
+          <p>O caminho do RibeirãoShopping até o Ilhas do Sul, em cerca de 5 minutos.</p>
+        </div>
+      </div>
+      <div class="b-photos" id="b-photos">
+        <button class="wide" data-i="0"><img src="img/bairro-aerea.jpg" alt="Vista aérea real do Ilhas do Sul com as torres e o verde do bairro" loading="lazy" width="1800" height="1013"><span>Vista aérea real</span></button>
+        <button data-i="1"><img src="img/bairro-portaria.jpg" alt="Entrada do bairro Ilhas do Sul ao entardecer" loading="lazy" width="1417" height="810"><span>Portaria do bairro</span></button>
+        <button data-i="2"><img src="img/bairro-pergolados.jpg" alt="Praça com pergolados e ipês no Ilhas do Sul" loading="lazy" width="1417" height="945"><span>Praças e pergolados</span></button>
+        <button data-i="3"><img src="img/bairro-rotunda.jpg" alt="Rotunda central arborizada do Ilhas do Sul" loading="lazy" width="1800" height="1013"><span>Rotunda central</span></button>
+        <button data-i="4"><img src="img/bairro-projecao.jpg" alt="Projeção do Ilhas do Sul com os empreendimentos previstos" loading="lazy" width="1800" height="1323"><span>Projeção do bairro</span></button>
+        <button data-i="5" class="wide"><img src="img/b05b.jpg" alt="Foto aérea da região do Ilhas do Sul com a cidade ao fundo" loading="lazy" width="1800" height="968"><span>Foto aérea da região</span></button>
+      </div>
+      <div class="near">
+        <span class="eyebrow">Por perto</span>
+        <ul>
+          <li>RibeirãoShopping</li><li>Av. Prof. João Fiúsa</li><li>Hospital Unimed</li><li>Parque Olhos D’Água</li><li>Parque das Artes</li><li>Maple Bear</li><li>Unip</li><li>Museu da Gula</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="lazer">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Lazer</span>
+        <h2>Um clube dentro de casa</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p>Mais de 20 espaços, entregues equipados e decorados, com ar-condicionado nos ambientes fechados.</p>
+      </div>
+      <div class="gallery" aria-roledescription="carrossel" aria-label="Fotos do lazer">
+        <div class="track" id="track" tabindex="0"></div>
+        <button class="nav prev" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="nav next" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="count" id="count" aria-live="polite"></div>
+      </div>
+      <div class="thumbs" id="thumbs" aria-label="Miniaturas"></div>
+      <ul class="chips">
+        <li>Piscina com borda infinita e raia de 25 m</li><li>Family space com piscina e deck</li><li>Piscina infantil</li><li>Solário</li><li>Sauna</li><li>Massagem</li><li>Espaço beleza</li><li>Espaço fitness</li><li>Sport bar e coworking</li><li>Salão de festas</li><li>Espaço gourmet</li><li>Churrasqueira com chopeira</li><li>Quadra esportiva</li><li>Brinquedoteca</li><li>2 playgrounds</li><li>Pet place</li><li>Bicicletário</li><li>Espelho d’água</li><li>Delivery</li><li>Lobby</li><li>Porte-cochère</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="plans" style="padding-top:56px">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Diferenciais</span><h2>Os detalhes que fazem diferença</h2><span class="rule" aria-hidden="true"></span></div>
+      <ul class="check cols">
+        <li>Porcelanato em todo o apartamento: 90 × 90 cm nas salas e suítes, 60 × 60 cm nos banhos</li>
+        <li>Persiana elétrica integrada nas suítes, exceto na 3ª suíte do 183 m² e na 4ª do 237 m², que têm caixilho de vidro contínuo</li>
+        <li>Banho da suíte master com 2 cubas e 2 chuveiros</li>
+        <li>Infraestrutura de ar-condicionado na sala, nas suítes e no escritório</li>
+        <li>Varanda gourmet com churrasqueira a gás, bancada em granito e cuba inox</li>
+        <li>Cozinha com bancada estendida para cooktop e cuba dupla em inox</li>
+        <li>Lavabo social, banheiro de serviço e depósito privativo</li>
+        <li>Controle facial nos elevadores e fechadura eletrônica na porta de serviço</li>
+        <li>Porte-cochère coberto para embarque e desembarque</li>
+        <li>Previsão de recarga para carro elétrico e gerador</li>
+        <li>Infraestrutura para climatizar as piscinas</li>
+        <li>Pé-direito amplo nas salas e varandas do 28º andar</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Ficha técnica</span><h2>O empreendimento</h2><span class="rule" aria-hidden="true"></span></div>
+      <dl class="ficha">
+        <div><dt>Incorporação e construção</dt><dd>Tarraf, duas vezes premiada no Master Imobiliário</dd></div>
+        <div><dt>Arquitetura</dt><dd>Königsberger Vannucchi</dd></div>
+        <div><dt>Interiores</dt><dd>Carlos Rossi</dd></div>
+        <div><dt>Paisagismo</dt><dd>Burle Marx Escritório de Paisagismo</dd></div>
+        <div><dt>Torre</dt><dd>1 torre, 28 andares e ático, 4 apartamentos por andar</dd></div>
+        <div><dt>Unidades</dt><dd>112</dd></div>
+        <div><dt>Elevadores</dt><dd>6 (4 sociais e 2 de serviço)</dd></div>
+        <div><dt>Terreno</dt><dd>4.522,64 m²</dd></div>
+        <div><dt>Bairro</dt><dd>Ilhas do Sul · Ribeirão Preto</dd></div>
+        <div><dt>Entrega prevista</dt><dd>Outubro de 2028</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap narrow">
+      <div style="display:grid;gap:6px">
+        <span class="eyebrow">Seu corretor</span>
+        <span class="cname">Lucas</span>
+        <span style="color:var(--on-green-mute)">Kairós Negócios Imobiliários · CRECI 190.339-F</span>
+      </div>
+      <p>Corretor premiado pela Tarraf nas vendas do Artse. Te apresento as unidades disponíveis, a condição de pagamento e marco uma visita ao estande da Tarraf, na Av. Prof. João Fiúsa, quando quiser.</p>
+      <div class="cta-row"><a class="btn btn-wa" id="wa-end" href="#" target="_blank" rel="noopener">Falar com o Lucas no WhatsApp</a></div>
+      <div class="phone-num"><code id="phone">(16) 99455-8101</code><button class="btn btn-line btn-sm" id="copy" type="button">Copiar número</button></div>
+      <p class="legal">Perspectivas e imagens meramente ilustrativas, sujeitas a ajustes, inclusive na fachada. A vegetação aparece em porte adulto, atingido alguns anos após a entrega. Os apartamentos serão entregues conforme o memorial descritivo do contrato de compra e venda.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Contato">
+  <div class="in">
+    <a class="btn btn-green" id="wa-dock-tabela" href="#" target="_blank" rel="noopener">Pedir condições</a>
+    <a class="btn btn-wa" id="wa-dock" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>WhatsApp</a>
+  </div>
+</nav>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <div class="lb-bar"><span id="lb-cap"></span><button class="lb-close" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lb-track" id="lb-track"></div>
+</div>
+
+<script>
+(function(){
+  var PHONE="5516994558101";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);}
+  var hello="Oi Lucas! Vi a apresentação do Artse, no Ilhas do Sul, e quero saber mais.";
+  var cond="Oi Lucas! Vi o Artse, no Ilhas do Sul. Pode me mandar as unidades disponíveis e a condição de pagamento?";
+  ["wa-top","wa-end","wa-dock"].forEach(function(id){document.getElementById(id).href=wa(hello);});
+  ["wa-tabela","wa-dock-tabela"].forEach(function(id){document.getElementById(id).href=wa(cond);});
+
+  /* lightbox */
+  var lb=document.getElementById("lb"),lbt=document.getElementById("lb-track"),lbc=document.getElementById("lb-cap"),items=[],last;
+  function openLB(list,start,white){items=list;last=document.activeElement;lbt.innerHTML="";lb.classList.toggle("white",!!white);
+    list.forEach(function(it){var s=document.createElement("div");s.className="lb-slide";var im=document.createElement("img");im.src=it[0];im.alt=it[1];s.appendChild(im);lbt.appendChild(s);});
+    lb.hidden=false;document.body.style.overflow="hidden";
+    requestAnimationFrame(function(){lbt.scrollLeft=start*lbt.clientWidth;cap(start);document.getElementById("lb-close").focus();});}
+  function cap(i){if(items[i])lbc.textContent=items[i][1]+"  ·  "+(i+1)+" / "+items.length;}
+  lbt.addEventListener("scroll",function(){cap(Math.round(lbt.scrollLeft/lbt.clientWidth));});
+  function closeLB(){lb.hidden=true;document.body.style.overflow="";if(last)last.focus();}
+  document.getElementById("lb-close").onclick=closeLB;
+  document.addEventListener("keydown",function(e){if(lb.hidden)return;if(e.key==="Escape")closeLB();
+    if(e.key==="ArrowRight")lbt.scrollBy({left:lbt.clientWidth,behavior:"smooth"});if(e.key==="ArrowLeft")lbt.scrollBy({left:-lbt.clientWidth,behavior:"smooth"});});
+
+  var facade=[["img/torre-noite.jpg","Fachada ao entardecer"],["img/torre-dia.jpg","Fachada"],["img/b03a.jpg","Porte-cochère e entrada"]];
+  document.getElementById("hero-img").addEventListener("click",function(){openLB(facade,0);});
+  document.getElementById("arch-img").addEventListener("click",function(){openLB(facade,1);});
+
+  /* rooms */
+  var rooms=[["img/b26a.jpg","Living · 183 m²"],["img/b27a.jpg","Living ampliado · 237 m²"],["img/b29a.jpg","Suíte master · 183 m²"],["img/b23a.jpg","Vista da varanda, deck em madeira cumaru"]];
+  document.querySelectorAll("#rooms button").forEach(function(b){b.addEventListener("click",function(){openLB(rooms,+b.dataset.i);});});
+  /* neighborhood */
+  var bp=[["img/bairro-aerea.jpg","Vista aérea real do Ilhas do Sul"],["img/bairro-portaria.jpg","Portaria do bairro"],["img/bairro-pergolados.jpg","Praças e pergolados"],["img/bairro-rotunda.jpg","Rotunda central"],["img/bairro-projecao.jpg","Projeção do bairro"],["img/b05b.jpg","Foto aérea da região"]];
+  document.querySelectorAll("#b-photos button").forEach(function(b){b.addEventListener("click",function(){openLB(bp,+b.dataset.i);});});
+
+  /* plans */
+  var plans={
+    "183":[{label:"Planta tipo · 3 suítes",img:"img/planta-183.jpg",w:1510,h:1229,title:"3 suítes e escritório",
+      specs:[["Suítes","3, master com closet"],["Escritório","Sim"],["Vagas","3"],["Varanda","Gourmet, integrada ao living"],["Apoio","Lavabo, despensa, depósito e WC de serviço"]],
+      note:"Living e jantar abertos para a varanda gourmet, suíte master com closet amplo e banho com 2 cubas e 2 chuveiros."}],
+    "237":[{label:"Planta tipo · 4 suítes",img:"img/planta-237.jpg",w:1608,h:1228,title:"4 suítes e escritório",
+      specs:[["Suítes","4, master com closet"],["Escritório","Sim"],["Vagas","3"],["Varanda","Gourmet, de ponta a ponta do living"],["Apoio","Lavabo, despensas, depósito e WC de serviço"]],
+      note:"A maior planta do Artse, com varanda contínua ao longo do living e suíte master com closet em corredor."},
+      {label:"Opção · 3 suítes, sala ampliada",img:"img/planta-237-sala.jpg",w:1573,h:1206,title:"3 suítes com sala ampliada",
+      specs:[["Suítes","3, master com closet"],["Escritório","Sim"],["Vagas","3"],["Living","Ampliado, com a área da 4ª suíte"]],
+      note:"Troca uma suíte por um living maior, para quem recebe muito e prefere salas generosas."}]
+  };
+  var planImg=document.getElementById("plan-img"),info=document.getElementById("plan-info"),vbox=document.getElementById("variant"),active="183",vi=0;
+  function render(){var p=plans[active][vi];
+    planImg.src=p.img;planImg.width=p.w;planImg.height=p.h;planImg.alt="Planta do apartamento de "+active+" m²: "+p.title;
+    var h='<h3>'+p.title+'</h3><ul class="specs">';
+    p.specs.forEach(function(s){h+='<li><span>'+s[0]+'</span><span>'+s[1]+'</span></li>';});
+    info.innerHTML=h+'</ul><p class="plan-note">'+p.note+'</p>';
+    vbox.innerHTML="";vbox.hidden=plans[active].length<2;
+    plans[active].forEach(function(v,k){var b=document.createElement("button");b.type="button";b.textContent=v.label;b.setAttribute("aria-pressed",k===vi?"true":"false");b.onclick=function(){vi=k;render();};vbox.appendChild(b);});
+    document.querySelectorAll(".size").forEach(function(t){t.setAttribute("aria-selected",t.dataset.p===active?"true":"false");});}
+  document.querySelectorAll(".size").forEach(function(t){t.addEventListener("click",function(){active=t.dataset.p;vi=0;render();});});
+  document.getElementById("plan-open").addEventListener("click",function(){
+    var list=[],start=0;["183","237"].forEach(function(k){plans[k].forEach(function(v,j){if(k===active&&j===vi)start=list.length;list.push([v.img,k+" m² · "+v.label]);});});openLB(list,start,true);});
+  render();
+
+  /* amenities carousel */
+  var photos=[
+    ["b18a","Piscina com borda infinita","Raia de 25 m com vista aberta"],["b19a","Piscina adulto e infantil","Solário e deck ao redor"],["b17a","Family space","Piscina e deck privativos para receber a família"],
+    ["b07a","Lobby","Interiores Carlos Rossi"],["b08a","Salão de festas","Amplo e integrado à área externa"],["b09a","Espaço gourmet","Pode ser ampliado junto ao salão de festas"],
+    ["b16a","Churrasqueira","Com chopeira"],["b10a","Sport bar","Lazer e coworking"],["b11a","Espaço fitness","Com conexão direta à área externa"],
+    ["b12a","Massagem","Ambiente climatizado"],["b13b","Sauna",""],["b21a","Espaço beleza","Para cuidados completos sem sair de casa"],
+    ["b20a","Quadra esportiva",""],["b14a","Brinquedoteca",""],["b15b","Playgrounds","Duas áreas abertas"],
+    ["b22a","Pet place",""],["b03a","Porte-cochère","Acesso coberto direto ao edifício"],["b24a","Implantação","Mapa do lazer no térreo"]
+  ];
+  var track=document.getElementById("track"),thumbs=document.getElementById("thumbs"),count=document.getElementById("count");
+  var full=photos.map(function(q){return ["img/"+q[0]+".jpg",q[1]];});
+  photos.forEach(function(p,i){
+    var f=document.createElement("figure");f.className="slide";f.setAttribute("aria-label",(i+1)+" de "+photos.length);
+    var im=document.createElement("img");im.src="img/"+p[0]+".jpg";im.alt=p[1]+(p[2]?": "+p[2]:"");im.loading=i<1?"eager":"lazy";im.decoding="async";
+    if(p[0]==="b24a")im.style.objectFit="contain",im.style.background="#fff";
+    im.addEventListener("click",function(){openLB(full,i);});
+    var c=document.createElement("figcaption");c.innerHTML="<b></b><span></span>";c.firstChild.textContent=p[1];c.lastChild.textContent=p[2];
+    f.appendChild(im);f.appendChild(c);track.appendChild(f);
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Ver foto "+(i+1)+": "+p[1]);
+    var ti=document.createElement("img");ti.src="img/"+p[0]+".jpg";ti.alt="";ti.loading="lazy";b.appendChild(ti);
+    b.addEventListener("click",function(){go(i);});thumbs.appendChild(b);
+  });
+  var cur=-1;
+  function go(i){i=(i+photos.length)%photos.length;track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});}
+  function mark(i){if(i===cur)return;cur=i;count.textContent=(i+1)+" / "+photos.length;
+    Array.prototype.forEach.call(thumbs.children,function(b,k){b.setAttribute("aria-current",k===i?"true":"false");});
+    var t=thumbs.children[i];if(t)thumbs.scrollTo({left:t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2,behavior:"smooth"});}
+  var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(Math.round(track.scrollLeft/track.clientWidth));});});
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(cur+1);e.preventDefault();}if(e.key==="ArrowLeft"){go(cur-1);e.preventDefault();}});
+  mark(0);
+
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("phone"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText("16994558101").then(function(){cb.textContent="Número copiado";setTimeout(function(){cb.textContent="Copiar número";},2000);},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
