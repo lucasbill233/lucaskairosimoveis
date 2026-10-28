@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#9c4626">
+<title>Thai Homes by Tarraf · Ilhas do Sul</title>
+<meta name="description" content="Fotos, plantas de 92 e 123 m² e detalhes do Thai Homes by Tarraf, no Ilhas do Sul, com o corretor Lucas · Kairós.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucaskairosimoveis.vercel.app/thaihomes/">
+<meta property="og:title" content="Thai Homes by Tarraf · Ilhas do Sul">
+<meta property="og:description" content="2 e 3 suítes, 92 e 123 m², 2 vagas. Entrega prevista para janeiro de 2027.">
+<meta property="og:image" content="https://lucaskairosimoveis.vercel.app/thaihomes/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: sand-colored resort page; terracotta title band under the carousel, then a reading column; contact docked at the bottom */
+:root{
+  --sand:#f3eddc;        /* page ground, the book's cream */
+  --paper:#fbf8ef;       /* raised cards */
+  --line:#e0d5b9;
+  --terra:#9c4626;       /* the book's terracotta */
+  --terra-deep:#7d3519;
+  --on-terra:#fbf3e4;
+  --ink:#38281e;
+  --mute:#76665a;
+  --wa:#25d366;
+  --display:"Cormorant Garamond", "Cormorant", Georgia, serif;
+  --body:"Montserrat", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+[hidden]{display:none!important}
+body{margin:0;background:var(--sand);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--sand)}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:720px}
+.eyebrow{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--terra);font-weight:600}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:500}
+h2{font-family:var(--display);font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.1;font-weight:600}
+p{margin:0}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--sand) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.broker{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.broker b{font-weight:600;font-size:.88rem}
+.broker span{font-size:.7rem;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font:600 .86rem/1 var(--body);letter-spacing:.02em;text-decoration:none;padding:13px 18px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#08260f}
+.btn-terra{background:var(--terra);color:var(--on-terra)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#cdbf9f}
+.btn-sm{padding:9px 14px;font-size:.8rem}
+
+.gallery{position:relative;background:#2b2019}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;margin:0;aspect-ratio:4/3;max-height:78vh;width:100%}
+@media (min-width:760px){.slide{aspect-ratio:16/9}}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px max(16px,env(safe-area-inset-left,0px)) 14px;background:linear-gradient(transparent,rgba(43,26,16,.72));color:#fbf3e4;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;pointer-events:none}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(251,243,228,.85);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:max(12px,env(safe-area-inset-left,0px))}
+.nav.next{right:max(12px,env(safe-area-inset-right,0px))}
+.count{position:absolute;top:12px;right:max(12px,env(safe-area-inset-right,0px));background:rgba(251,243,228,.85);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.78rem;font-variant-numeric:tabular-nums}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px max(16px,env(safe-area-inset-left,0px));scrollbar-width:none;background:var(--sand)}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 auto;width:64px;height:46px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;opacity:.55;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--terra);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+
+.band{background:var(--terra);color:var(--on-terra)}
+.band .wrap{padding-block:30px 34px;display:grid;gap:18px}
+.band .eyebrow{color:#f2c9a4}
+.name{display:grid;gap:2px}
+.name h1{font-family:var(--display);font-weight:500;font-size:clamp(2.8rem,11vw,4.4rem);line-height:.95;letter-spacing:.14em;text-transform:uppercase}
+.name .homes{font-size:.8rem;letter-spacing:.5em;text-transform:uppercase;padding-left:.2em}
+.name .sub{margin-top:10px;font-size:.95rem;opacity:.9}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(251,243,228,.28);border:1px solid rgba(251,243,228,.28);border-radius:14px;overflow:hidden}
+@media (min-width:640px){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fact{background:var(--terra-deep);padding:14px 16px;display:grid;gap:2px;min-width:0}
+.fact .v{font-family:var(--display);font-size:1.6rem;line-height:1.1;font-weight:600;font-variant-numeric:tabular-nums}
+.fact .k{font-size:.74rem;opacity:.85}
+
+.intro{padding-block:30px 6px;display:grid;gap:18px}
+.lede{font-size:1.02rem;max-width:62ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+section{padding-block:40px}
+.sec-head{display:grid;gap:8px;margin-bottom:20px}
+.sec-head p{color:var(--mute);max-width:60ch}
+
+.paperband{background:var(--paper);border-block:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font:600 .88rem/1 var(--body);padding:11px 18px;border-radius:999px;border:1px solid #cdbf9f;background:transparent;color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--terra);border-color:var(--terra);color:var(--on-terra)}
+.plan{display:grid;gap:20px}
+.plan-img{background:#f1ead3;border-radius:14px;padding:8px;border:1px solid var(--line);cursor:zoom-in;display:block;width:100%}
+.plan-img img{display:block;width:100%;height:auto;border-radius:8px}
+.plan-info{display:grid;gap:14px;min-width:0}
+@media (min-width:760px){.plan-info{grid-template-columns:auto minmax(0,1fr);column-gap:36px;align-items:start}}
+.area{font-family:var(--display);font-size:3.6rem;line-height:1;color:var(--terra);font-weight:600;font-variant-numeric:tabular-nums}
+.area small{font-size:1.5rem}
+.specs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.specs li{display:flex;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:8px}
+.specs li span:first-child{color:var(--mute);font-size:.8rem;min-width:8em}
+.plan-note{font-size:.88rem;color:var(--mute)}
+.hint{font-size:.76rem;color:var(--mute);margin-top:8px}
+
+.cols{display:grid;gap:10px 28px}
+@media (min-width:640px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.check li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:7px;height:7px;margin-top:.62em;transform:rotate(45deg);background:var(--terra)}
+.lazer{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.lazer li{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.86rem;background:var(--paper)}
+.lazer li.hl{background:var(--terra);border-color:var(--terra);color:var(--on-terra)}
+
+.aerial{border-radius:14px;overflow:hidden;margin-bottom:22px;border:1px solid var(--line)}
+.aerial img{display:block;width:100%;height:auto}
+.aerial p{font-size:.76rem;color:var(--mute);padding:8px 12px;background:var(--paper)}
+.loc{display:grid;gap:22px}
+@media (min-width:760px){.loc{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.addr{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+.addr .street{font-family:var(--display);font-size:1.5rem;line-height:1.2;font-weight:600}
+.near{display:grid;gap:18px}
+.near h3{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin:0 0 8px;font-weight:600}
+.near ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+
+.ficha{margin:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+@media (min-width:640px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}}
+.ficha div{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font-size:.74rem;color:var(--mute)}
+.ficha dd{margin:0}
+
+.closing{background:var(--terra-deep);color:var(--on-terra)}
+.closing .wrap{display:grid;gap:18px}
+.closing .eyebrow{color:#f2c9a4}
+.closing .btn-ghost{color:var(--on-terra);border-color:rgba(251,243,228,.4)}
+.cname{font-family:var(--display);font-size:2rem;font-weight:600}
+.phone{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone code{font:600 1.05rem var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.legal{font-size:.72rem;line-height:1.55;opacity:.8;max-width:72ch}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--sand) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dock .in{max-width:980px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.dock .btn{width:100%;padding:13px 10px}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(30,20,14,.96);display:flex;flex-direction:column;color:#fbf3e4}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));font-size:.85rem;opacity:.9}
+.lb-bar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{width:44px;height:44px;border-radius:50%;border:1px solid rgba(251,243,228,.35);background:transparent;color:inherit;cursor:pointer;display:grid;place-items:center;flex:none}
+.lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lb-track::-webkit-scrollbar{display:none}
+.lb-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;padding:8px max(8px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-slide img{max-width:100%;max-height:100%;object-fit:contain;touch-action:pinch-zoom}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="broker"><b>Lucas · Kairós Negócios Imobiliários</b><span>Corretor · CRECI 190.339-F</span></div>
+    <a class="btn btn-wa btn-sm" id="wa-top" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="gallery" aria-roledescription="carrossel" aria-label="Fotos do Thai Homes">
+  <div class="track" id="track" tabindex="0"></div>
+  <button class="nav prev" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="nav next" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="count" id="count" aria-live="polite"></div>
+</div>
+<div class="thumbs" id="thumbs" aria-label="Miniaturas"></div>
+
+<div class="band">
+  <div class="wrap">
+    <div class="name">
+      <span class="eyebrow">Tarraf · Ilhas do Sul</span>
+      <h1>Thai</h1>
+      <span class="homes">Homes</span>
+      <p class="sub">Região do Jardim Olhos D’Água · Ribeirão Preto</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="v">92 e 123 m²</span><span class="k">área privativa</span></div>
+      <div class="fact"><span class="v">2 e 3 suítes</span><span class="k">todas as plantas com lavabo</span></div>
+      <div class="fact"><span class="v">2 vagas</span><span class="k">em todos os apartamentos</span></div>
+      <div class="fact"><span class="v">Jan/2027</span><span class="k">entrega prevista</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap narrow intro">
+    <p class="lede">Uma torre com lazer inspirado nos resorts da Tailândia: spa tailandês, sauna, piscinas climatizadas e jardins. Fica no Ilhas do Sul, bairro planejado da zona Sul, perto do Jardim Olhos D’Água e da Av. Prof. João Fiúsa.</p>
+    <div class="cta-row">
+      <a class="btn btn-terra" id="wa-tabela" href="#" target="_blank" rel="noopener">Quero a tabela atualizada</a>
+      <a class="btn btn-ghost" href="#plantas">Ver as plantas</a>
+    </div>
+  </div>
+
+  <section class="paperband" id="plantas" style="margin-top:34px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Plantas</span>
+        <h2>Dois tamanhos, sempre com suítes</h2>
+        <p>Escolha a metragem para ver a planta. Toque na imagem para ampliar.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Metragens">
+        <button class="tab" role="tab" id="tab-92" aria-controls="plan" aria-selected="true" data-p="92">92 m² · 2 suítes</button>
+        <button class="tab" role="tab" id="tab-123" aria-controls="plan" aria-selected="false" data-p="123">123 m² · 3 suítes</button>
+      </div>
+      <div class="plan" id="plan" role="tabpanel">
+        <div>
+          <button class="plan-img" id="plan-open" aria-label="Ampliar planta"><img id="plan-img" src="img/planta-92.jpg" alt="Planta humanizada do apartamento de 92 m²" width="1700" height="684"></button>
+          <p class="hint">Planta humanizada. Móveis e decoração são sugestões e não fazem parte do contrato.</p>
+        </div>
+        <div class="plan-info" id="plan-info"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Acabamento</span><h2>O que já vem no apartamento</h2></div>
+      <ul class="check cols">
+        <li>Porcelanato 80 × 80 cm em todo o apartamento, exceto banheiros</li>
+        <li>Fechadura eletrônica na porta de entrada</li>
+        <li>Persiana de enrolar motorizada</li>
+        <li>Terraço gourmet integrado ao living</li>
+        <li>Bancadas em pedra e cubas inox na cozinha e na varanda</li>
+        <li>Água quente nos chuveiros, lavatórios e pia da cozinha</li>
+        <li>Rede frigorígena para ar-condicionado</li>
+        <li>Forro de gesso</li>
+        <li>Tomadas de 20 A na cozinha, área de serviço, banheiros e circulação</li>
+        <li>Pontos para filtro e para lava-louças</li>
+        <li>Lavabo e terraço técnico</li>
+        <li>Ventilação natural nos banheiros</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <span class="eyebrow">Lazer</span>
+        <h2>22 espaços, entregues equipados e decorados</h2>
+        <p>Piscinas climatizadas, sistema de acesso por reconhecimento facial, CFTV perimetral, gerador e 4 vagas com infraestrutura para carro elétrico.</p>
+      </div>
+      <ul class="lazer">
+        <li class="hl">Spa tailandês</li><li class="hl">Sauna</li><li class="hl">Espaço massagem</li><li>Piscina adulto climatizada</li><li>Piscina infantil climatizada</li><li>Family space</li><li>Salão de festas</li><li>Terraço do salão de festas</li><li>Espaço gourmet</li><li>Health space</li><li>Espaço pilates</li><li>Espaço funcional</li><li>Quadra recreativa</li><li>Sala de jogos</li><li>Playground</li><li>Brinquedoteca</li><li>Pet care</li><li>Bike space</li><li>Bike repair</li><li>Delivery</li><li>Lobby</li><li>Portaria com porte-cochère coberto</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Localização</span>
+        <h2>Ilhas do Sul, a nova zona Sul</h2>
+        <p>Bairro planejado e protegido, com fiação subterrânea, gás natural, mais de 35 mil m² de praças com paisagismo de Benedito Abbud, pista de caminhada e fácil acesso à Rodovia Ribeirão Preto – Bonfim Paulista.</p>
+      </div>
+      <figure class="aerial" style="margin:0 0 22px"><img src="img/p06.jpg" alt="Foto aérea da região do Ilhas do Sul com a perspectiva do Thai Homes" loading="lazy" width="1800" height="687"><p>Foto aérea da região com a perspectiva ilustrada do empreendimento.</p></figure>
+      <div class="loc">
+        <div class="addr">
+          <span class="street">Rua Dr. Brasil Salim Melis<br>Ilhas do Sul · Ribeirão Preto</span>
+          <p style="color:var(--mute);font-size:.9rem">Região do Jardim Olhos D’Água.</p>
+          <a class="btn btn-ghost" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Brasil%20Salim%20Melis%2C%20Ilhas%20do%20Sul%2C%20Ribeir%C3%A3o%20Preto%20-%20SP" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+        <div class="near">
+          <div><h3>Compras e lazer</h3><ul><li>Iguatemi Ribeirão Preto</li><li>Ribeirão Shopping</li><li>Parque Olhos D’Água e Parque das Artes</li><li>Tennis Country Club</li></ul></div>
+          <div><h3>Saúde e educação</h3><ul><li>Hospital Unimed</li><li>Colégio Pequeno Príncipe e Maple Bear</li><li>Unip</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Ficha técnica</span><h2>O empreendimento</h2></div>
+      <dl class="ficha">
+        <div><dt>Incorporação e construção</dt><dd>Tarraf Incorporadora</dd></div>
+        <div><dt>Entrega prevista</dt><dd>Janeiro de 2027</dd></div>
+        <div><dt>Arquitetura</dt><dd>Rivaben Arquitetura</dd></div>
+        <div><dt>Interiores</dt><dd>Tânia Sobreira</dd></div>
+        <div><dt>Torre</dt><dd>1 torre, 22 andares tipo, 8 apartamentos por andar</dd></div>
+        <div><dt>Unidades</dt><dd>176 (88 de 92 m² e 88 de 123 m²)</dd></div>
+        <div><dt>Elevadores</dt><dd>4</dd></div>
+        <div><dt>Terreno</dt><dd>3.994,06 m²</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap narrow">
+      <div style="display:grid;gap:4px">
+        <span class="eyebrow">Seu corretor</span>
+        <span class="cname">Lucas</span>
+        <span style="opacity:.85">Kairós Negócios Imobiliários · CRECI 190.339-F</span>
+      </div>
+      <p>Te mando a tabela do dia, simulo a forma de pagamento e marco uma visita ao estande da Tarraf, na Av. Prof. João Fiúsa, quando quiser.</p>
+      <div class="cta-row"><a class="btn btn-wa" id="wa-end" href="#" target="_blank" rel="noopener">Falar com o Lucas no WhatsApp</a></div>
+      <div class="phone"><code id="phone">(16) 99455-8101</code><button class="btn btn-ghost btn-sm" id="copy" type="button">Copiar número</button></div>
+      <p class="legal">Perspectivas e imagens meramente ilustrativas, sujeitas a ajustes, inclusive na fachada. Móveis, objetos e decoração não fazem parte do contrato. Os apartamentos serão entregues conforme o memorial descritivo. Registro de incorporação nº 08/161.954 de 27/06/2023, 2º Cartório de Registro de Imóveis de Ribeirão Preto.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Contato">
+  <div class="in">
+    <a class="btn btn-terra" id="wa-dock-tabela" href="#" target="_blank" rel="noopener">Pedir a tabela</a>
+    <a class="btn btn-wa" id="wa-dock" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>WhatsApp</a>
+  </div>
+</nav>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="lb-bar"><span id="lb-cap"></span><button class="lb-close" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lb-track" id="lb-track"></div>
+</div>
+
+<script>
+(function(){
+  var PHONE="5516994558101";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);}
+  var hello="Oi Lucas! Vi as fotos do Thai Homes, no Ilhas do Sul, e quero saber mais.";
+  var tabela="Oi Lucas! Vi o Thai Homes, no Ilhas do Sul. Pode me mandar a tabela atualizada?";
+  ["wa-top","wa-end","wa-dock"].forEach(function(id){document.getElementById(id).href=wa(hello);});
+  ["wa-tabela","wa-dock-tabela"].forEach(function(id){document.getElementById(id).href=wa(tabela);});
+
+  var photos=[
+    ["p07","Fachada"],["p10","Porte-cochère"],["p40","Varanda gourmet · 123 m²"],["p34","Living · 92 m²"],
+    ["p19","Piscina adulto climatizada"],["p16","Spa tailandês"],["p17","Spa · espaço massagem"],["p15","Family space"],
+    ["p18","Piscina infantil"],["p12","Terraço do salão de festas"],["p13","Salão de festas"],["p14","Espaço gourmet"],
+    ["p33","Lobby"],["p24","Health space"],["p25","Espaço pilates"],["p26","Espaço funcional"],
+    ["p22","Sala de jogos"],["p21","Quadra recreativa"],["p20","Playground"],["p23","Brinquedoteca"],
+    ["p27","Bike space"],["p29","Pet care"],["p35","Cozinha e jantar · 92 m²"],["p37","Suíte master · 92 m²"],
+    ["p38","Segunda suíte · 92 m²"],["p41","Living · 123 m²"],["p46","Jantar e cozinha · 123 m²"],["p43","Suíte master · 123 m²"],
+    ["p44","Segunda suíte · 123 m²"],["p45","Terceira suíte · 123 m²"],["p31","Implantação do lazer"]
+  ];
+  var track=document.getElementById("track"),thumbs=document.getElementById("thumbs"),count=document.getElementById("count");
+  var full=photos.map(function(q){return ["img/"+q[0]+".jpg",q[1]];});
+  photos.forEach(function(p,i){
+    var f=document.createElement("figure");f.className="slide";f.setAttribute("aria-label",(i+1)+" de "+photos.length);
+    var im=document.createElement("img");im.src="img/"+p[0]+".jpg";im.alt=p[1];im.loading=i<2?"eager":"lazy";im.decoding="async";
+    im.addEventListener("click",function(){openLB(full,i);});
+    var c=document.createElement("figcaption");c.textContent=p[1];f.appendChild(im);f.appendChild(c);track.appendChild(f);
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Ver foto "+(i+1)+": "+p[1]);
+    var ti=document.createElement("img");ti.src="img/"+p[0]+".jpg";ti.alt="";ti.loading="lazy";b.appendChild(ti);
+    b.addEventListener("click",function(){go(i);});thumbs.appendChild(b);
+  });
+  var cur=-1;
+  function go(i){i=(i+photos.length)%photos.length;track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});}
+  function mark(i){if(i===cur)return;cur=i;count.textContent=(i+1)+" / "+photos.length;
+    Array.prototype.forEach.call(thumbs.children,function(b,k){b.setAttribute("aria-current",k===i?"true":"false");});
+    var t=thumbs.children[i];if(t)thumbs.scrollTo({left:t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2,behavior:"smooth"});}
+  var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(Math.round(track.scrollLeft/track.clientWidth));});});
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(cur+1);e.preventDefault();}if(e.key==="ArrowLeft"){go(cur-1);e.preventDefault();}});
+  mark(0);
+
+  var plans={
+    "92":{img:"img/planta-92.jpg",w:1700,h:684,title:"Apartamento de 2 suítes",
+      specs:[["Suítes","2, com suíte master e closet"],["Lavabo","Sim, com bancada estendida"],["Vagas","2"],["Área exata","92,26 m² (finais 3, 4, 5 e 6)"],["Varanda","Gourmet, integrada ao living e já envidraçada"]],
+      note:"Living integrado à varanda gourmet, cozinha com área de serviço e acesso à laje técnica por porta."},
+    "123":{img:"img/planta-123.jpg",w:1700,h:670,title:"Apartamento de 3 suítes",
+      specs:[["Suítes","3, com suíte master de cuba dupla"],["Lavabo","Sim"],["Vagas","2"],["Área exata","122,74 m² (finais 1, 2, 7 e 8)"],["Varanda","Gourmet, com piso nivelado"]],
+      note:"Planta de canto, com varanda gourmet ampla, suíte master com persiana motorizada e acesso à laje técnica por porta."}
+  };
+  var planImg=document.getElementById("plan-img"),info=document.getElementById("plan-info"),active="92";
+  function showPlan(k){active=k;var p=plans[k];
+    planImg.src=p.img;planImg.width=p.w;planImg.height=p.h;planImg.alt="Planta humanizada do apartamento de "+k+" m²";
+    var h='<div><div class="area">'+k+'<small> m²</small></div><b style="font-weight:600">'+p.title+'</b></div><div style="display:grid;gap:12px;min-width:0"><ul class="specs">';
+    p.specs.forEach(function(s){h+='<li><span>'+s[0]+'</span><span>'+s[1]+'</span></li>';});
+    info.innerHTML=h+'</ul><p class="plan-note">'+p.note+'</p></div>';
+    document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",t.dataset.p===k?"true":"false");});}
+  document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){showPlan(t.dataset.p);});});
+  document.getElementById("plan-open").addEventListener("click",function(){var o=["92","123"];openLB(o.map(function(k){return [plans[k].img,"Planta "+k+" m²"];}),o.indexOf(active));});
+  showPlan("92");
+
+  var lb=document.getElementById("lb"),lbt=document.getElementById("lb-track"),lbc=document.getElementById("lb-cap"),items=[],last;
+  function openLB(list,start){items=list;last=document.activeElement;lbt.innerHTML="";
+    list.forEach(function(it){var s=document.createElement("div");s.className="lb-slide";var im=document.createElement("img");im.src=it[0];im.alt=it[1];s.appendChild(im);lbt.appendChild(s);});
+    lb.hidden=false;document.body.style.overflow="hidden";
+    requestAnimationFrame(function(){lbt.scrollLeft=start*lbt.clientWidth;cap(start);document.getElementById("lb-close").focus();});}
+  function cap(i){if(items[i])lbc.textContent=items[i][1]+"  ·  "+(i+1)+" / "+items.length;}
+  lbt.addEventListener("scroll",function(){cap(Math.round(lbt.scrollLeft/lbt.clientWidth));});
+  function closeLB(){lb.hidden=true;document.body.style.overflow="";if(last)last.focus();}
+  document.getElementById("lb-close").onclick=closeLB;
+  document.addEventListener("keydown",function(e){if(lb.hidden)return;if(e.key==="Escape")closeLB();
+    if(e.key==="ArrowRight")lbt.scrollBy({left:lbt.clientWidth,behavior:"smooth"});if(e.key==="ArrowLeft")lbt.scrollBy({left:-lbt.clientWidth,behavior:"smooth"});});
+
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("phone"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText("16994558101").then(function(){cb.textContent="Número copiado";setTimeout(function(){cb.textContent="Copiar número";},2000);},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
