@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2a2220">
+<title>Einstein 1090 · Ao lado da USP</title>
+<meta name="description" content="Fotos, plantas de 43, 49 e 57 m² e tudo o que fica perto do Einstein 1090, no Monte Alegre, ao lado da USP. Com o corretor Lucas · Kairós.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucaskairosimoveis.vercel.app/einstein1090/">
+<meta property="og:title" content="Einstein 1090 · Ao lado da USP">
+<meta property="og:description" content="2 dormitórios com até 1 suíte, 43 a 57 m², opções garden. USP a 3 min e Av. do Café a 4 min.">
+<meta property="og:image" content="https://lucaskairosimoveis.vercel.app/einstein1090/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: espresso night page from the book; the USP neighborhood is the hero section right after the title, with a minutes board */
+:root{
+  --espresso:#272020;    /* the book's dark brown */
+  --espresso-2:#332a28;
+  --line:#4a3e3a;
+  --sand:#e5c495;        /* the book's sand band */
+  --gold:#d2ad78;
+  --on-sand:#2a1d14;
+  --cream:#f4ece2;
+  --mute:#b9ab9f;
+  --wa:#25d366;
+  --display:"Gilda Display", "Didot", Georgia, serif;
+  --body:"Manrope", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color-scheme:dark;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+[hidden]{display:none!important}
+body{margin:0;background:var(--espresso);color:var(--cream);font-family:var(--body);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--espresso)}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sand);outline-offset:3px;border-radius:4px}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:720px}
+.eyebrow{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:400}
+h2{font-family:var(--display);font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.12;text-transform:uppercase;letter-spacing:.02em;color:var(--sand)}
+p{margin:0}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--espresso) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.broker{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.broker b{font-weight:700;font-size:.88rem}
+.broker span{font-size:.7rem;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font:700 .86rem/1 var(--body);text-decoration:none;padding:13px 18px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#08260f}
+.btn-sand{background:var(--sand);color:var(--on-sand)}
+.btn-ghost{background:transparent;color:var(--cream);border-color:var(--line)}
+.btn-sm{padding:9px 14px;font-size:.8rem}
+
+.gallery{position:relative;background:#171212}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;margin:0;aspect-ratio:4/3;max-height:78vh;width:100%}
+@media (min-width:760px){.slide{aspect-ratio:16/9}}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.slide.tall img{object-fit:contain;background:#1b2037}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px max(16px,env(safe-area-inset-left,0px)) 14px;background:linear-gradient(transparent,rgba(20,14,12,.78));font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(39,32,32,.78);color:var(--cream);display:grid;place-items:center;cursor:pointer}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:max(12px,env(safe-area-inset-left,0px))}
+.nav.next{right:max(12px,env(safe-area-inset-right,0px))}
+.count{position:absolute;top:12px;right:max(12px,env(safe-area-inset-right,0px));background:rgba(39,32,32,.78);border-radius:999px;padding:4px 12px;font-size:.78rem;font-variant-numeric:tabular-nums}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px max(16px,env(safe-area-inset-left,0px));scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 auto;width:64px;height:46px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;opacity:.5;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--sand);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+
+.hero{padding-block:22px 8px;display:grid;gap:18px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo h1{font-family:var(--body);font-weight:700;font-size:clamp(2.2rem,9vw,3.4rem);line-height:.95;letter-spacing:.08em;color:var(--sand)}
+.logo h1 span{display:block;padding-left:1.1em}
+.logo .mark{width:clamp(54px,14vw,78px);aspect-ratio:1;border:3px solid var(--sand);position:relative;flex:none}
+.logo .mark::before{content:"";position:absolute;left:26%;right:-3px;top:26%;height:3px;background:var(--sand);box-shadow:0 calc(clamp(54px,14vw,78px)*.22) 0 var(--sand),0 calc(clamp(54px,14vw,78px)*.44) 0 var(--sand)}
+.logo .mark::after{content:"";position:absolute;right:-3px;top:-3px;bottom:-3px;width:3px;background:var(--espresso);clip-path:inset(28% 0 28% 0)}
+.sub{color:var(--mute)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media (min-width:640px){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fact{background:var(--espresso-2);padding:14px 16px;display:grid;gap:2px;min-width:0}
+.fact .v{font-family:var(--display);font-size:1.45rem;line-height:1.15;color:var(--sand);font-variant-numeric:tabular-nums}
+.fact .k{font-size:.74rem;color:var(--mute)}
+.lede{font-size:1.02rem;max-width:62ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+section{padding-block:40px}
+.sec-head{display:grid;gap:8px;margin-bottom:20px}
+.sec-head p{color:var(--mute);max-width:62ch}
+
+/* USP band */
+.usp{background:var(--sand);color:var(--on-sand)}
+.usp h2{color:var(--on-sand)}
+.usp .eyebrow{color:#7a4f22}
+.usp .sec-head p{color:#5b4330}
+.usp-photo{margin:0;border-radius:16px;overflow:hidden;position:relative;background:#171212}
+.usp-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;cursor:zoom-in}
+.usp-photo figcaption{position:absolute;left:12px;bottom:12px;background:rgba(39,32,32,.82);color:var(--cream);font-size:.75rem;padding:6px 10px;border-radius:999px}
+.board{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:640px){.board{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.board li{background:var(--espresso);color:var(--cream);border-radius:12px;padding:14px;display:grid;gap:2px;min-width:0}
+.board li.key{background:var(--on-sand);outline:2px solid var(--espresso);outline-offset:-2px}
+.board .m{font-family:var(--display);font-size:1.9rem;line-height:1;color:var(--sand);font-variant-numeric:tabular-nums}
+.board .m small{font-family:var(--body);font-size:.8rem;margin-left:3px;color:var(--mute)}
+.board .n{font-size:.86rem;font-weight:600}
+.usp-grid{display:grid;gap:18px;margin-top:22px}
+@media (min-width:760px){.usp-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:start}}
+.map{display:block;width:100%;padding:0;border:1px solid #cfae80;border-radius:14px;overflow:hidden;background:#fff;cursor:zoom-in}
+.map img{display:block;width:100%;height:auto}
+.invest{background:rgba(255,255,255,.35);border:1px solid #cfae80;border-radius:14px;padding:18px;display:grid;gap:10px}
+.invest b{font-family:var(--display);font-weight:400;font-size:1.3rem;text-transform:uppercase}
+.note{font-size:.76rem;color:#6d5440}
+
+.paperband{background:var(--espresso-2);border-block:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font:700 .88rem/1 var(--body);padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--cream);cursor:pointer;font-variant-numeric:tabular-nums}
+.tab[aria-selected="true"]{background:var(--sand);border-color:var(--sand);color:var(--on-sand)}
+.variant{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.variant button{font:600 .8rem/1 var(--body);padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--espresso);color:var(--cream);cursor:pointer}
+.variant button[aria-pressed="true"]{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);color:var(--sand)}
+.plan{display:grid;gap:22px;align-items:start}
+@media (min-width:760px){.plan{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr)}}
+.plan-img{background:#fff;border-radius:14px;padding:10px;border:0;cursor:zoom-in;display:block;width:100%}
+.plan-img img{display:block;width:100%;height:auto}
+.plan-info{display:grid;gap:14px;min-width:0}
+.area{font-family:var(--display);font-size:3.4rem;line-height:1;color:var(--sand);font-variant-numeric:tabular-nums}
+.area small{font-size:1.4rem}
+.specs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.specs li{display:flex;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:8px}
+.specs li span:first-child{color:var(--mute);font-size:.8rem;min-width:7.5em}
+.plan-note{font-size:.88rem;color:var(--mute)}
+.hint{font-size:.76rem;color:var(--mute);margin-top:8px}
+
+.cols{display:grid;gap:10px 28px}
+@media (min-width:640px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.check li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:9px;height:9px;margin-top:.55em;border:2px solid var(--sand);border-left:0}
+.lazer{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.lazer li{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.86rem;background:var(--espresso-2)}
+.lazer li b{color:var(--sand);font-weight:700}
+
+.ficha{margin:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+@media (min-width:640px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}}
+.ficha div{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font-size:.74rem;color:var(--mute)}
+.ficha dd{margin:0}
+
+.closing{background:var(--espresso-2);border-top:1px solid var(--line)}
+.closing .wrap{display:grid;gap:18px}
+.cname{font-family:var(--display);font-size:2rem;color:var(--sand)}
+.phone{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone code{font:700 1.05rem var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.legal{font-size:.72rem;line-height:1.55;color:var(--mute);max-width:72ch}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--espresso) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dock .in{max-width:980px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.dock .btn{width:100%;padding:13px 10px}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(18,13,12,.97);display:flex;flex-direction:column}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));font-size:.85rem;color:var(--mute)}
+.lb-bar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--cream);cursor:pointer;display:grid;place-items:center;flex:none}
+.lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lb-track::-webkit-scrollbar{display:none}
+.lb-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;padding:8px max(8px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-slide img{max-width:100%;max-height:100%;object-fit:contain;touch-action:pinch-zoom}
+.lb.white .lb-slide img{background:#fff;border-radius:8px;padding:6px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="broker"><b>Lucas · Kairós Negócios Imobiliários</b><span>Corretor · CRECI 190.339-F</span></div>
+    <a class="btn btn-wa btn-sm" id="wa-top" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="gallery" aria-roledescription="carrossel" aria-label="Fotos do Einstein 1090">
+  <div class="track" id="track" tabindex="0"></div>
+  <button class="nav prev" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="nav next" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="count" id="count" aria-live="polite"></div>
+</div>
+<div class="thumbs" id="thumbs" aria-label="Miniaturas"></div>
+
+<main>
+  <div class="wrap narrow hero">
+    <span class="eyebrow">Lançamento · Projeto 9 Construtora</span>
+    <div class="logo"><h1>Einstein<span>1090</span></h1></div>
+    <p class="sub">Rua Albert Einstein, 1090 · Monte Alegre · Ribeirão Preto</p>
+    <div class="facts">
+      <div class="fact"><span class="v">43 a 57 m²</span><span class="k">área privativa</span></div>
+      <div class="fact"><span class="v">2 dorms</span><span class="k">com até 1 suíte</span></div>
+      <div class="fact"><span class="v">Garden</span><span class="k">opções com quintal privativo</span></div>
+      <div class="fact"><span class="v">3 min</span><span class="k">até a USP</span></div>
+    </div>
+    <p class="lede">Um prédio novo no Monte Alegre, bairro tradicional e arborizado ao lado do campus da USP. Plantas compactas e bem resolvidas, para quem estuda ou trabalha na universidade e para quem quer investir em aluguel.</p>
+    <div class="cta-row">
+      <a class="btn btn-sand" id="wa-tabela" href="#" target="_blank" rel="noopener">Quero a tabela atualizada</a>
+      <a class="btn btn-ghost" href="#plantas">Ver as plantas</a>
+    </div>
+  </div>
+
+  <section class="usp" id="localizacao" style="margin-top:34px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Localização</span>
+        <h2>Ao lado da USP, perto de tudo</h2>
+        <p>O campus da USP de Ribeirão Preto fica a 3 minutos, com hospitais, centros de pesquisa e faculdades. No caminho do dia a dia tem padaria, farmácia, academia, mercado e restaurantes, e a Avenida do Café leva rápido ao resto da cidade.</p>
+      </div>
+      <figure class="usp-photo"><img id="aerea" src="img/aerea-usp.jpg" alt="Fotomontagem aérea do Einstein 1090 no Monte Alegre, com a cidade ao fundo" width="1800" height="1185"><figcaption>Fotomontagem do empreendimento no Monte Alegre</figcaption></figure>
+      <ul class="board" aria-label="Tempo de carro até">
+        <li class="key"><span class="m">3<small>min</small></span><span class="n">Campus da USP</span></li>
+        <li class="key"><span class="m">4<small>min</small></span><span class="n">Avenida do Café</span></li>
+        <li><span class="m">3<small>min</small></span><span class="n">Padaria</span></li>
+        <li><span class="m">3<small>min</small></span><span class="n">Restaurante</span></li>
+        <li><span class="m">4<small>min</small></span><span class="n">Academia</span></li>
+        <li><span class="m">4<small>min</small></span><span class="n">Pizzaria</span></li>
+        <li><span class="m">5<small>min</small></span><span class="n">Farmácia</span></li>
+        <li><span class="m">6<small>min</small></span><span class="n">Supermercado</span></li>
+      </ul>
+      <p class="note" style="margin-top:8px">Tempos de carro informados no material da construtora.</p>
+      <div class="usp-grid">
+        <button class="map" id="map-open" aria-label="Ampliar mapa"><img src="img/mapa.jpg" alt="Mapa com o Einstein 1090 na Rua Albert Einstein, ao lado do Campus da USP" width="1800" height="1217" loading="lazy"></button>
+        <div class="invest">
+          <b>Para morar ou investir</b>
+          <p>Estar ao lado da USP atrai procura por aluguel de estudantes, residentes, pesquisadores e profissionais da universidade. Plantas de 43 a 57 m² são o tamanho que esse público procura.</p>
+          <p>Para quem é de fora de Ribeirão e tem filho estudando na USP, é uma alternativa ao aluguel durante o curso, e depois o imóvel continua rendendo.</p>
+          <a class="btn btn-ghost" style="justify-self:start;color:var(--on-sand);border-color:#b8925f" href="https://www.google.com/maps/search/?api=1&query=Rua%20Albert%20Einstein%2C%201090%20-%20Monte%20Alegre%2C%20Ribeir%C3%A3o%20Preto%20-%20SP" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="paperband" id="plantas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Plantas</span>
+        <h2>Três tamanhos, com versões garden</h2>
+        <p>Escolha a metragem e a versão. Toque na planta para ampliar.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Metragens">
+        <button class="tab" role="tab" id="tab-57" aria-controls="plan" aria-selected="true" data-p="57">57 m²</button>
+        <button class="tab" role="tab" id="tab-49" aria-controls="plan" aria-selected="false" data-p="49">49 m²</button>
+        <button class="tab" role="tab" id="tab-43" aria-controls="plan" aria-selected="false" data-p="43">43 m²</button>
+      </div>
+      <div class="variant" id="variant"></div>
+      <div class="plan" id="plan" role="tabpanel">
+        <div>
+          <button class="plan-img" id="plan-open" aria-label="Ampliar planta"><img id="plan-img" src="img/planta-57.jpg" alt="Planta do apartamento de 57 m²" width="1265" height="854"></button>
+          <p class="hint">Planta humanizada. Móveis e decoração são sugestões e não fazem parte do contrato.</p>
+        </div>
+        <div class="plan-info" id="plan-info"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">No apartamento</span><h2>O que já vem pronto</h2></div>
+      <ul class="check cols">
+        <li>Janelas com persiana integrada nos dormitórios</li>
+        <li>Infraestrutura para ar-condicionado split, com local para condensadora</li>
+        <li>Varanda reversível: área de serviço e espaço de happy hour</li>
+        <li>Cozinha integrada ao living, com possibilidade de ilha nas plantas maiores</li>
+        <li>Bancadas em granito na cozinha e no banheiro, com cuba inox na cozinha</li>
+        <li>Possibilidade de estender as bancadas depois</li>
+        <li>Piso cerâmico 50 × 50 cm</li>
+        <li>1 vaga de garagem por apartamento</li>
+      </ul>
+      <p class="legal" style="margin-top:14px">Os apartamentos de 43 m² do térreo ao 3º andar têm vaga de moto. Acabamentos conforme memorial descritivo.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <span class="eyebrow">1090 Convive</span>
+        <h2>Lazer e serviços no prédio</h2>
+        <p>Áreas pensadas como extensão do apartamento: para trabalhar, receber, cuidar da casa e se movimentar.</p>
+      </div>
+      <ul class="lazer">
+        <li><b>Piscina Deck</b></li><li><b>Grill</b></li><li><b>Fit Studio</b></li><li>Lounge Celebra</li><li>Play Lounge</li><li>Work</li><li>Influencer</li><li>Market Café</li><li>Lava Fácil</li><li>Utilidades</li><li>Kids Lab</li><li>Playbaby</li><li>Pet Care</li><li>Bike Hub</li><li>Delivery</li><li>Lobby</li><li>Portal de entrada</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Ficha técnica</span><h2>O empreendimento</h2></div>
+      <dl class="ficha">
+        <div><dt>Incorporação e construção</dt><dd>Projeto 9 Construtora</dd></div>
+        <div><dt>Arquitetura</dt><dd>Montôt Espaços Incomuns · Gil Almeida</dd></div>
+        <div><dt>Torre</dt><dd>1 torre, 3 elevadores</dd></div>
+        <div><dt>Unidades</dt><dd>141 (70 de 57 m², 35 de 49 m² e 36 de 43 m²)</dd></div>
+        <div><dt>Terreno</dt><dd>2.700 m²</dd></div>
+        <div><dt>Endereço</dt><dd>Rua Albert Einstein, 1090 · Monte Alegre</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap narrow">
+      <div style="display:grid;gap:4px">
+        <span class="eyebrow">Seu corretor</span>
+        <span class="cname">Lucas</span>
+        <span style="color:var(--mute)">Kairós Negócios Imobiliários · CRECI 190.339-F</span>
+      </div>
+      <p>Te mando a tabela do dia, simulo a forma de pagamento e marco uma visita quando quiser.</p>
+      <div class="cta-row"><a class="btn btn-wa" id="wa-end" href="#" target="_blank" rel="noopener">Falar com o Lucas no WhatsApp</a></div>
+      <div class="phone"><code id="phone">(16) 99455-8101</code><button class="btn btn-ghost btn-sm" id="copy" type="button">Copiar número</button></div>
+      <p class="legal">Imagens e perspectivas meramente ilustrativas. Paisagismo representado na fase adulta das espécies. Prevalece o memorial descritivo assinado pelo comprador. Incorporação registrada no 1º Oficial de Registro de Imóveis de Ribeirão Preto sob R3/167.106, em 06/10/2026. SPE 10 Einstein Empr. Imob. Ltda.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Contato">
+  <div class="in">
+    <a class="btn btn-sand" id="wa-dock-tabela" href="#" target="_blank" rel="noopener">Pedir a tabela</a>
+    <a class="btn btn-wa" id="wa-dock" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>WhatsApp</a>
+  </div>
+</nav>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="lb-bar"><span id="lb-cap"></span><button class="lb-close" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lb-track" id="lb-track"></div>
+</div>
+
+<script>
+(function(){
+  var PHONE="5516994558101";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);}
+  var hello="Oi Lucas! Vi as fotos do Einstein 1090, perto da USP, e quero saber mais.";
+  var tabela="Oi Lucas! Vi o Einstein 1090, perto da USP. Pode me mandar a tabela atualizada?";
+  ["wa-top","wa-end","wa-dock"].forEach(function(id){document.getElementById(id).href=wa(hello);});
+  ["wa-tabela","wa-dock-tabela"].forEach(function(id){document.getElementById(id).href=wa(tabela);});
+
+  var photos=[
+    ["torre","Fachada",1],["p36","Portaria à noite"],["p15","Piscina Deck"],["p28","Living · 57 m²"],["p32","Varanda reversível"],
+    ["p31","Garden privativo"],["p17","Grill"],["p11","Lounge Celebra"],["p13","Fit Studio"],["p21","Work e Influencer"],
+    ["p22","Market Café"],["p09","Play Lounge"],["p10","Lobby"],["p20","Kids Lab"],["p14","Playbaby"],
+    ["p23","Lava Fácil"],["p24","Utilidades"],["p26","Pet Care"],["p18","Bike Hub"],["p08","Portal de entrada"],
+    ["p29","Living · 49 m²"],["p30","Living · 43 m²"],["p33","Varanda · 43 m²"],["p34","Dormitório"],["p35","Suíte"],
+    ["aerea-usp","Vista aérea do Monte Alegre"]
+  ];
+  var track=document.getElementById("track"),thumbs=document.getElementById("thumbs"),count=document.getElementById("count");
+  var full=photos.map(function(q){return ["img/"+q[0]+".jpg",q[1]];});
+  photos.forEach(function(p,i){
+    var f=document.createElement("figure");f.className="slide"+(p[2]?" tall":"");f.setAttribute("aria-label",(i+1)+" de "+photos.length);
+    var im=document.createElement("img");im.src="img/"+p[0]+".jpg";im.alt=p[1];im.loading=i<2?"eager":"lazy";im.decoding="async";
+    im.addEventListener("click",function(){openLB(full,i);});
+    var c=document.createElement("figcaption");c.textContent=p[1];f.appendChild(im);f.appendChild(c);track.appendChild(f);
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Ver foto "+(i+1)+": "+p[1]);
+    var ti=document.createElement("img");ti.src="img/"+p[0]+".jpg";ti.alt="";ti.loading="lazy";b.appendChild(ti);
+    b.addEventListener("click",function(){go(i);});thumbs.appendChild(b);
+  });
+  var cur=-1;
+  function go(i){i=(i+photos.length)%photos.length;track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});}
+  function mark(i){if(i===cur)return;cur=i;count.textContent=(i+1)+" / "+photos.length;
+    Array.prototype.forEach.call(thumbs.children,function(b,k){b.setAttribute("aria-current",k===i?"true":"false");});
+    var t=thumbs.children[i];if(t)thumbs.scrollTo({left:t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2,behavior:"smooth"});}
+  var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(Math.round(track.scrollLeft/track.clientWidth));});});
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(cur+1);e.preventDefault();}if(e.key==="ArrowLeft"){go(cur-1);e.preventDefault();}});
+  mark(0);
+
+  var plans={
+    "57":[{label:"Tipo · 2 dorms com suíte",img:"img/planta-57.jpg",w:1265,h:854,title:"2 dormitórios, sendo 1 suíte",
+            specs:[["Dormitórios","2, sendo 1 suíte"],["Banheiros","2"],["Vaga","1"],["Área exata","56,76 m²"]],
+            note:"A maior planta: cozinha integrada com possibilidade de ilha e varanda reversível para área de serviço e happy hour."},
+          {label:"Garden · +20,55 m²",img:"img/planta-57-garden.jpg",w:1265,h:854,title:"2 dormitórios com suíte e garden",
+            specs:[["Dormitórios","2, sendo 1 suíte"],["Vaga","1"],["Área exata","56,76 m² + 20,55 m² de garden"],["Andar","Térreo"]],
+            note:"Mesma planta com um quintal privativo de 20 m², bom para quem tem pet ou quer área externa."}],
+    "49":[{label:"Tipo · 2 dorms",img:"img/planta-49.jpg",w:1265,h:856,title:"2 dormitórios",
+            specs:[["Dormitórios","2"],["Banheiro","1"],["Vaga","1"],["Área exata","48,98 m²"]],
+            note:"Cozinha e living integrados, com possibilidade de estender a bancada, e varanda reversível."},
+          {label:"Sala ampliada",img:"img/planta-49-sala.jpg",w:1324,h:897,title:"1 dormitório com sala ampliada",
+            specs:[["Dormitório","1"],["Vaga","1"],["Área exata","48,98 m²"],["Sala","Maior, com a área do 2º dormitório"]],
+            note:"Para quem mora sozinho ou a dois e prefere uma sala mais ampla."},
+          {label:"Garden · +15,38 m²",img:"img/planta-49-garden.jpg",w:1349,h:901,title:"2 dormitórios com garden",
+            specs:[["Dormitórios","2"],["Vaga","1"],["Área exata","48,98 m² + 15,38 m² de garden"],["Andar","Térreo"]],
+            note:"Planta de 2 dormitórios com quintal privativo."}],
+    "43":[{label:"Tipo · 2 dorms",img:"img/planta-43.jpg",w:1195,h:833,title:"2 dormitórios",
+            specs:[["Dormitórios","2"],["Banheiro","1"],["Vaga","1 (vaga de moto do térreo ao 3º andar)"],["Área exata","42,75 m²"]],
+            note:"A planta mais compacta, pensada para estudante ou para investir em aluguel perto da USP."},
+          {label:"Sala ampliada · home office",img:"img/planta-43-sala.jpg",w:1209,h:982,title:"1 dormitório, sala ampliada e home office",
+            specs:[["Dormitório","1"],["Home office","Sim, na sala"],["Área exata","42,75 m²"]],
+            note:"Sala maior com um canto de home office no lugar do segundo dormitório."}]
+  };
+  var planImg=document.getElementById("plan-img"),info=document.getElementById("plan-info"),vbox=document.getElementById("variant"),active="57",vi=0;
+  function render(){var p=plans[active][vi];
+    planImg.src=p.img;planImg.width=p.w;planImg.height=p.h;planImg.alt="Planta: "+p.title+", "+active+" m²";
+    var h='<div class="area">'+active+'<small> m²</small></div><b style="font-weight:700">'+p.title+'</b><ul class="specs">';
+    p.specs.forEach(function(s){h+='<li><span>'+s[0]+'</span><span>'+s[1]+'</span></li>';});
+    info.innerHTML=h+'</ul><p class="plan-note">'+p.note+'</p>';
+    vbox.innerHTML="";
+    plans[active].forEach(function(v,k){var b=document.createElement("button");b.type="button";b.textContent=v.label;b.setAttribute("aria-pressed",k===vi?"true":"false");b.onclick=function(){vi=k;render();};vbox.appendChild(b);});
+    document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",t.dataset.p===active?"true":"false");});}
+  document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){active=t.dataset.p;vi=0;render();});});
+  document.getElementById("plan-open").addEventListener("click",function(){
+    var list=[],start=0;["57","49","43"].forEach(function(k){plans[k].forEach(function(v,j){if(k===active&&j===vi)start=list.length;list.push([v.img,k+" m² · "+v.label]);});});openLB(list,start,true);});
+  render();
+
+  document.getElementById("aerea").addEventListener("click",function(){openLB([["img/aerea-usp.jpg","Fotomontagem aérea · Monte Alegre"],["img/mapa.jpg","Mapa · ao lado do Campus da USP"]],0);});
+  document.getElementById("map-open").addEventListener("click",function(){openLB([["img/aerea-usp.jpg","Fotomontagem aérea · Monte Alegre"],["img/mapa.jpg","Mapa · ao lado do Campus da USP"]],1);});
+
+  var lb=document.getElementById("lb"),lbt=document.getElementById("lb-track"),lbc=document.getElementById("lb-cap"),items=[],last;
+  function openLB(list,start,white){items=list;last=document.activeElement;lbt.innerHTML="";lb.classList.toggle("white",!!white);
+    list.forEach(function(it){var s=document.createElement("div");s.className="lb-slide";var im=document.createElement("img");im.src=it[0];im.alt=it[1];s.appendChild(im);lbt.appendChild(s);});
+    lb.hidden=false;document.body.style.overflow="hidden";
+    requestAnimationFrame(function(){lbt.scrollLeft=start*lbt.clientWidth;cap(start);document.getElementById("lb-close").focus();});}
+  function cap(i){if(items[i])lbc.textContent=items[i][1]+"  ·  "+(i+1)+" / "+items.length;}
+  lbt.addEventListener("scroll",function(){cap(Math.round(lbt.scrollLeft/lbt.clientWidth));});
+  function closeLB(){lb.hidden=true;document.body.style.overflow="";if(last)last.focus();}
+  document.getElementById("lb-close").onclick=closeLB;
+  document.addEventListener("keydown",function(e){if(lb.hidden)return;if(e.key==="Escape")closeLB();
+    if(e.key==="ArrowRight")lbt.scrollBy({left:lbt.clientWidth,behavior:"smooth"});if(e.key==="ArrowLeft")lbt.scrollBy({left:-lbt.clientWidth,behavior:"smooth"});});
+
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("phone"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText("16994558101").then(function(){cb.textContent="Número copiado";setTimeout(function(){cb.textContent="Copiar número";},2000);},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
