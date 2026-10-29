@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3c4a2c">
+<title>Terras de Verano · Vila do Golfe</title>
+<meta name="description" content="Casas sobrado de 3 dormitórios e 105 m² em condomínio fechado perto da Vila do Golfe, em Ribeirão Preto. Fluxo de pagamento, plantas e fotos com o corretor Lucas · Kairós.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucaskairosimoveis.vercel.app/terrasdeverano/">
+<meta property="og:title" content="Terras de Verano · Casas na Vila do Golfe">
+<meta property="og:description" content="Sobrados de 105 m², 3 dormitórios com suíte, 2 vagas e quintal. Entrada em 4x de R$ 20.571,27.">
+<meta property="og:image" content="https://lucaskairosimoveis.vercel.app/terrasdeverano/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Outfit:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: warm countryside page from the book; cream ground, olive sections and a terracotta accent for the payment plan, which gets its own band */
+:root{
+  --cream:#f4ece1;       /* the book's cream */
+  --card:#fbf7f1;
+  --line:#e2d5c3;
+  --olive:#3c4a2c;       /* the book's olive green */
+  --olive-2:#2d3920;
+  --sage:#a7ae86;
+  --terra:#b5523a;       /* the book's terracotta */
+  --terra-deep:#93412d;
+  --ink:#2c2a22;
+  --mute:#736b5f;
+  --on-dark:#f3eee4;
+  --on-dark-mute:#c4c6b1;
+  --wa:#25d366;
+  --display:"Bellefair", "Cormorant Garamond", Georgia, serif;
+  --body:"Outfit", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+[hidden]{display:none!important}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--olive)}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.narrow{max-width:740px}
+.eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);font-weight:600}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+h2{font-family:var(--display);font-size:clamp(2rem,6vw,2.9rem);line-height:1.08;color:var(--olive)}
+p{margin:0}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--olive) 95%,transparent);backdrop-filter:blur(8px);color:var(--on-dark)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.who{display:flex;align-items:center;gap:10px;min-width:0}
+.avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;display:block}
+.broker{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.broker b{font-weight:600;font-size:.86rem}
+.broker span{font-size:.7rem;color:var(--on-dark-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font:600 .86rem/1 var(--body);text-decoration:none;padding:14px 20px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#08260f}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-line{background:transparent;color:inherit;border-color:currentColor}
+.btn-sm{padding:9px 14px;font-size:.8rem}
+
+/* hero */
+.hero{position:relative;background:var(--olive);color:var(--on-dark)}
+.hero-img{margin:0;position:relative;cursor:zoom-in}
+.hero-img img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;max-height:76vh}
+@media (min-width:760px){.hero-img img{aspect-ratio:21/9}}
+.hero-img::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,var(--olive));pointer-events:none}
+.hero-copy{position:relative;margin-top:-60px;padding-bottom:36px;display:grid;gap:18px}
+.name{display:grid;gap:0}
+.name .pre{font-family:var(--display);font-size:1.3rem;letter-spacing:.06em;color:var(--sage)}
+.name h1{font-family:var(--display);font-size:clamp(3.6rem,15vw,6rem);line-height:.9;letter-spacing:.06em}
+.sub{color:var(--on-dark-mute)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(167,174,134,.35);border:1px solid rgba(167,174,134,.35);border-radius:14px;overflow:hidden}
+@media (min-width:640px){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.facts div{background:var(--olive);padding:14px 16px;display:grid;gap:2px;min-width:0}
+.facts .v{font-family:var(--display);font-size:1.55rem;line-height:1.1}
+.facts .k{font-size:.74rem;color:var(--on-dark-mute)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+
+section{padding-block:56px}
+.sec-head{display:grid;gap:10px;margin-bottom:26px}
+.sec-head p{color:var(--mute);max-width:62ch}
+
+/* payment plan */
+.fluxo{background:var(--terra);color:#fff}
+.fluxo h2{color:#fff}
+.fluxo .eyebrow{color:#f6d3c3}
+.fluxo .sec-head p{color:#f8e2d8}
+.total{display:grid;gap:4px;margin-bottom:22px}
+.total span{font-size:.8rem;letter-spacing:.06em;color:#f8e2d8}
+.total b{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,9vw,3.4rem);line-height:1;font-variant-numeric:tabular-nums}
+.bar{display:flex;height:14px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.2);margin-bottom:8px}
+.bar i{display:block;height:100%}
+.bar i:nth-child(1){background:#fff}
+.bar i:nth-child(2){background:#f6d3c3}
+.bar i:nth-child(3){background:#e9a88f}
+.bar i:nth-child(4){background:var(--olive)}
+.bar-legend{display:flex;justify-content:space-between;font-size:.74rem;color:#f8e2d8;margin-bottom:22px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (min-width:760px){.steps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.steps li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:16px;display:grid;gap:4px;min-width:0;position:relative}
+.steps li .dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+.steps .t{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:#f8e2d8}
+.steps .q{font-family:var(--display);font-size:1.9rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.steps .q small{font-family:var(--body);font-size:.85rem;margin-right:4px}
+.steps .w{font-size:.82rem;color:#f8e2d8}
+.steps li.last{background:var(--olive);border-color:var(--olive)}
+.fluxo .note{font-size:.76rem;color:#f8e2d8;margin-top:16px;max-width:70ch}
+
+/* plans */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{font:600 .88rem/1 var(--body);padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--olive);border-color:var(--olive);color:var(--on-dark)}
+.plan{display:grid;gap:22px;align-items:start}
+@media (min-width:860px){.plan{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.plan-img{display:block;width:100%;padding:10px;border:1px solid var(--line);background:#f3ece2;border-radius:14px;cursor:zoom-in}
+.plan-img img{display:block;width:100%;height:auto;border-radius:6px}
+.rooms{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:r}
+.rooms li{display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:8px}
+.rooms li b{flex:none;width:28px;height:28px;border-radius:6px;background:var(--olive);color:var(--on-dark);display:grid;place-items:center;font-size:.76rem;font-weight:600;font-variant-numeric:tabular-nums}
+.hint{font-size:.76rem;color:var(--mute);margin-top:8px}
+.house-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:30px}
+@media (min-width:760px){.house-photos{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.house-photos button{all:unset;cursor:zoom-in;display:grid;gap:6px}
+.house-photos button:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.house-photos img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:10px}
+.house-photos span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+/* videos */
+.videos{background:var(--olive);color:var(--on-dark)}
+.videos h2{color:var(--on-dark)}
+.videos .eyebrow{color:var(--sage)}
+.videos .sec-head p{color:var(--on-dark-mute)}
+.v-grid{display:grid;gap:26px;align-items:start}
+@media (min-width:860px){.v-grid{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}}
+.v-card{display:grid;gap:10px;justify-items:center}
+.phone{width:min(100%,300px);aspect-ratio:9/16;border-radius:28px;padding:7px;background:var(--olive-2);border:1px solid rgba(167,174,134,.4)}
+.phone video,.wide video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+.phone video{border-radius:22px}
+.wide{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid rgba(167,174,134,.4)}
+.v-card p{font-size:.82rem;color:var(--on-dark-mute);text-align:center}
+
+/* carousel */
+.gallery{position:relative;background:var(--olive-2);border-radius:14px;overflow:hidden}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;margin:0;aspect-ratio:4/3;width:100%}
+@media (min-width:760px){.slide{aspect-ratio:16/9}}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(30,36,20,.78));color:#fff;font-family:var(--display);font-size:1.35rem;letter-spacing:.03em;pointer-events:none}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(244,236,225,.9);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:12px}.nav.next{right:12px}
+.count{position:absolute;top:12px;right:12px;background:rgba(244,236,225,.9);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.76rem;font-variant-numeric:tabular-nums}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px 0 0;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 auto;width:64px;height:46px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;opacity:.5;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--terra);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.chips{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.84rem;background:var(--card)}
+
+/* location */
+.loc{display:grid;gap:22px;align-items:start}
+@media (min-width:860px){.loc{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}}
+.map{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in;background:#fff}
+.map img{display:block;width:100%;height:auto}
+.addr{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px;align-content:start}
+.addr .street{font-family:var(--display);font-size:1.5rem;line-height:1.2;color:var(--olive)}
+.near{display:grid;gap:16px;margin-top:6px}
+.near h3{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin:0 0 6px;font-weight:600}
+.near ul{margin:0;padding:0;list-style:none;display:grid;gap:3px}
+
+/* lists */
+.cols{display:grid;gap:10px 30px}
+@media (min-width:640px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.check li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--terra);margin-top:.6em}
+.team{display:grid;gap:12px}
+@media (min-width:760px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.team div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:6px}
+.team .role{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.team b{font-family:var(--display);font-weight:400;font-size:1.45rem;color:var(--olive)}
+.team p{font-size:.88rem;color:var(--mute)}
+.ficha{margin:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+@media (min-width:640px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px}}
+.ficha div{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font-size:.74rem;color:var(--mute)}
+.ficha dd{margin:0}
+
+/* closing */
+.closing{background:var(--olive-2);color:var(--on-dark)}
+.closing .wrap{display:grid;gap:18px}
+.closing .eyebrow{color:var(--sage)}
+.me{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;align-items:center}
+@media (min-width:640px){.me{grid-template-columns:150px minmax(0,1fr);gap:24px}}
+.me img{width:100%;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
+.me-t{display:grid;gap:4px;min-width:0}
+.me-name{font-family:var(--display);font-size:clamp(1.8rem,6vw,2.4rem);line-height:1.05}
+.me-sub{font-size:.9rem;opacity:.85}
+.me-creci{font-size:.74rem;line-height:1.55;opacity:.7;font-variant-numeric:tabular-nums}
+.phone-num{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone-num code{font:600 1.05rem var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.legal{font-size:.72rem;line-height:1.55;color:var(--on-dark-mute);max-width:74ch}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--cream) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dock .in{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.dock .btn{width:100%;padding:14px 10px}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(26,30,18,.97);display:flex;flex-direction:column;color:var(--on-dark)}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));font-size:.85rem;color:var(--on-dark-mute)}
+.lb-bar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{width:44px;height:44px;border-radius:50%;border:1px solid rgba(167,174,134,.5);background:transparent;color:inherit;cursor:pointer;display:grid;place-items:center;flex:none}
+.lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lb-track::-webkit-scrollbar{display:none}
+.lb-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;padding:8px max(8px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-slide img{max-width:100%;max-height:100%;object-fit:contain;touch-action:pinch-zoom}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="who"><img class="avatar" src="/img/lucas-jessica-thumb.jpg" alt="" width="160" height="160"><div class="broker"><b>Lucas · Kairós Negócios Imobiliários</b><span>Corretor · CRECI 190.339-F</span></div></div>
+    <a class="btn btn-wa btn-sm" id="wa-top" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="hero">
+  <figure class="hero-img" id="hero-img"><img src="img/b24_000.jpg" alt="Perspectiva das casas sobrado do Terras de Verano, com garagem e jardim na frente" width="1800" height="900"></figure>
+  <div class="wrap hero-copy">
+    <div class="name"><span class="pre">Terras de</span><h1>VERANO</h1></div>
+    <p class="sub">Casas em condomínio fechado · região da Vila do Golfe · Ribeirão Preto</p>
+    <div class="facts">
+      <div><span class="v">105 m²</span><span class="k">sobrado isolado</span></div>
+      <div><span class="v">3 dorms</span><span class="k">sendo 1 suíte</span></div>
+      <div><span class="v">2 vagas</span><span class="k">garagem na frente</span></div>
+      <div><span class="v">Quintal</span><span class="k">terrenos de 152 a 206 m²</span></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-terra" href="#fluxo">Ver o fluxo de pagamento</a>
+      <a class="btn btn-line" href="#plantas">Ver as plantas</a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="fluxo" id="fluxo">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Fluxo sugerido</span>
+        <h2>Entrada em 4 vezes e 75% só na entrega</h2>
+        <p>Você paga 25% durante a obra, em parcelas, e o saldo de 75% no fim, com financiamento, consórcio ou quitação.</p>
+      </div>
+      <div class="total"><span>Valor da casa neste exemplo</span><b>R$ 822.850,65</b></div>
+      <div class="bar" role="img" aria-label="Divisão do pagamento: 10% de entrada, 9% em mensais, 6% em anuais e 75% de saldo final">
+        <i style="width:10%"></i><i style="width:9%"></i><i style="width:6%"></i><i style="width:75%"></i>
+      </div>
+      <div class="bar-legend"><span>25% durante a obra</span><span>75% no saldo final</span></div>
+      <ol class="steps">
+        <li><span class="t"><span class="dot" style="background:#fff"></span>Entrada</span><span class="q"><small>4x</small>R$ 20.571,27</span><span class="w">Total de R$ 82.285,08</span></li>
+        <li><span class="t"><span class="dot" style="background:#f6d3c3"></span>Mensais</span><span class="q"><small>25x</small>R$ 2.962,26</span><span class="w">Total de R$ 74.056,50</span></li>
+        <li><span class="t"><span class="dot" style="background:#e9a88f"></span>Anuais</span><span class="q"><small>2x</small>R$ 24.685,52</span><span class="w">Total de R$ 49.371,04</span></li>
+        <li class="last"><span class="t"><span class="dot" style="background:var(--sage)"></span>Saldo final</span><span class="q">R$ 617.138,03</span><span class="w">Financiamento, consórcio ou quitação</span></li>
+      </ol>
+      <p class="note">Exemplo com base na tabela de outubro de 2026, para as casas de terreno de 152,99 m². Valores e datas variam conforme a casa escolhida e estão sujeitos a reajuste e a alteração de tabela, conforme contrato.</p>
+      <div class="cta-row" style="margin-top:20px"><a class="btn btn-wa" id="wa-fluxo" href="#" target="_blank" rel="noopener">Simular para outra casa</a></div>
+    </div>
+  </section>
+
+  <section id="plantas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">A casa</span>
+        <h2>Sobrado de 105 m², com quintal</h2>
+        <p>Social e gourmet no térreo, abertos para o quintal. No andar de cima, três dormitórios, sendo uma suíte, e um canto de estudo no hall.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Pavimentos">
+        <button class="tab" role="tab" id="tab-t" aria-controls="plan" aria-selected="true" data-p="t">Térreo</button>
+        <button class="tab" role="tab" id="tab-s" aria-controls="plan" aria-selected="false" data-p="s">1º pavimento</button>
+      </div>
+      <div class="plan" id="plan" role="tabpanel">
+        <div>
+          <button class="plan-img" id="plan-open" aria-label="Ampliar planta"><img id="plan-img" src="img/planta-terreo.jpg" alt="Planta do térreo" width="1418" height="509"></button>
+          <p class="hint">Planta humanizada. Móveis e decoração são sugestões e não fazem parte do contrato.</p>
+        </div>
+        <ul class="rooms" id="rooms"></ul>
+      </div>
+      <div class="house-photos" id="house">
+        <button data-i="0"><img src="img/b26_000.jpg" alt="Sala de estar e jantar" loading="lazy" width="1800" height="638"><span>Sala</span></button>
+        <button data-i="1"><img src="img/b27_000.jpg" alt="Cozinha" loading="lazy" width="1800" height="861"><span>Cozinha</span></button>
+        <button data-i="2"><img src="img/b28_000.jpg" alt="Área gourmet aberta para o quintal" loading="lazy" width="1800" height="816"><span>Área gourmet</span></button>
+        <button data-i="3"><img src="img/b29_000.jpg" alt="Quintal" loading="lazy" width="1800" height="638"><span>Quintal</span></button>
+        <button data-i="4"><img src="img/b30_000.jpg" alt="Suíte do casal" loading="lazy" width="1800" height="638"><span>Suíte</span></button>
+        <button data-i="5"><img src="img/b31_000.jpg" alt="Dormitório" loading="lazy" width="1689" height="1195"><span>Dormitório 2</span></button>
+        <button data-i="6"><img src="img/b31_001.jpg" alt="Dormitório infantil" loading="lazy" width="1689" height="1195"><span>Dormitório 3</span></button>
+        <button data-i="7"><img src="img/b23_000.jpg" alt="Rua interna do condomínio com as casas" loading="lazy" width="1800" height="638"><span>Rua interna</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="videos" id="videos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Vídeos</span>
+        <h2>Veja a casa por dentro</h2>
+        <p>À esquerda, a maquete da casa aberta, mostrando os dois andares. À direita, o vídeo do empreendimento.</p>
+      </div>
+      <div class="v-grid">
+        <div class="v-card">
+          <div class="phone"><video src="img/maquete.mp4" poster="img/maquete-poster.jpg" controls playsinline muted preload="none" aria-label="Vídeo da maquete da casa"></video></div>
+          <p>Maquete da casa sobrado</p>
+        </div>
+        <div class="v-card">
+          <div class="wide"><video src="img/video-produto.mp4" poster="img/video-produto-poster.jpg" controls playsinline preload="none" aria-label="Vídeo do empreendimento Terras de Verano"></video></div>
+          <p>Vídeo oficial do Terras de Verano</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lazer">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Condomínio</span>
+        <h2>Lazer de clube, com bosque</h2>
+        <p>Áreas de lazer entregues equipadas e decoradas, com paisagismo assinado.</p>
+      </div>
+      <div class="gallery" aria-roledescription="carrossel" aria-label="Fotos do condomínio">
+        <div class="track" id="track" tabindex="0"></div>
+        <button class="nav prev" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="nav next" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="count" id="count" aria-live="polite"></div>
+      </div>
+      <div class="thumbs" id="thumbs" aria-label="Miniaturas"></div>
+      <ul class="chips">
+        <li>Portaria</li><li>Piscina adulto com deck molhado</li><li>Piscina infantil</li><li>Salão de festas</li><li>Salão de jogos</li><li>Espaço gourmet</li><li>Brinquedotecas</li><li>Playground</li><li>Academia</li><li>Espaço fit</li><li>Quadra poliesportiva</li><li>Quadra de areia</li><li>Quadra de grama</li><li>Pet place</li><li>Bosque com redário e praça do fogo</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Localização</span>
+        <h2>Zona Sul, perto da Vila do Golfe</h2>
+        <p>Região que valoriza com urbanismo planejado, áreas verdes e acesso rápido ao Shopping Iguatemi e aos principais pontos da cidade.</p>
+      </div>
+      <div class="loc">
+        <button class="map" id="map-open" aria-label="Ampliar mapa"><img src="img/mapa.jpg" alt="Mapa da região com o Terras de Verano e os pontos próximos" width="740" height="979" loading="lazy"></button>
+        <div>
+          <div class="addr">
+            <span class="street">Av. Coronel Edgard Pereira, 1400<br>Ribeirão Preto</span>
+            <a class="btn btn-line" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=Av.%20Coronel%20Edgard%20Pereira%2C%201400%2C%20Ribeir%C3%A3o%20Preto%20-%20SP" target="_blank" rel="noopener">Abrir no Google Maps</a>
+          </div>
+          <div class="near">
+            <div><h3>Compras e lazer</h3><ul><li>Shopping Iguatemi</li><li>Spot Complexo Esportivo e Sacada Beach</li><li>Academias Bodytech e Pacer</li></ul></div>
+            <div><h3>Escolas e saúde</h3><ul><li>Escola Concept</li><li>Liceu Albert Sabin</li><li>Droga Raia</li></ul></div>
+            <div><h3>Restaurantes</h3><ul><li>Noípe, Verace Pizzaria e Aisen Café</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Diferenciais</span><h2>O que vem na casa e no condomínio</h2></div>
+      <ul class="check cols">
+        <li>Casa sobrado isolada, com 2 vagas de garagem</li>
+        <li>Preparação para ar-condicionado split</li>
+        <li>Esquadrias de alumínio com pintura eletrostática</li>
+        <li>Lavabo e área de serviço no térreo</li>
+        <li>Área gourmet integrada ao quintal</li>
+        <li>Lazer entregue equipado e decorado</li>
+        <li>Paisagismo diferenciado nas áreas comuns</li>
+        <li>Itens sustentáveis: dual flush, arejadores e madeira certificada</li>
+      </ul>
+      <div class="team" style="margin-top:30px">
+        <div><span class="role">Projeto</span><b>OA Arquitetura</b><p>Escritório de Florianópolis e Ribeirão Preto, com arquitetura de formas simples e integrada à natureza.</p></div>
+        <div><span class="role">Interiores</span><b>Teto</b><p>Estúdio de Ribeirão Preto de Isabella Manciopi e Rafael Brechani.</p></div>
+        <div><span class="role">Paisagismo</span><b>Edu Leal</b><p>Mais de 10 anos em projetos que integram natureza e arquitetura.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Ficha técnica</span><h2>O empreendimento</h2></div>
+      <dl class="ficha">
+        <div><dt>Incorporação</dt><dd>Virtú, com urbanismo da Perplan</dd></div>
+        <div><dt>Endereço</dt><dd>Av. Coronel Edgard Pereira, 1400</dd></div>
+        <div><dt>Unidades</dt><dd>161 casas</dd></div>
+        <div><dt>Tipologia</dt><dd>Sobrado isolado, 3 dormitórios sendo 1 suíte</dd></div>
+        <div><dt>Área da casa</dt><dd>105,27 m²</dd></div>
+        <div><dt>Terrenos</dt><dd>De 151,76 m² a 205,69 m²</dd></div>
+        <div><dt>Vagas</dt><dd>2 por casa</dd></div>
+        <div><dt>Perplan</dt><dd>Desde 2000, mais de 7 mil unidades entregues</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap narrow">
+      <div class="me">
+        <img src="/img/lucas-jessica.jpg" alt="Lucas e Jéssica, corretores da Kairós Negócios Imobiliários" width="900" height="900" loading="lazy">
+        <div class="me-t">
+          <span class="eyebrow">Seus corretores</span>
+          <span class="me-name">Lucas e Jéssica</span>
+          <span class="me-sub">Kairós Negócios Imobiliários</span>
+          <span class="me-creci">Lucas · CRECI 190.339-F<br>Jéssica · CRECI 184.014-F<br>Kairós · CRECI 40.488-J</span>
+        </div>
+      </div>
+      <p>Eu e a Jéssica somos casados e trabalhamos juntos na Kairós. Estou há 10 anos no mercado imobiliário de Ribeirão Preto, de lançamentos a imóveis de alto padrão.</p>
+      <p>Te mostro as casas disponíveis, simulo o fluxo para a que você gostar e marco uma visita quando quiser.</p>
+      <div class="cta-row"><a class="btn btn-wa" id="wa-end" href="#" target="_blank" rel="noopener">Falar com o Lucas no WhatsApp</a></div>
+      <div class="phone-num"><code id="phone">(16) 99455-8101</code><button class="btn btn-line btn-sm" id="copy" type="button">Copiar número</button></div>
+      <p class="legal">Imagens meramente ilustrativas. Móveis e decoração não fazem parte do contrato. Valores da tabela de outubro de 2026, sujeitos a alteração sem aviso prévio e a reajuste conforme contrato. Condições finais conforme contrato de compra e venda.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Contato">
+  <div class="in">
+    <a class="btn btn-terra" id="wa-dock-tabela" href="#" target="_blank" rel="noopener">Ver casas disponíveis</a>
+    <a class="btn btn-wa" id="wa-dock" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>WhatsApp</a>
+  </div>
+</nav>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <div class="lb-bar"><span id="lb-cap"></span><button class="lb-close" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lb-track" id="lb-track"></div>
+</div>
+
+<script>
+(function(){
+  var PHONE="5516994558101";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);}
+  var hello="Oi Lucas! Vi as casas do Terras de Verano, na Vila do Golfe, e quero saber mais.";
+  var disp="Oi Lucas! Vi o Terras de Verano. Quais casas ainda estão disponíveis e qual o fluxo de pagamento delas?";
+  var sim="Oi Lucas! Vi o fluxo do Terras de Verano. Pode simular para outra casa?";
+  ["wa-top","wa-end","wa-dock"].forEach(function(id){document.getElementById(id).href=wa(hello);});
+  document.getElementById("wa-dock-tabela").href=wa(disp);
+  document.getElementById("wa-fluxo").href=wa(sim);
+
+  var lb=document.getElementById("lb"),lbt=document.getElementById("lb-track"),lbc=document.getElementById("lb-cap"),items=[],last;
+  function openLB(list,start){items=list;last=document.activeElement;lbt.innerHTML="";
+    list.forEach(function(it){var s=document.createElement("div");s.className="lb-slide";var im=document.createElement("img");im.src=it[0];im.alt=it[1];s.appendChild(im);lbt.appendChild(s);});
+    lb.hidden=false;document.body.style.overflow="hidden";
+    requestAnimationFrame(function(){lbt.scrollLeft=start*lbt.clientWidth;cap(start);document.getElementById("lb-close").focus();});}
+  function cap(i){if(items[i])lbc.textContent=items[i][1]+"  ·  "+(i+1)+" / "+items.length;}
+  lbt.addEventListener("scroll",function(){cap(Math.round(lbt.scrollLeft/lbt.clientWidth));});
+  function closeLB(){lb.hidden=true;document.body.style.overflow="";if(last)last.focus();}
+  document.getElementById("lb-close").onclick=closeLB;
+  document.addEventListener("keydown",function(e){if(lb.hidden)return;if(e.key==="Escape")closeLB();
+    if(e.key==="ArrowRight")lbt.scrollBy({left:lbt.clientWidth,behavior:"smooth"});if(e.key==="ArrowLeft")lbt.scrollBy({left:-lbt.clientWidth,behavior:"smooth"});});
+
+  document.getElementById("hero-img").addEventListener("click",function(){openLB([["img/b24_000.jpg","Casas sobrado"],["img/b23_000.jpg","Rua interna"],["img/b05_000.jpg","Vista aérea do condomínio"]],0);});
+  var house=[["img/b26_000.jpg","Sala"],["img/b27_000.jpg","Cozinha"],["img/b28_000.jpg","Área gourmet"],["img/b29_000.jpg","Quintal"],["img/b30_000.jpg","Suíte"],["img/b31_000.jpg","Dormitório 2"],["img/b31_001.jpg","Dormitório 3"],["img/b23_000.jpg","Rua interna"]];
+  document.querySelectorAll("#house button").forEach(function(b){b.addEventListener("click",function(){openLB(house,+b.dataset.i);});});
+  document.getElementById("map-open").addEventListener("click",function(){openLB([["img/mapa.jpg","Mapa da região"],["img/b08_000.jpg","Vista aérea da região"]],0);});
+
+  var floors={
+    t:{img:"img/planta-terreo.jpg",w:1418,h:509,alt:"Planta do térreo",rooms:[["01","Garagem para 2 carros"],["02","Lavabo"],["03","Área de serviço"],["04","Sala de jantar"],["05","Sala de estar"],["06","Cozinha"],["07","Área gourmet"],["08","Quintal"]]},
+    s:{img:"img/planta-superior.jpg",w:1154,h:728,alt:"Planta do 1º pavimento",rooms:[["09","Dormitório 1, suíte"],["10","Dormitório 2"],["11","Dormitório 3"],["12","Banheiro social"]]}
+  };
+  var planImg=document.getElementById("plan-img"),roomsEl=document.getElementById("rooms"),active="t";
+  function render(){var f=floors[active];planImg.src=f.img;planImg.width=f.w;planImg.height=f.h;planImg.alt=f.alt;
+    roomsEl.innerHTML="";f.rooms.forEach(function(r){var li=document.createElement("li");li.innerHTML="<b></b><span></span>";li.firstChild.textContent=r[0];li.lastChild.textContent=r[1];roomsEl.appendChild(li);});
+    document.querySelectorAll(".tab").forEach(function(t){t.setAttribute("aria-selected",t.dataset.p===active?"true":"false");});}
+  document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){active=t.dataset.p;render();});});
+  document.getElementById("plan-open").addEventListener("click",function(){openLB([["img/planta-terreo.jpg","Térreo"],["img/planta-superior.jpg","1º pavimento"]],active==="t"?0:1);});
+  render();
+
+  var photos=[
+    ["b05_000","Vista do condomínio"],["b09_000","Portaria"],["b11_000","Piscina"],["b10_000","Áreas de lazer"],["b12_000","Salão de festas"],
+    ["b14_000","Salão de jogos"],["b13_000","Brinquedoteca"],["b13_001","Brinquedoteca"],["b14_001","Playground"],["b15_000","Academia"],
+    ["b16_000","Espaço fit"],["b16_001","Pet place"],["b17_000","Espaço gourmet"],["b17_001","Gourmet"],["b18_000","Complexo de quadras"],
+    ["b19_000","Quadra de areia"],["b20_000","Quadra de grama"],["b21_000","Bosque"],["b22_000","Bosque e praça"]
+  ];
+  var track=document.getElementById("track"),thumbs=document.getElementById("thumbs"),count=document.getElementById("count");
+  var full=photos.map(function(q){return ["img/"+q[0]+".jpg",q[1]];});
+  photos.forEach(function(p,i){
+    var f=document.createElement("figure");f.className="slide";f.setAttribute("aria-label",(i+1)+" de "+photos.length);
+    var im=document.createElement("img");im.src="img/"+p[0]+".jpg";im.alt=p[1];im.loading=i<1?"eager":"lazy";im.decoding="async";
+    im.addEventListener("click",function(){openLB(full,i);});
+    var c=document.createElement("figcaption");c.textContent=p[1];f.appendChild(im);f.appendChild(c);track.appendChild(f);
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Ver foto "+(i+1)+": "+p[1]);
+    var ti=document.createElement("img");ti.src="img/"+p[0]+".jpg";ti.alt="";ti.loading="lazy";b.appendChild(ti);
+    b.addEventListener("click",function(){go(i);});thumbs.appendChild(b);
+  });
+  var cur=-1;
+  function go(i){i=(i+photos.length)%photos.length;track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});}
+  function mark(i){if(i===cur)return;cur=i;count.textContent=(i+1)+" / "+photos.length;
+    Array.prototype.forEach.call(thumbs.children,function(b,k){b.setAttribute("aria-current",k===i?"true":"false");});
+    var t=thumbs.children[i];if(t)thumbs.scrollTo({left:t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2,behavior:"smooth"});}
+  var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(Math.round(track.scrollLeft/track.clientWidth));});});
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(cur+1);e.preventDefault();}if(e.key==="ArrowLeft"){go(cur-1);e.preventDefault();}});
+  mark(0);
+
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("phone"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText("16994558101").then(function(){cb.textContent="Número copiado";setTimeout(function(){cb.textContent="Copiar número";},2000);},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
