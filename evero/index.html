@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3f4327">
+<title>Évero · Jardim Olhos d’Água</title>
+<meta name="description" content="Évero, da Bild, pronto para morar: apartamentos de 166 m² com até 4 suítes e vista para o Parque Olhos d’Água, em Ribeirão Preto. Com o corretor Lucas · Kairós.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucaskairosimoveis.vercel.app/evero/">
+<meta property="og:title" content="Évero · Vista eterna para o Parque Olhos d’Água">
+<meta property="og:description" content="Pronto para morar. 166 m², até 4 suítes, 2 vagas. Piscina com borda infinita, raia coberta de 25 m e squash.">
+<meta property="og:image" content="https://lucaskairosimoveis.vercel.app/evero/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Layout: the book's olive and mustard; split hero with the tower, then a full-width "vista eterna" band on the pool, then plans as the centerpiece */
+:root{
+  --paper:#f4f1e7;
+  --card:#fbfaf4;
+  --line:#ddd7c2;
+  --olive:#4f5432;       /* the book's olive */
+  --olive-deep:#3a3e24;
+  --mustard:#bcae66;     /* the book's mustard */
+  --mustard-deep:#8e8040;
+  --ink:#25271b;
+  --mute:#6c6c5b;
+  --on-dark:#f2f0e4;
+  --on-dark-mute:#c6c6ad;
+  --wa:#25d366;
+  --display:"Josefin Sans", "Futura", "Avenir Next", sans-serif;
+  --body:"Nunito Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--olive-deep)}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--mustard);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.narrow{max-width:740px}
+.eyebrow{font-family:var(--display);font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mustard-deep);font-weight:400}
+h1,h2,h3{margin:0;font-weight:300;text-wrap:balance}
+h2{font-family:var(--display);font-size:clamp(1.9rem,5.6vw,2.8rem);line-height:1.12;color:var(--olive)}
+p{margin:0}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--olive-deep) 95%,transparent);backdrop-filter:blur(8px);color:var(--on-dark)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.who{display:flex;align-items:center;gap:10px;min-width:0}
+.avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;display:block}
+.broker{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.broker b{font-weight:700;font-size:.86rem}
+.broker span{font-size:.7rem;color:var(--on-dark-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font:700 .86rem/1 var(--body);text-decoration:none;padding:14px 20px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#08260f}
+.btn-mustard{background:var(--mustard);color:var(--olive-deep)}
+.btn-line{background:transparent;color:inherit;border-color:currentColor}
+.btn-sm{padding:9px 14px;font-size:.8rem}
+
+/* hero */
+.hero{background:var(--olive);color:var(--on-dark)}
+.hero-grid{display:grid}
+@media (min-width:880px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.hero-img{margin:0;cursor:zoom-in;background:var(--olive-deep)}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;aspect-ratio:4/5;max-height:84vh}
+@media (min-width:880px){.hero-img img{aspect-ratio:auto;max-height:none;min-height:620px}}
+.hero-copy{padding:36px max(18px,env(safe-area-inset-right,0px)) 40px max(18px,env(safe-area-inset-left,0px));display:grid;gap:20px;align-content:center}
+@media (min-width:880px){.hero-copy{padding:56px}}
+.hero .eyebrow{color:var(--mustard)}
+.hero h1{font-family:var(--display);font-size:clamp(4rem,17vw,6.6rem);line-height:.95;letter-spacing:.06em}
+.tag{font-family:var(--display);font-size:clamp(1.25rem,4vw,1.55rem);line-height:1.35;color:var(--on-dark)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(188,174,102,.45)}
+.facts div{padding:14px 0;border-bottom:1px solid rgba(188,174,102,.45);display:grid;gap:2px;min-width:0}
+.facts div:nth-child(odd){padding-right:12px}
+.facts div:nth-child(even){padding-left:14px;border-left:1px solid rgba(188,174,102,.45)}
+.facts .v{font-family:var(--display);font-size:1.55rem;line-height:1.1}
+.facts .k{font-size:.74rem;color:var(--on-dark-mute)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.ready{justify-self:start;display:inline-flex;align-items:center;gap:8px;background:var(--mustard);color:var(--olive-deep);font:700 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border-radius:999px}
+.ready::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--olive-deep)}
+
+section{padding-block:58px}
+.sec-head{display:grid;gap:12px;margin-bottom:28px}
+.sec-head p{color:var(--mute);max-width:62ch}
+
+/* view band */
+.view{padding:0;position:relative;background:var(--olive-deep);color:var(--on-dark)}
+.view figure{margin:0;position:relative;cursor:zoom-in}
+.view img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;max-height:80vh}
+@media (min-width:760px){.view img{aspect-ratio:21/9}}
+.view .cap{position:absolute;left:0;right:0;bottom:0;padding:70px max(18px,env(safe-area-inset-left,0px)) 24px;background:linear-gradient(transparent,rgba(30,32,18,.82))}
+.view .cap .wrap{display:grid;gap:8px;padding:0}
+.view .cap b{font-family:var(--display);font-weight:300;font-size:clamp(1.8rem,6vw,3rem);line-height:1.08}
+.view .cap span{font-size:.9rem;color:var(--on-dark-mute);max-width:56ch}
+
+/* plans */
+.plans{background:var(--card);border-bottom:1px solid var(--line)}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:18px}
+@media (min-width:760px){.opts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.opt{all:unset;cursor:pointer;border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:2px;background:var(--paper)}
+.opt:focus-visible{outline:2px solid var(--mustard);outline-offset:3px}
+.opt b{font-family:var(--display);font-weight:400;font-size:1.25rem;color:var(--olive)}
+.opt span{font-size:.78rem;color:var(--mute)}
+.opt[aria-selected="true"]{background:var(--olive);border-color:var(--olive)}
+.opt[aria-selected="true"] b{color:var(--on-dark)}
+.opt[aria-selected="true"] span{color:var(--on-dark-mute)}
+.plan{display:grid;gap:24px;align-items:start}
+@media (min-width:860px){.plan{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.plan-img{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:#bcae66}
+.plan-img img{display:block;width:100%;height:auto}
+.hint{font-size:.76rem;color:var(--mute);margin-top:8px}
+.plan-info{display:grid;gap:14px;min-width:0}
+.area{font-family:var(--display);font-weight:300;font-size:clamp(3.4rem,12vw,4.6rem);line-height:.95;color:var(--olive)}
+.area small{font-size:.38em;margin-left:4px}
+.plan-info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;color:var(--olive)}
+.specs{list-style:none;margin:0;padding:0;display:grid}
+.specs li{display:flex;gap:14px;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:10px 0}
+.specs li span:first-child{color:var(--mute);font-size:.8rem}
+.specs li span:last-child{text-align:right}
+.plan-note{font-size:.9rem;color:var(--mute)}
+.aps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:30px}
+.aps button{all:unset;cursor:zoom-in;display:grid;gap:6px;min-width:0}
+.aps button:focus-visible{outline:2px solid var(--mustard);outline-offset:3px}
+.aps img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block;border-radius:10px}
+@media (min-width:760px){.aps img{aspect-ratio:16/10}}
+.aps span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+
+/* carousel */
+.gallery{position:relative;background:var(--olive-deep);border-radius:14px;overflow:hidden}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;margin:0;aspect-ratio:4/3;width:100%}
+@media (min-width:760px){.slide{aspect-ratio:2/1}}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;background:linear-gradient(transparent,rgba(30,32,18,.8));color:#fff;display:grid;gap:2px;pointer-events:none}
+.slide figcaption b{font-family:var(--display);font-weight:400;font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase}
+.slide figcaption span{font-size:.8rem;opacity:.88;max-width:60ch}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(244,241,231,.92);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:12px}.nav.next{right:12px}
+.count{position:absolute;top:12px;right:12px;background:rgba(244,241,231,.92);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.76rem;font-variant-numeric:tabular-nums}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px 0 0;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 auto;width:64px;height:46px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;opacity:.5;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--olive);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.chips{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.84rem;background:var(--card)}
+.chips li.hl{background:var(--olive);border-color:var(--olive);color:var(--on-dark)}
+
+/* location */
+.loc{background:var(--olive);color:var(--on-dark)}
+.loc h2{color:var(--on-dark)}
+.loc .eyebrow{color:var(--mustard)}
+.loc .sec-head p{color:var(--on-dark-mute)}
+.loc-grid{display:grid;gap:22px;align-items:start}
+@media (min-width:860px){.loc-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.addr{border:1px solid rgba(188,174,102,.45);border-radius:14px;padding:20px;display:grid;gap:12px}
+.addr .street{font-family:var(--display);font-size:1.45rem;line-height:1.25}
+.near{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid rgba(188,174,102,.45)}
+.near li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(188,174,102,.45)}
+.near li span:last-child{color:var(--mustard);font-weight:700;white-space:nowrap}
+.impl{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;margin-top:22px;background:var(--olive-deep)}
+.impl img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain}
+
+/* lists */
+.cols{display:grid;gap:10px 30px}
+@media (min-width:640px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.check li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:9px;height:9px;border:1.5px solid var(--mustard-deep);border-radius:50%;margin-top:.55em}
+.ficha{margin:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+@media (min-width:640px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px}}
+.ficha div{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font-size:.74rem;color:var(--mute)}
+.ficha dd{margin:0}
+
+/* closing */
+.closing{background:var(--olive-deep);color:var(--on-dark)}
+.closing .wrap{display:grid;gap:18px}
+.closing .eyebrow{color:var(--mustard)}
+.me{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;align-items:center}
+@media (min-width:640px){.me{grid-template-columns:150px minmax(0,1fr);gap:24px}}
+.me img{width:100%;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
+.me-t{display:grid;gap:4px;min-width:0}
+.me-name{font-family:var(--display);font-size:clamp(1.7rem,6vw,2.3rem);line-height:1.05}
+.me-sub{font-size:.9rem;opacity:.85}
+.me-creci{font-size:.74rem;line-height:1.55;opacity:.7;font-variant-numeric:tabular-nums}
+.phone-num{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone-num code{font:700 1.05rem var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.legal{font-size:.72rem;line-height:1.55;color:var(--on-dark-mute);max-width:74ch}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dock .in{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.dock .btn{width:100%;padding:14px 10px}
+.dock .btn-olive{background:var(--olive);color:var(--on-dark)}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(24,26,14,.97);display:flex;flex-direction:column;color:var(--on-dark)}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));font-size:.85rem;color:var(--on-dark-mute)}
+.lb-bar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{width:44px;height:44px;border-radius:50%;border:1px solid rgba(188,174,102,.5);background:transparent;color:inherit;cursor:pointer;display:grid;place-items:center;flex:none}
+.lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lb-track::-webkit-scrollbar{display:none}
+.lb-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;padding:8px max(8px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-slide img{max-width:100%;max-height:100%;object-fit:contain;touch-action:pinch-zoom}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="who"><img class="avatar" src="/img/lucas-jessica-thumb.jpg" alt="" width="160" height="160"><div class="broker"><b>Lucas · Kairós Negócios Imobiliários</b><span>Corretor · CRECI 190.339-F</span></div></div>
+    <a class="btn btn-wa btn-sm" id="wa-top" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-grid">
+    <figure class="hero-img" id="hero-img"><img src="img/torre.jpg" alt="Perspectiva da fachada do Évero ao entardecer, torre única com o letreiro na entrada" width="1172" height="1521"></figure>
+    <div class="hero-copy">
+      <span class="ready">Pronto para morar</span>
+      <span class="eyebrow">Bild · Jardim Olhos d’Água · Ribeirão Preto</span>
+      <h1>ÉVERO</h1>
+      <p class="tag">Uma vista deslumbrante<br>de uma vida completa.</p>
+      <div class="facts">
+        <div><span class="v">166 m²</span><span class="k">área privativa</span></div>
+        <div><span class="v">Até 4 suítes</span><span class="k">4 opções de planta</span></div>
+        <div><span class="v">2 vagas</span><span class="k">com vagas extras à venda</span></div>
+        <div><span class="v">Vista eterna</span><span class="k">para o Parque Olhos d’Água</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-mustard" id="wa-cond" href="#" target="_blank" rel="noopener">Agendar uma visita</a>
+        <a class="btn btn-line" href="#plantas">Ver as plantas</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="view" aria-label="Vista para o parque">
+    <figure id="view-img"><img src="img/piscina.jpg" alt="Piscina com borda infinita e deck molhado, com vista para o Parque Olhos d’Água ao entardecer" width="1800" height="897" loading="lazy">
+      <figcaption class="cap"><div class="wrap"><b>Vista eterna para o parque</b><span>A piscina com borda infinita olha direto para o Parque Olhos d’Água. Na frente do prédio fica o parque, por isso a vista é chamada de eterna.</span></div></figcaption>
+    </figure>
+  </section>
+
+  <section class="plans" id="plantas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Plantas</span>
+        <h2>166 m², do seu jeito</h2>
+        <p>A mesma área em quatro versões: 4 suítes ou 3 suítes com sala maior, e cozinha fechada ou americana. Toque na planta para ampliar.</p>
+      </div>
+      <div class="opts" role="tablist" aria-label="Opções de planta">
+        <button class="opt" role="tab" aria-selected="true" data-k="1"><b>Opção 1</b><span>4 suítes · cozinha fechada</span></button>
+        <button class="opt" role="tab" aria-selected="false" data-k="2"><b>Opção 2</b><span>4 suítes · cozinha americana</span></button>
+        <button class="opt" role="tab" aria-selected="false" data-k="3"><b>Opção 3</b><span>3 suítes · sala ampliada</span></button>
+        <button class="opt" role="tab" aria-selected="false" data-k="4"><b>Opção 4</b><span>3 suítes · sala ampliada e cozinha americana</span></button>
+      </div>
+      <div class="plan" role="tabpanel">
+        <div>
+          <button class="plan-img" id="plan-open" aria-label="Ampliar planta"><img id="plan-img" src="img/planta-1.jpg" alt="Planta opção 1, 4 suítes e cozinha fechada" width="1548" height="1468"></button>
+          <p class="hint">Planta humanizada. Móveis e decoração são sugestões e não fazem parte do contrato.</p>
+        </div>
+        <div class="plan-info">
+          <div class="area">166<small>m²</small></div>
+          <h3 id="plan-title"></h3>
+          <ul class="specs" id="plan-specs"></ul>
+          <p class="plan-note" id="plan-note"></p>
+        </div>
+      </div>
+      <div class="aps" id="aps">
+        <button data-i="0"><img src="img/sala.jpg" alt="Sala ampliada" loading="lazy" width="1800" height="897"><span>Sala ampliada</span></button>
+        <button data-i="1"><img src="img/varanda.jpg" alt="Varanda gourmet com vista" loading="lazy" width="1800" height="897"><span>Varanda gourmet</span></button>
+        <button data-i="2"><img src="img/suite.jpg" alt="Suíte master" loading="lazy" width="1800" height="897"><span>Suíte master</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="lazer">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Lazer</span>
+        <h2>Clube completo, climatizado</h2>
+        <p>Os ambientes internos são entregues climatizados, equipados e decorados.</p>
+      </div>
+      <div class="gallery" aria-roledescription="carrossel" aria-label="Fotos do lazer">
+        <div class="track" id="track" tabindex="0"></div>
+        <button class="nav prev" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="nav next" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="count" id="count" aria-live="polite"></div>
+      </div>
+      <div class="thumbs" id="thumbs" aria-label="Miniaturas"></div>
+      <ul class="chips">
+        <li class="hl">Piscina com borda infinita</li><li class="hl">Piscina raia coberta de 25 m com spa</li><li class="hl">Quadra de squash</li><li>Deck molhado e solarium</li><li>Piscina infantil</li><li>Lounge mirante</li><li>Family grill com piscina privativa</li><li>Espaço festas com copa</li><li>Espaço gourmet</li><li>Pub com jogos</li><li>Movie games</li><li>Espaço fitness</li><li>Coworking</li><li>Brinquedoteca</li><li>Playground</li><li>Quadra poliesportiva</li><li>Pet place e pet care</li><li>Porte-cochère</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="loc" id="localizacao">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Localização</span>
+        <h2>No Jardim Olhos d’Água</h2>
+        <p>O bairro mais valorizado da cidade, na continuação da Av. Prof. João Fiúsa, com ruas arborizadas, fiação subterrânea e o parque como vizinho.</p>
+      </div>
+      <div class="loc-grid">
+        <div class="addr">
+          <span class="street">Av. Deputado Sérgio Cardoso de Almeida, 2085<br>Jardim Olhos d’Água · Ribeirão Preto</span>
+          <a class="btn btn-line" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=Av.%20Deputado%20S%C3%A9rgio%20Cardoso%20de%20Almeida%2C%202085%20-%20Jardim%20Olhos%20D%27%C3%81gua%2C%20Ribeir%C3%A3o%20Preto%20-%20SP" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+        <ul class="near" aria-label="Pontos próximos">
+          <li><span>Parque Olhos d’Água</span><span>em frente</span></li>
+          <li><span>Av. Prof. João Fiúsa</span><span>na continuação</span></li>
+          <li><span>RibeirãoShopping</span><span>poucos minutos</span></li>
+          <li><span>Shopping Iguatemi</span><span>poucos minutos</span></li>
+          <li><span>Hospital Unimed</span><span>poucos minutos</span></li>
+        </ul>
+      </div>
+      <button class="impl" id="impl-open" aria-label="Ampliar implantação"><img src="img/implantacao.jpg" alt="Implantação do térreo com o lazer do Évero" width="903" height="1521" loading="lazy"></button>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Diferenciais</span><h2>Os detalhes do projeto</h2></div>
+      <ul class="check cols">
+        <li>Infraestrutura de ar-condicionado nos dormitórios, sala e varanda, com varanda técnica</li>
+        <li>Persianas integradas nos dormitórios</li>
+        <li>Varanda gourmet integrada à sala</li>
+        <li>Medição individual de água, luz e gás</li>
+        <li>Infraestrutura para recarga de carro elétrico, um ponto por apartamento</li>
+        <li>Gerador para áreas técnicas e elevadores</li>
+        <li>Piscina raia coberta com trocador de calor</li>
+        <li>Placas fotovoltaicas</li>
+        <li>Portaria com acessos independentes para moradores, visitantes e serviço</li>
+        <li>Wi-Fi no hall das áreas comuns</li>
+        <li>Personalização de acabamentos com o Bild Design</li>
+        <li>Lazer entregue equipado e decorado</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Ficha técnica</span><h2>O empreendimento</h2></div>
+      <dl class="ficha">
+        <div><dt>Incorporação e construção</dt><dd>Bild, desde 2007 em Ribeirão Preto</dd></div>
+        <div><dt>Arquitetura</dt><dd>Studio Bild</dd></div>
+        <div><dt>Decoração</dt><dd>Designa</dd></div>
+        <div><dt>Paisagismo</dt><dd>Daniel Dillenburg</dd></div>
+        <div><dt>Torre</dt><dd>Torre única, 27 andares tipo</dd></div>
+        <div><dt>Unidades</dt><dd>108 apartamentos de 166 m²</dd></div>
+        <div><dt>Elevadores</dt><dd>3 (2 sociais e 1 de serviço)</dd></div>
+        <div><dt>Situação</dt><dd>Pronto para morar</dd></div>
+        <div><dt>Terreno</dt><dd>3.917,10 m²</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap narrow">
+      <div class="me">
+        <img src="/img/lucas-jessica.jpg" alt="Lucas e Jéssica, corretores da Kairós Negócios Imobiliários" width="900" height="900" loading="lazy">
+        <div class="me-t">
+          <span class="eyebrow">Seus corretores</span>
+          <span class="me-name">Lucas e Jéssica</span>
+          <span class="me-sub">Kairós Negócios Imobiliários</span>
+          <span class="me-creci">Lucas · CRECI 190.339-F<br>Jéssica · CRECI 184.014-F<br>Kairós · CRECI 40.488-J</span>
+        </div>
+      </div>
+      <p>Eu e a Jéssica somos casados e trabalhamos juntos na Kairós. Estou há 10 anos no mercado imobiliário de Ribeirão Preto, de lançamentos a imóveis de alto padrão.</p>
+      <p>O prédio já está pronto: dá para visitar o apartamento e o lazer de verdade, sem depender só de perspectiva. Te apresento as unidades disponíveis, a condição de pagamento e marco a visita quando quiser.</p>
+      <div class="cta-row"><a class="btn btn-wa" id="wa-end" href="#" target="_blank" rel="noopener">Falar com o Lucas no WhatsApp</a></div>
+      <div class="phone-num"><code id="phone">(16) 99455-8101</code><button class="btn btn-line btn-sm" id="copy" type="button">Copiar número</button></div>
+      <p class="legal">Imagens meramente ilustrativas, prevalecendo o Memorial Descritivo. Móveis, objetos e revestimentos ilustrados nas unidades são sugestões decorativas e não fazem parte do contrato. Incorporação registrada no 2º Oficial de Registro de Imóveis de Ribeirão Preto, R.8 da matrícula 160.074.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Contato">
+  <div class="in">
+    <a class="btn btn-olive" id="wa-dock-cond" href="#" target="_blank" rel="noopener">Agendar visita</a>
+    <a class="btn btn-wa" id="wa-dock" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>WhatsApp</a>
+  </div>
+</nav>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <div class="lb-bar"><span id="lb-cap"></span><button class="lb-close" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lb-track" id="lb-track"></div>
+</div>
+
+<script>
+(function(){
+  var PHONE="5516994558101";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);}
+  var hello="Oi Lucas! Vi a apresentação do Évero, no Olhos d'Água, e quero saber mais.";
+  var cond="Oi Lucas! Vi o Évero, no Olhos d'Água. Quero agendar uma visita para conhecer o apartamento pronto.";
+  ["wa-top","wa-end","wa-dock"].forEach(function(id){document.getElementById(id).href=wa(hello);});
+  ["wa-cond","wa-dock-cond"].forEach(function(id){document.getElementById(id).href=wa(cond);});
+
+  var lb=document.getElementById("lb"),lbt=document.getElementById("lb-track"),lbc=document.getElementById("lb-cap"),items=[],last;
+  function openLB(list,start){items=list;last=document.activeElement;lbt.innerHTML="";
+    list.forEach(function(it){var s=document.createElement("div");s.className="lb-slide";var im=document.createElement("img");im.src=it[0];im.alt=it[1];s.appendChild(im);lbt.appendChild(s);});
+    lb.hidden=false;document.body.style.overflow="hidden";
+    requestAnimationFrame(function(){lbt.scrollLeft=start*lbt.clientWidth;cap(start);document.getElementById("lb-close").focus();});}
+  function cap(i){if(items[i])lbc.textContent=items[i][1]+"  ·  "+(i+1)+" / "+items.length;}
+  lbt.addEventListener("scroll",function(){cap(Math.round(lbt.scrollLeft/lbt.clientWidth));});
+  function closeLB(){lb.hidden=true;document.body.style.overflow="";if(last)last.focus();}
+  document.getElementById("lb-close").onclick=closeLB;
+  document.addEventListener("keydown",function(e){if(lb.hidden)return;if(e.key==="Escape")closeLB();
+    if(e.key==="ArrowRight")lbt.scrollBy({left:lbt.clientWidth,behavior:"smooth"});if(e.key==="ArrowLeft")lbt.scrollBy({left:-lbt.clientWidth,behavior:"smooth"});});
+
+  var facade=[["img/torre.jpg","Fachada"],["img/portico.jpg","Pórtico de entrada"],["img/capa.jpg","Évero"]];
+  document.getElementById("hero-img").addEventListener("click",function(){openLB(facade,0);});
+  document.getElementById("view-img").addEventListener("click",function(){openLB([["img/piscina.jpg","Piscina com borda infinita e vista para o parque"],["img/piscina-coberta.jpg","Piscina raia coberta"]],0);});
+  var aps=[["img/sala.jpg","Sala ampliada"],["img/varanda.jpg","Varanda gourmet"],["img/suite.jpg","Suíte master"]];
+  document.querySelectorAll("#aps button").forEach(function(b){b.addEventListener("click",function(){openLB(aps,+b.dataset.i);});});
+  document.getElementById("impl-open").addEventListener("click",function(){openLB([["img/implantacao.jpg","Implantação"]],0);});
+
+  var plans={
+    "1":{title:"4 suítes, cozinha fechada",specs:[["Suítes","4"],["Cozinha","Fechada"],["Varanda","Gourmet, com churrasqueira"],["Vagas","2"],["Apoio","Lavabo, área de serviço e banheiro de serviço"]],note:"A planta para família grande: quatro suítes, sala de estar e jantar integradas à varanda gourmet."},
+    "2":{title:"4 suítes, cozinha americana",specs:[["Suítes","4"],["Cozinha","Americana, aberta para a sala"],["Varanda","Gourmet, com churrasqueira"],["Vagas","2"]],note:"As mesmas quatro suítes, com a cozinha aberta para o living."},
+    "3":{title:"3 suítes e sala ampliada",specs:[["Suítes","3"],["Suíte master","Banho Sr. e Sra. e closet ampliado"],["Cozinha","Fechada"],["Sala","Ampliada"],["Vagas","2"]],note:"Troca uma suíte por uma sala maior e uma suíte master mais generosa, com dois banheiros."},
+    "4":{title:"3 suítes, sala ampliada e cozinha americana",specs:[["Suítes","3"],["Suíte master","Banho Sr. e Sra. e closet ampliado"],["Cozinha","Americana"],["Sala","Ampliada"],["Vagas","2"]],note:"A versão mais aberta: sala ampliada com a cozinha integrada."}
+  };
+  var planImg=document.getElementById("plan-img"),active="1";
+  function render(){var p=plans[active];
+    planImg.src="img/planta-"+active+".jpg";planImg.alt="Planta opção "+active+", "+p.title;
+    document.getElementById("plan-title").textContent="Opção "+active+" · "+p.title;
+    var ul=document.getElementById("plan-specs");ul.innerHTML="";
+    p.specs.forEach(function(s){var li=document.createElement("li");li.innerHTML="<span></span><span></span>";li.firstChild.textContent=s[0];li.lastChild.textContent=s[1];ul.appendChild(li);});
+    document.getElementById("plan-note").textContent=p.note;
+    document.querySelectorAll(".opt").forEach(function(t){t.setAttribute("aria-selected",t.dataset.k===active?"true":"false");});}
+  document.querySelectorAll(".opt").forEach(function(t){t.addEventListener("click",function(){active=t.dataset.k;render();});});
+  document.getElementById("plan-open").addEventListener("click",function(){openLB(["1","2","3","4"].map(function(k){return ["img/planta-"+k+".jpg","Opção "+k+" · "+plans[k].title];}),+active-1);});
+  render();
+
+  var photos=[
+    ["piscina","Piscina com deck molhado","Borda infinita, com vista para o Parque Olhos d’Água"],
+    ["piscina-coberta","Piscina coberta","Raia de 25 m e spa"],
+    ["familygrill","Family grill","Churrasqueira e piscina privativa, para cerca de 15 pessoas"],
+    ["squash","Quadra de squash","Climatizada"],
+    ["portico","Pórtico de entrada","Acessos independentes para moradores, visitantes e serviço"],
+    ["lobby","Lobby",""],
+    ["festas","Espaço festas","Para cerca de 48 pessoas, com copa equipada"],
+    ["gourmet","Espaço gourmet","Para cerca de 20 pessoas"],
+    ["pub","Pub e jogos","Com cervejeira e mesa de sinuca"],
+    ["fitness","Espaço fitness","Climatizado e equipado"],
+    ["coworking","Coworking","Com TVs e cafeteira"],
+    ["brinquedoteca","Brinquedoteca",""]
+  ];
+  var track=document.getElementById("track"),thumbs=document.getElementById("thumbs"),count=document.getElementById("count");
+  var full=photos.map(function(q){return ["img/"+q[0]+".jpg",q[1]];});
+  photos.forEach(function(p,i){
+    var f=document.createElement("figure");f.className="slide";f.setAttribute("aria-label",(i+1)+" de "+photos.length);
+    var im=document.createElement("img");im.src="img/"+p[0]+".jpg";im.alt=p[1]+(p[2]?": "+p[2]:"");im.loading=i<1?"eager":"lazy";im.decoding="async";
+    im.addEventListener("click",function(){openLB(full,i);});
+    var c=document.createElement("figcaption");c.innerHTML="<b></b><span></span>";c.firstChild.textContent=p[1];c.lastChild.textContent=p[2];
+    f.appendChild(im);f.appendChild(c);track.appendChild(f);
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Ver foto "+(i+1)+": "+p[1]);
+    var ti=document.createElement("img");ti.src="img/"+p[0]+".jpg";ti.alt="";ti.loading="lazy";b.appendChild(ti);
+    b.addEventListener("click",function(){go(i);});thumbs.appendChild(b);
+  });
+  var cur=-1;
+  function go(i){i=(i+photos.length)%photos.length;track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});}
+  function mark(i){if(i===cur)return;cur=i;count.textContent=(i+1)+" / "+photos.length;
+    Array.prototype.forEach.call(thumbs.children,function(b,k){b.setAttribute("aria-current",k===i?"true":"false");});
+    var t=thumbs.children[i];if(t)thumbs.scrollTo({left:t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2,behavior:"smooth"});}
+  var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(Math.round(track.scrollLeft/track.clientWidth));});});
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(cur+1);e.preventDefault();}if(e.key==="ArrowLeft"){go(cur-1);e.preventDefault();}});
+  mark(0);
+
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("phone"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText("16994558101").then(function(){cb.textContent="Número copiado";setTimeout(function(){cb.textContent="Copiar número";},2000);},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
