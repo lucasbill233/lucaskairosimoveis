@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1a1f1b">
+<title>Empreendimentos · Lucas · Kairós</title>
+<meta name="description" content="Lançamentos e imóveis prontos em Ribeirão Preto, para morar ou investir. Escolha e veja fotos, plantas e localização com o corretor Lucas · Kairós.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucaskairosimoveis.vercel.app/opcoes/">
+<meta property="og:title" content="Empreendimentos em Ribeirão Preto · Lucas · Kairós">
+<meta property="og:description" content="Para morar, para investir em Airbnb ou para valorização. Toque e veja fotos, plantas e localização.">
+<meta property="og:image" content="https://lucaskairosimoveis.vercel.app/artse/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Layout: dark menu page. Hero, filter chips, one horizontal rail of every empreendimento, then two investment tiles that expand into sheets. Tapping a card grows its photo to full screen and opens that empreendimento's page. */
+:root{
+  --bg:#1a1f1b;--card:#252b26;--line:#3a423a;--fg:#f2efe7;--mute:#b2b5a8;--gold:#d9a25a;--gold-soft:#e8c48f;--wa:#25d366;
+  --air:#2f6f73;--val:#8a5a2b;
+  --display:"Marcellus",Georgia,serif;--body:"Jost","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20% -20% auto;height:70vh;background:radial-gradient(60% 60% at 70% 20%,rgba(217,162,90,.14),transparent 70%);pointer-events:none;z-index:0}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.1;text-wrap:balance}
+p{margin:0}
+
+/* entrada */
+.rise{opacity:0;transform:translateY(18px);animation:rise .8s var(--ease) forwards;animation-delay:calc(var(--i,0)*90ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+
+.top{padding:calc(18px + env(safe-area-inset-top,0px)) 0 0}
+.who{display:flex;align-items:center;gap:12px}
+.who img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.who b{display:block;font-weight:500;font-size:.95rem}
+.who span{font-size:.75rem;color:var(--mute)}
+
+.hero{padding:34px 0 22px;display:grid;gap:12px}
+.hero h1{font-size:clamp(2.1rem,8vw,3.6rem);max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--gold-soft)}
+.hero p{color:var(--mute);max-width:46ch}
+
+/* chips */
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 0 2px;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:10px 16px;font-size:.88rem;cursor:pointer;transition:background .3s,border-color .3s,color .3s}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+
+.sec{padding:26px 0 6px}
+.sec-h{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
+.sec-h h2{font-size:clamp(1.5rem,5vw,2rem)}
+.arrows{display:none;gap:8px}
+@media (hover:hover) and (min-width:760px){.arrows{display:flex}}
+.arrow{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center}
+.arrow svg{width:18px;height:18px}
+.count{font-size:.8rem;color:var(--mute);font-variant-numeric:tabular-nums}
+
+/* trilho horizontal */
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px max(16px,env(safe-area-inset-left,0px)) 22px;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));scroll-padding-inline:max(16px,env(safe-area-inset-left,0px));overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 min(76vw,300px);scroll-snap-align:start;position:relative;border-radius:20px;overflow:hidden;background:var(--card);text-decoration:none;color:#fff;aspect-ratio:4/5.4;display:block;isolation:isolate;
+  transform:scale(var(--s,1));transition:transform .45s var(--ease),opacity .45s var(--ease),flex-basis .45s var(--ease),margin .45s var(--ease);box-shadow:0 18px 40px -22px rgba(0,0,0,.7)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(10,12,10,.86) 100%);z-index:1}
+@media (hover:hover){.card:hover img{transform:scale(1.06)}}
+.card .tag{position:absolute;z-index:2;top:12px;left:12px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(20,24,20,.62);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 10px}
+.card .tag.ready{background:var(--gold);color:#22170a;border-color:transparent}
+.card .t{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:16px 16px 18px;display:grid;gap:8px}
+.card .n{font-family:var(--display);font-size:1.6rem;line-height:1.05}
+.card .by{font-size:.76rem;color:rgba(255,255,255,.75);letter-spacing:.04em}
+.card .row{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.84rem}
+.card .row span{display:inline-flex;align-items:center;gap:6px}
+.card .row svg{width:15px;height:15px;opacity:.85;flex:none}
+.card .go{position:absolute;z-index:2;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);color:#1a1f1b;display:grid;place-items:center;transition:transform .4s var(--ease)}
+.card .go svg{width:16px;height:16px}
+@media (hover:hover){.card:hover .go{transform:rotate(-45deg)}}
+.card.out{opacity:0;transform:scale(.85);flex-basis:0;margin-right:-14px;pointer-events:none}
+
+/* blocos de investimento */
+.invest{display:grid;gap:14px;padding-bottom:8px}
+@media (min-width:760px){.invest{grid-template-columns:1fr 1fr}}
+.tile{position:relative;border:0;padding:0;text-align:left;cursor:pointer;border-radius:22px;overflow:hidden;min-height:220px;display:grid;align-content:end;isolation:isolate;background:var(--card)}
+.tile .bg{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;z-index:-2}
+.tile .bg img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+@media (hover:hover){.tile:hover .bg img{transform:scale(1.06)}}
+.tile::before{content:"";position:absolute;inset:0;z-index:-1}
+.tile.air::before{background:linear-gradient(160deg,rgba(47,111,115,.55),rgba(14,32,34,.94) 75%)}
+.tile.val::before{background:linear-gradient(160deg,rgba(138,90,43,.5),rgba(34,22,10,.94) 75%)}
+.tile .in{padding:20px;display:grid;gap:8px}
+.tile .k{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft)}
+.tile h3{font-size:clamp(1.6rem,6vw,2.1rem)}
+.tile p{color:rgba(255,255,255,.82);font-size:.92rem;max-width:40ch}
+.tile .cta{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:.88rem;font-weight:500}
+.tile .cta svg{width:16px;height:16px;transition:transform .4s var(--ease)}
+@media (hover:hover){.tile:hover .cta svg{transform:translateX(4px)}}
+
+/* folha que expande */
+.sheet{position:fixed;inset:0;z-index:40;overflow-y:auto;overscroll-behavior:contain;background:var(--bg);clip-path:inset(var(--ct,0) var(--cr,0) var(--cb,0) var(--cl,0) round var(--cr2,22px));transition:clip-path .6s var(--ease)}
+.sheet.air{background:linear-gradient(180deg,#123033,#151b18 55%)}
+.sheet.val{background:linear-gradient(180deg,#2c1d0f,#1a1d19 55%)}
+.sheet .bar{position:sticky;top:0;z-index:2;display:flex;justify-content:flex-end;padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 0}
+.close{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(20,24,20,.5);backdrop-filter:blur(6px);cursor:pointer;display:grid;place-items:center}
+.close svg{width:20px;height:20px}
+.sheet .head{display:grid;gap:12px;padding:8px 0 22px}
+.sheet .head h2{font-size:clamp(2rem,8vw,3.2rem)}
+.sheet .head p{color:var(--mute);max-width:52ch}
+.why{display:grid;gap:10px;margin:4px 0 6px;padding:0;list-style:none}
+@media (min-width:760px){.why{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.why li{border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px;font-size:.9rem;background:rgba(255,255,255,.03)}
+.why b{display:block;font-family:var(--display);font-weight:400;font-size:1.15rem;margin-bottom:2px;color:var(--gold-soft)}
+.sheet .stagger>*{opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0)*80ms + 220ms)}
+.sheet.open .stagger>*{opacity:1;transform:none}
+.sheet .rail{padding-bottom:28px}
+.sheet .card{flex-basis:min(80vw,340px)}
+.note{font-size:.76rem;color:var(--mute);padding-bottom:calc(40px + env(safe-area-inset-bottom,0px));max-width:70ch}
+
+/* final */
+.end{padding:34px 0 calc(48px + env(safe-area-inset-bottom,0px));display:grid;gap:14px}
+.end h2{font-size:clamp(1.5rem,5vw,2rem)}
+.end p{color:var(--mute);max-width:48ch}
+.btn{display:inline-flex;justify-self:start;align-items:center;gap:10px;border-radius:999px;padding:14px 20px;background:var(--wa);color:#08260f;font-weight:500;text-decoration:none}
+.btn svg{width:18px;height:18px}
+.creci{font-size:.74rem;color:var(--mute);line-height:1.6}
+
+/* zoom do card ao abrir */
+.zoom{position:fixed;z-index:60;border-radius:20px;overflow:hidden;pointer-events:none;transition:top .55s var(--ease),left .55s var(--ease),width .55s var(--ease),height .55s var(--ease),border-radius .55s var(--ease)}
+.zoom img{width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform 1.4s var(--ease)}
+.zoom .z-t{position:absolute;left:0;right:0;bottom:0;padding:24px max(20px,env(safe-area-inset-left,0px)) calc(40px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,rgba(10,12,10,.85));color:#fff;display:grid;gap:6px}
+.zoom .z-n{font-family:var(--display);font-size:clamp(2rem,9vw,3.4rem);line-height:1}
+.zoom .z-l{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;opacity:0;transition:opacity .4s .35s}
+.zoom.full .z-l{opacity:.85}
+.zoom.full img{transform:scale(1.08)}
+
+@media (prefers-reduced-motion:reduce){
+  .rise{animation:none;opacity:1;transform:none}
+  .card,.card img,.tile .bg img,.sheet,.zoom,.zoom img,.sheet .stagger>*{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top rise" style="--i:0">
+    <div class="who"><img src="/img/lucas-jessica-thumb.jpg" alt="" width="160" height="160"><div><b>Lucas e Jéssica · Kairós</b><span>Corretores em Ribeirão Preto · CRECI 190.339-F</span></div></div>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow rise" style="--i:1">Ribeirão Preto</span>
+    <h1 class="rise" style="--i:2">Encontre o imóvel <em>que combina com você</em></h1>
+    <p class="rise" style="--i:3">Deslize para o lado, bata o olho na fachada, no tamanho e na localização. Tocou, abre o empreendimento com fotos, plantas e valores.</p>
+  </section>
+
+  <div class="chips rise" style="--i:4" role="group" aria-label="Filtrar empreendimentos">
+    <button class="chip" type="button" aria-pressed="true" data-f="all">Todos</button>
+    <button class="chip" type="button" aria-pressed="false" data-f="apto">Apartamentos</button>
+    <button class="chip" type="button" aria-pressed="false" data-f="casa">Casas</button>
+    <button class="chip" type="button" aria-pressed="false" data-f="studio">Studios e compactos</button>
+    <button class="chip" type="button" aria-pressed="false" data-f="pronto">Prontos para morar</button>
+  </div>
+
+  <section class="sec rise" style="--i:5" aria-labelledby="h-todos">
+    <div class="sec-h">
+      <div><span class="eyebrow">Para morar</span><h2 id="h-todos">Empreendimentos</h2></div>
+      <div style="display:flex;align-items:center;gap:12px"><span class="count" id="count"></span>
+        <div class="arrows"><button class="arrow" type="button" data-dir="-1" aria-label="Anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button><button class="arrow" type="button" data-dir="1" aria-label="Próximos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button></div>
+      </div>
+    </div>
+    <div class="rail" id="rail-all"></div>
+  </section>
+
+  <section class="sec rise" style="--i:6" aria-labelledby="h-inv">
+    <div class="sec-h"><div><span class="eyebrow">Para investir</span><h2 id="h-inv">Qual é o seu objetivo?</h2></div></div>
+    <div class="invest">
+      <button class="tile air" type="button" data-sheet="air" aria-haspopup="dialog">
+        <div class="bg"><img src="/tarrafstudios/img/fachada.jpg" alt="" loading="lazy"><img src="/mbpark/img/fachada.jpg" alt="" loading="lazy"></div>
+        <div class="in">
+          <span class="k">Renda com aluguel</span>
+          <h3>Investimento para Airbnb</h3>
+          <p>Studios e plantas compactas em pontos de alta procura, pensados para aluguel de temporada e rentabilidade.</p>
+          <span class="cta">Ver os empreendimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </button>
+      <button class="tile val" type="button" data-sheet="val" aria-haspopup="dialog">
+        <div class="bg"><img src="/juquehy/img/og.jpg" alt="" loading="lazy"><img src="/einstein1090/img/torre.jpg" alt="" loading="lazy"></div>
+        <div class="in">
+          <span class="k">Comprar na planta</span>
+          <h3>Investimento para valorização</h3>
+          <p>Lançamentos em regiões que estão crescendo, para comprar na planta, pagar durante a obra e ganhar com a valorização.</p>
+          <span class="cta">Ver os empreendimentos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <section class="end">
+    <span class="eyebrow">Não achou o que procura?</span>
+    <h2>Me conta o que você precisa</h2>
+    <p>Trabalho com lançamentos de todas as construtoras de Ribeirão Preto e também com imóveis prontos. Me fala o bairro, o tamanho e o valor que eu te mando as opções certas.</p>
+    <a class="btn" id="wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>Falar no WhatsApp · (16) 99455-8101</a>
+    <p class="creci">Lucas · CRECI 190.339-F · Jéssica · CRECI 184.014-F · Kairós Negócios Imobiliários · CRECI 40.488-J<br>Imagens ilustrativas. Valores, condições e disponibilidade sujeitos a alteração pela construtora.</p>
+  </section>
+</div>
+
+<div class="sheet air" id="sheet-air" role="dialog" aria-modal="true" aria-labelledby="sa-h" hidden>
+  <div class="bar"><button class="close" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="wrap stagger">
+    <div class="head" style="--i:0"><span class="eyebrow">Renda com aluguel</span><h2 id="sa-h">Investimento para Airbnb</h2><p>Para quem quer o imóvel trabalhando: unidades compactas, fáceis de mobiliar e de alugar, em endereços com procura o ano inteiro.</p></div>
+    <div class="rail" id="rail-air" style="--i:1"></div>
+    <ul class="why" style="--i:2">
+      <li><b>Endereço que aluga</b>Perto de shopping, faculdades e grandes avenidas, onde há procura por hospedagem curta.</li>
+      <li><b>Ticket de entrada menor</b>Plantas compactas custam menos para comprar e para mobiliar.</li>
+      <li><b>Estrutura de serviço</b>Portaria, delivery, coworking e lavanderia, o que o hóspede procura.</li>
+    </ul>
+    <p class="note" style="--i:3">Rentabilidade depende do mercado, da gestão e das regras do condomínio. Te ajudo a montar a conta antes de decidir.</p>
+  </div>
+</div>
+
+<div class="sheet val" id="sheet-val" role="dialog" aria-modal="true" aria-labelledby="sv-h" hidden>
+  <div class="bar"><button class="close" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="wrap stagger">
+    <div class="head" style="--i:0"><span class="eyebrow">Comprar na planta</span><h2 id="sv-h">Investimento para valorização</h2><p>Para quem quer ver o patrimônio crescer: comprar no lançamento, pagar uma parte durante a obra e chegar na entrega com um imóvel que vale mais.</p></div>
+    <div class="rail" id="rail-val" style="--i:1"></div>
+    <ul class="why" style="--i:2">
+      <li><b>Preço de lançamento</b>A tabela costuma subir conforme a obra avança e as unidades saem.</li>
+      <li><b>Pagamento durante a obra</b>Entrada e parcelas leves até as chaves; o saldo fica para a entrega.</li>
+      <li><b>Regiões em crescimento</b>Bairros com demanda firme, perto da USP e da zona Sul.</li>
+    </ul>
+    <p class="note" style="--i:3">Valorização não é garantida e depende do mercado. Te mostro o histórico da região e simulo o fluxo de pagamento.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var PHONE="5516994558101";
+  document.getElementById("wa").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent("Oi Lucas! Vi as opções de empreendimentos e quero ajuda para escolher.");
+
+  var I={
+    area:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
+    pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+    arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg>'
+  };
+  // [slug, nome, construtora, imagem, metragem, localização, tipos, tag]
+  var E={
+    artse:["artse","Artse","Tarraf","/artse/img/torre-dia.jpg","183 e 237 m²","Ilhas do Sul","apto",""],
+    splendor:["splendor","Splendor","Pagano","/splendor/img/og.jpg","112 a 249 m²","Av. Prof. João Fiúsa","apto pronto","Pronto para morar"],
+    evero:["evero","Évero","Bild","/evero/img/torre.jpg","166 m²","Jardim Olhos d’Água","apto pronto","Pronto para morar"],
+    thaihomes:["thaihomes","Thai Homes","Tarraf","/thaihomes/img/og.jpg","92 e 123 m²","Ilhas do Sul","apto",""],
+    plazasevilla:["plazasevilla","Plaza Sevilla","Stéfani Nogueira","/plazasevilla/img/og.jpg","93 a 121 m²","Jardim Olhos d’Água","apto",""],
+    juquehy:["juquehy","Juquehy","Stéfani Nogueira","/juquehy/img/og.jpg","70 a 110 m²","Panamby","apto",""],
+    terrasdeverano:["terrasdeverano","Terras de Verano","Perplan e Virtu","/terrasdeverano/img/og.jpg","Casas de 105 m²","Região da Vila do Golfe","casa","Casas"],
+    einstein1090:["einstein1090","Einstein 1090","Projeto 9","/einstein1090/img/torre.jpg","43 a 57 m²","Monte Alegre · ao lado da USP","apto studio",""],
+    mbpark:["mbpark","MB Park","Perplan e CP Construplan","/mbpark/img/fachada.jpg","43 a 63 m²","Av. Maurílio Biagi","apto studio",""],
+    tarrafstudios:["tarrafstudios","Tarraf Studios","Tarraf","/tarrafstudios/img/fachada.jpg","Studios de 28 e 48 m²","Dentro do Shopping Iguatemi","studio","Studios"]
+  };
+  var ALL=["artse","splendor","evero","thaihomes","plazasevilla","juquehy","terrasdeverano","einstein1090","mbpark","tarrafstudios"];
+  var AIR=["tarrafstudios","mbpark"], VAL=["juquehy","einstein1090"];
+
+  function card(k,i){
+    var e=E[k],a=document.createElement("a");
+    a.className="card";a.href="/"+e[0]+"/";a.dataset.k=k;a.dataset.types=e[6];a.style.setProperty("--i",i);
+    a.setAttribute("aria-label",e[1]+", "+e[4]+", "+e[5]);
+    a.innerHTML='<img src="'+e[3]+'" alt="" loading="'+(i<3?"eager":"lazy")+'" decoding="async">'+
+      (e[7]?'<span class="tag'+(e[6].indexOf("pronto")>-1?" ready":"")+'">'+e[7]+'</span>':'')+
+      '<span class="go" aria-hidden="true">'+I.arrow+'</span>'+
+      '<span class="t"><span><span class="n">'+e[1]+'</span><br><span class="by">'+e[2]+'</span></span>'+
+      '<span class="row"><span>'+I.area+e[4]+'</span><span>'+I.pin+e[5]+'</span></span></span>';
+    a.addEventListener("click",open);
+    return a;
+  }
+  function fill(id,list){var r=document.getElementById(id);list.forEach(function(k,i){r.appendChild(card(k,i));});return r;}
+  var railAll=fill("rail-all",ALL),railAir=fill("rail-air",AIR),railVal=fill("rail-val",VAL);
+
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // cards ficam levemente menores longe do começo do trilho
+  function depth(r){
+    if(reduce)return;
+    var box=r.getBoundingClientRect();
+    Array.prototype.forEach.call(r.children,function(c){
+      if(c.classList.contains("out"))return;
+      var b=c.getBoundingClientRect(),d=Math.abs(b.left-box.left-parseFloat(getComputedStyle(r).paddingLeft))/box.width;
+      c.style.setProperty("--s",(1-Math.min(d,1)*.08).toFixed(3));
+    });
+  }
+  [railAll,railAir,railVal].forEach(function(r){var raf;r.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){depth(r);});},{passive:true});});
+  addEventListener("resize",function(){depth(railAll);});
+  depth(railAll);
+
+  // setas (computador)
+  document.querySelectorAll(".arrow").forEach(function(b){b.addEventListener("click",function(){railAll.scrollBy({left:Number(b.dataset.dir)*(railAll.clientWidth*.8),behavior:"smooth"});});});
+
+  // filtros
+  var countEl=document.getElementById("count");
+  function setCount(){var n=railAll.querySelectorAll(".card:not(.out)").length;countEl.textContent=n+(n===1?" opção":" opções");}
+  document.querySelectorAll(".chip").forEach(function(ch){
+    ch.addEventListener("click",function(){
+      var f=ch.dataset.f;
+      document.querySelectorAll(".chip").forEach(function(c){c.setAttribute("aria-pressed",c===ch?"true":"false");});
+      Array.prototype.forEach.call(railAll.children,function(c){
+        var show=f==="all"||c.dataset.types.split(" ").indexOf(f)>-1;
+        c.classList.toggle("out",!show);c.tabIndex=show?0:-1;c.setAttribute("aria-hidden",show?"false":"true");
+      });
+      railAll.scrollTo({left:0,behavior:reduce?"auto":"smooth"});setCount();setTimeout(function(){depth(railAll);},480);
+    });
+  });
+  setCount();
+
+  // abrir empreendimento: a foto cresce até ocupar a tela
+  var busy=false;
+  function open(ev){
+    if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button===1)return;
+    ev.preventDefault();if(busy)return;busy=true;
+    var a=ev.currentTarget,e=E[a.dataset.k],href=a.href;
+    if(reduce){location.href=href;return;}
+    var r=a.getBoundingClientRect(),z=document.createElement("div");
+    z.className="zoom";z.style.top=r.top+"px";z.style.left=r.left+"px";z.style.width=r.width+"px";z.style.height=r.height+"px";
+    z.innerHTML='<img src="'+e[3]+'" alt=""><div class="z-t"><span class="z-n">'+e[1]+'</span><span class="z-l">Abrindo fotos e plantas…</span></div>';
+    document.body.appendChild(z);
+    requestAnimationFrame(function(){requestAnimationFrame(function(){
+      z.classList.add("full");z.style.top="0px";z.style.left="0px";z.style.width=innerWidth+"px";z.style.height=innerHeight+"px";z.style.borderRadius="0px";
+    });});
+    setTimeout(function(){location.href=href;},620);
+  }
+  // ao voltar pelo botão do celular, limpa a animação
+  addEventListener("pageshow",function(){busy=false;document.querySelectorAll(".zoom").forEach(function(z){z.remove();});});
+
+  // folhas de investimento: abrem a partir do bloco tocado
+  var lastTile=null;
+  function clipFrom(s,r){
+    s.style.setProperty("--ct",r.top+"px");s.style.setProperty("--cl",r.left+"px");
+    s.style.setProperty("--cr",(innerWidth-r.right)+"px");s.style.setProperty("--cb",(innerHeight-r.bottom)+"px");
+  }
+  function openSheet(tile){
+    var s=document.getElementById("sheet-"+tile.dataset.sheet);lastTile=tile;
+    var r=tile.getBoundingClientRect();
+    s.hidden=false;s.scrollTop=0;document.body.style.overflow="hidden";
+    if(reduce){s.classList.add("open");s.style.clipPath="none";}
+    else{
+      s.style.transition="none";clipFrom(s,r);s.style.setProperty("--cr2","22px");
+      s.offsetWidth;s.style.transition="";
+      requestAnimationFrame(function(){["--ct","--cl","--cr","--cb"].forEach(function(v){s.style.setProperty(v,"0px");});s.style.setProperty("--cr2","0px");s.classList.add("open");});
+    }
+    var rail=s.querySelector(".rail");setTimeout(function(){depth(rail);},50);
+    s.querySelector(".close").focus({preventScroll:true});
+  }
+  function closeSheet(s){
+    s.classList.remove("open");
+    var done=function(){s.hidden=true;document.body.style.overflow="";if(lastTile)lastTile.focus({preventScroll:true});};
+    if(reduce||!lastTile){done();return;}
+    clipFrom(s,lastTile.getBoundingClientRect());s.style.setProperty("--cr2","22px");
+    setTimeout(done,600);
+  }
+  document.querySelectorAll(".tile").forEach(function(t){t.addEventListener("click",function(){openSheet(t);});});
+  document.querySelectorAll(".sheet").forEach(function(s){s.querySelector(".close").addEventListener("click",function(){closeSheet(s);});});
+  addEventListener("keydown",function(e){if(e.key!=="Escape")return;var s=document.querySelector(".sheet:not([hidden])");if(s)closeSheet(s);});
+})();
+</script>
+</body>
+</html>
