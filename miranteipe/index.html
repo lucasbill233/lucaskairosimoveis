@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#26211c">
+<title>Mirante do Ipê · Alto do Ipê</title>
+<meta name="description" content="Apartamento de 195 m² no Residencial Mirante do Ipê, no Alto do Ipê, em Ribeirão Preto. R$ 1.500.000. Com os corretores Lucas e Jéssica · Kairós.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lucaskairosimoveis.vercel.app/miranteipe/">
+<meta property="og:title" content="Mirante do Ipê · 195 m² no ponto mais alto da cidade">
+<meta property="og:description" content="Pronto para morar. 195 m², 3 quartos, 5 vagas e piscina coberta e aquecida. Alto do Ipê, R$ 1.500.000.">
+<meta property="og:image" content="https://lucaskairosimoveis.vercel.app/miranteipe/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
+<style>
+/* Mirante do Ipê: grafite quente e o amarelo do ipê do book */
+:root{
+  --paper:#f6f2ea;
+  --card:#fcfaf5;
+  --line:#e2d9c6;
+  --olive:#3a332b;       /* grafite quente */
+  --olive-deep:#26211c;
+  --mustard:#e3a21a;     /* amarelo ipê do book */
+  --mustard-deep:#a8740c;
+  --ink:#231f1a;
+  --mute:#6f675c;
+  --on-dark:#f5f0e6;
+  --on-dark-mute:#cbbfae;
+  --wa:#25d366;
+  --display:"Josefin Sans", "Futura", "Avenir Next", sans-serif;
+  --body:"Nunito Sans", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--olive-deep)}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--mustard);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.narrow{max-width:740px}
+.eyebrow{font-family:var(--display);font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mustard-deep);font-weight:400}
+h1,h2,h3{margin:0;font-weight:300;text-wrap:balance}
+h2{font-family:var(--display);font-size:clamp(1.9rem,5.6vw,2.8rem);line-height:1.12;color:var(--olive)}
+p{margin:0}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--olive-deep) 95%,transparent);backdrop-filter:blur(8px);color:var(--on-dark)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.who{display:flex;align-items:center;gap:10px;min-width:0}
+.avatar{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;display:block}
+.broker{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.broker b{font-weight:700;font-size:.86rem}
+.broker span{font-size:.7rem;color:var(--on-dark-mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font:700 .86rem/1 var(--body);text-decoration:none;padding:14px 20px;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#08260f}
+.btn-mustard{background:var(--mustard);color:var(--olive-deep)}
+.btn-line{background:transparent;color:inherit;border-color:currentColor}
+.btn-sm{padding:9px 14px;font-size:.8rem}
+
+/* hero */
+.hero{background:var(--olive);color:var(--on-dark)}
+.hero-grid{display:grid}
+@media (min-width:880px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.hero-img{margin:0;cursor:zoom-in;background:var(--olive-deep)}
+.hero-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;aspect-ratio:4/5;max-height:84vh}
+@media (min-width:880px){.hero-img img{aspect-ratio:auto;max-height:none;min-height:620px}}
+.hero-copy{padding:36px max(18px,env(safe-area-inset-right,0px)) 40px max(18px,env(safe-area-inset-left,0px));display:grid;gap:20px;align-content:center}
+@media (min-width:880px){.hero-copy{padding:56px}}
+.hero .eyebrow{color:var(--mustard)}
+.hero h1{font-family:var(--display);font-size:clamp(4rem,17vw,6.6rem);line-height:.95;letter-spacing:.06em}
+.tag{font-family:var(--display);font-size:clamp(1.25rem,4vw,1.55rem);line-height:1.35;color:var(--on-dark)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(227,162,26,.4)}
+.facts div{padding:14px 0;border-bottom:1px solid rgba(227,162,26,.4);display:grid;gap:2px;min-width:0}
+.facts div:nth-child(odd){padding-right:12px}
+.facts div:nth-child(even){padding-left:14px;border-left:1px solid rgba(227,162,26,.4)}
+.facts .v{font-family:var(--display);font-size:1.55rem;line-height:1.1}
+.facts .k{font-size:.74rem;color:var(--on-dark-mute)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.ready{justify-self:start;display:inline-flex;align-items:center;gap:8px;background:var(--mustard);color:var(--olive-deep);font:700 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:9px 14px;border-radius:999px}
+.ready::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--olive-deep)}
+
+section{padding-block:58px}
+.sec-head{display:grid;gap:12px;margin-bottom:28px}
+.sec-head p{color:var(--mute);max-width:62ch}
+
+/* view band */
+.view{padding:0;position:relative;background:var(--olive-deep);color:var(--on-dark)}
+.view figure{margin:0;position:relative;cursor:zoom-in}
+.view img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;max-height:80vh}
+@media (min-width:760px){.view img{aspect-ratio:21/9}}
+.view .cap{position:absolute;left:0;right:0;bottom:0;padding:70px max(18px,env(safe-area-inset-left,0px)) 24px;background:linear-gradient(transparent,rgba(26,22,18,.82))}
+.view .cap .wrap{display:grid;gap:8px;padding:0}
+.view .cap b{font-family:var(--display);font-weight:300;font-size:clamp(1.8rem,6vw,3rem);line-height:1.08}
+.view .cap span{font-size:.9rem;color:var(--on-dark-mute);max-width:56ch}
+
+/* plans */
+.plans{background:var(--card);border-bottom:1px solid var(--line)}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:18px}
+@media (min-width:760px){.opts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.opt{all:unset;cursor:pointer;border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:2px;background:var(--paper)}
+.opt:focus-visible{outline:2px solid var(--mustard);outline-offset:3px}
+.opt b{font-family:var(--display);font-weight:400;font-size:1.25rem;color:var(--olive)}
+.opt span{font-size:.78rem;color:var(--mute)}
+.opt[aria-selected="true"]{background:var(--olive);border-color:var(--olive)}
+.opt[aria-selected="true"] b{color:var(--on-dark)}
+.opt[aria-selected="true"] span{color:var(--on-dark-mute)}
+.plan{display:grid;gap:24px;align-items:start}
+@media (min-width:860px){.plan{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.plan-img{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:#fff}
+.plan-img img{display:block;width:100%;height:auto}
+.hint{font-size:.76rem;color:var(--mute);margin-top:8px}
+.plan-info{display:grid;gap:14px;min-width:0}
+.area{font-family:var(--display);font-weight:300;font-size:clamp(3.4rem,12vw,4.6rem);line-height:.95;color:var(--olive)}
+.area small{font-size:.38em;margin-left:4px}
+.plan-info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;color:var(--olive)}
+.specs{list-style:none;margin:0;padding:0;display:grid}
+.specs li{display:flex;gap:14px;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding:10px 0}
+.specs li span:first-child{color:var(--mute);font-size:.8rem}
+.specs li span:last-child{text-align:right}
+.plan-note{font-size:.9rem;color:var(--mute)}
+.aps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:30px}
+.aps button{all:unset;cursor:zoom-in;display:grid;gap:6px;min-width:0}
+.aps button:focus-visible{outline:2px solid var(--mustard);outline-offset:3px}
+.aps img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block;border-radius:10px}
+@media (min-width:760px){.aps img{aspect-ratio:16/10}}
+.aps span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+
+/* carousel */
+.gallery{position:relative;background:var(--olive-deep);border-radius:14px;overflow:hidden}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;position:relative;margin:0;aspect-ratio:4/3;width:100%}
+@media (min-width:760px){.slide{aspect-ratio:2/1}}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.slide figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 14px;background:linear-gradient(transparent,rgba(26,22,18,.8));color:#fff;display:grid;gap:2px;pointer-events:none}
+.slide figcaption b{font-family:var(--display);font-weight:400;font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase}
+.slide figcaption span{font-size:.8rem;opacity:.88;max-width:60ch}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:rgba(246,242,234,.92);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.nav svg{width:20px;height:20px}
+.nav.prev{left:12px}.nav.next{right:12px}
+.count{position:absolute;top:12px;right:12px;background:rgba(246,242,234,.92);color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.76rem;font-variant-numeric:tabular-nums}
+.thumbs{display:flex;gap:6px;overflow-x:auto;padding:10px 0 0;scrollbar-width:none}
+.thumbs::-webkit-scrollbar{display:none}
+.thumbs button{flex:0 0 auto;width:64px;height:46px;padding:0;border:2px solid transparent;border-radius:6px;overflow:hidden;opacity:.5;cursor:pointer;background:none}
+.thumbs button[aria-current="true"]{border-color:var(--olive);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.chips{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.84rem;background:var(--card)}
+.chips li.hl{background:var(--olive);border-color:var(--olive);color:var(--on-dark)}
+
+/* location */
+.loc{background:var(--olive);color:var(--on-dark)}
+.loc h2{color:var(--on-dark)}
+.loc .eyebrow{color:var(--mustard)}
+.loc .sec-head p{color:var(--on-dark-mute)}
+.loc-grid{display:grid;gap:22px;align-items:start}
+@media (min-width:860px){.loc-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.addr{border:1px solid rgba(227,162,26,.4);border-radius:14px;padding:20px;display:grid;gap:12px}
+.addr .street{font-family:var(--display);font-size:1.45rem;line-height:1.25}
+.near{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid rgba(227,162,26,.4)}
+.near li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(227,162,26,.4)}
+.near li span:last-child{color:var(--mustard);font-weight:700;white-space:nowrap}
+.impl{display:block;width:100%;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;margin-top:22px;background:var(--olive-deep)}
+.impl img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain}
+
+/* lists */
+.cols{display:grid;gap:10px 30px}
+@media (min-width:640px){.cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.check li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start}
+.check li::before{content:"";width:9px;height:9px;border:1.5px solid var(--mustard-deep);border-radius:50%;margin-top:.55em}
+.ficha{margin:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+@media (min-width:640px){.ficha{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:30px}}
+.ficha div{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--line)}
+.ficha dt{font-size:.74rem;color:var(--mute)}
+.ficha dd{margin:0}
+
+/* closing */
+.closing{background:var(--olive-deep);color:var(--on-dark)}
+.closing .wrap{display:grid;gap:18px}
+.closing .eyebrow{color:var(--mustard)}
+.me{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;align-items:center}
+@media (min-width:640px){.me{grid-template-columns:150px minmax(0,1fr);gap:24px}}
+.me img{width:100%;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block}
+.me-t{display:grid;gap:4px;min-width:0}
+.me-name{font-family:var(--display);font-size:clamp(1.7rem,6vw,2.3rem);line-height:1.05}
+.me-sub{font-size:.9rem;opacity:.85}
+.me-creci{font-size:.74rem;line-height:1.55;opacity:.7;font-variant-numeric:tabular-nums}
+.phone-num{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone-num code{font:700 1.05rem var(--body);user-select:all;font-variant-numeric:tabular-nums}
+.legal{font-size:.72rem;line-height:1.55;color:var(--on-dark-mute);max-width:74ch}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.dock .in{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.dock .btn{width:100%;padding:14px 10px}
+.dock .btn-olive{background:var(--olive);color:var(--on-dark)}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(20,17,14,.97);display:flex;flex-direction:column;color:var(--on-dark)}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));font-size:.85rem;color:var(--on-dark-mute)}
+.lb-bar span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-close{width:44px;height:44px;border-radius:50%;border:1px solid rgba(227,162,26,.5);background:transparent;color:inherit;cursor:pointer;display:grid;place-items:center;flex:none}
+.lb-track{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lb-track::-webkit-scrollbar{display:none}
+.lb-slide{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:center;padding:8px max(8px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px))}
+.lb-slide img{max-width:100%;max-height:100%;object-fit:contain;touch-action:pinch-zoom}
+
+.price{font-family:var(--display);font-size:clamp(2rem,7vw,2.6rem);line-height:1;color:var(--mustard)}
+.price small{display:block;font-family:var(--body);font-size:.74rem;color:var(--on-dark-mute);margin-top:6px;letter-spacing:0}
+.view img.raia{aspect-ratio:4/5;object-position:60% 40%}
+@media (min-width:760px){.view img.raia{aspect-ratio:21/9}}
+.view img.pano{aspect-ratio:16/10;object-position:50% 85%}
+@media (min-width:760px){.view img.raia{aspect-ratio:4/5;object-position:60% 40%}
+@media (min-width:760px){.view img.raia{aspect-ratio:21/9}}
+.view img.pano{aspect-ratio:3/1}}
+.aps{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:760px){.aps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="who"><img class="avatar" src="/img/lucas-jessica-thumb.jpg" alt="" width="160" height="160"><div class="broker"><b>Lucas · Kairós Negócios Imobiliários</b><span>Corretor · CRECI 190.339-F</span></div></div>
+    <a class="btn btn-wa btn-sm" id="wa-top" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-grid">
+    <figure class="hero-img" id="hero-img"><img src="img/torre.jpg" alt="Perspectiva da torre do Residencial Mirante do Ipê" width="1696" height="1616"></figure>
+    <div class="hero-copy">
+      <span class="ready">Pronto para morar</span>
+      <span class="eyebrow">Tecnoart · Alto do Ipê · Ribeirão Preto</span>
+      <h1 style="font-size:clamp(3rem,12vw,4.8rem)">MIRANTE<br>DO IPÊ</h1>
+      <p class="tag">Ribeirão Preto por um<br>novo ponto de vista.</p>
+      <div class="price">R$ 1.500.000<small>Valor do apartamento à venda</small></div>
+      <div class="facts">
+        <div><span class="v">195 m²</span><span class="k">área do apartamento</span></div>
+        <div><span class="v">3 quartos</span><span class="k">planta com até 3 suítes</span></div>
+        <div><span class="v">5 vagas</span><span class="k">100% das vagas cobertas</span></div>
+        <div><span class="v">Raia aquecida</span><span class="k">piscina coberta para o ano todo</span></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-mustard" id="wa-cond" href="#" target="_blank" rel="noopener">Agendar uma visita</a>
+        <a class="btn btn-line" href="#apartamento">Ver a planta</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="view" aria-label="Vista da cidade">
+    <figure id="view-img"><img class="pano" src="img/panorama.jpg" alt="Vista panorâmica de Ribeirão Preto a partir do Alto do Ipê" width="2400" height="666" loading="lazy">
+      <figcaption class="cap"><div class="wrap"><b>A cidade no horizonte</b><span>O Alto do Ipê está no ponto mais alto de Ribeirão Preto. De qualquer andar, a sacada olha para a cidade inteira.</span></div></figcaption>
+    </figure>
+  </section>
+
+  <section class="view" aria-label="Piscina coberta e aquecida">
+    <figure id="raia-img"><img class="raia" src="img/raia.jpg" alt="Piscina com raia coberta e aquecida, com deck de madeira e teto de vidro" width="1800" height="1351" loading="lazy">
+      <figcaption class="cap"><div class="wrap"><span class="eyebrow" style="color:var(--mustard)">O diferencial do prédio</span><b>Piscina coberta e aquecida</b><span>Raia coberta e climatizada, com sauna ao lado. Nadar no inverno, à noite ou em dia de chuva, sem depender do tempo.</span></div></figcaption>
+    </figure>
+  </section>
+
+  <section class="plans" id="apartamento">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">O apartamento</span>
+        <h2>195 m² com varanda gourmet</h2>
+        <p>Sala ampla integrada à varanda gourmet com churrasqueira, que se abre para a cozinha. Suíte master em dois ambientes, com closet e banheiro Sr. e Sra. Toque na planta para ampliar.</p>
+      </div>
+      <div class="plan">
+        <div>
+          <button class="plan-img" id="plan-open" aria-label="Ampliar planta"><img src="img/planta.jpg" alt="Planta humanizada do apartamento tipo de 195 m²" width="1755" height="1800"></button>
+          <p class="hint">Planta tipo do book do empreendimento. Móveis e decoração são sugestões.</p>
+        </div>
+        <div class="plan-info">
+          <div class="area">195<small>m²</small></div>
+          <h3>Apartamento tipo</h3>
+          <ul class="specs">
+            <li><span>Quartos</span><span>3</span></li>
+            <li><span>Vagas</span><span>5, todas cobertas</span></li>
+            <li><span>Varanda</span><span>Gourmet, integrada à cozinha, com churrasqueira de grelha argentina</span></li>
+            <li><span>Suíte master</span><span>2 ambientes, closet e banheiro Sr. e Sra.</span></li>
+            <li><span>Apoio</span><span>Dormitório de empregada e depósito privativo</span></li>
+          </ul>
+          <p class="plan-note">A planta original admite 7 variações (3 suítes, 4 dormitórios, home office ampliado, cozinha tradicional). Te confirmo a configuração exata desta unidade na visita.</p>
+        </div>
+      </div>
+      <div class="aps" id="aps">
+        <button data-i="0"><img src="img/sala.jpg" alt="Sala de estar e jantar" loading="lazy" width="1800" height="1714"><span>Sala</span></button>
+        <button data-i="1"><img src="img/varanda.jpg" alt="Varanda gourmet com vista" loading="lazy" width="1800" height="1344"><span>Varanda gourmet</span></button>
+        <button data-i="2"><img src="img/suite.jpg" alt="Suíte master" loading="lazy" width="1800" height="1309"><span>Suíte master</span></button>
+        <button data-i="3"><img src="img/closet.jpg" alt="Closet da suíte master" loading="lazy" width="441" height="441"><span>Closet</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="lazer">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Lazer</span>
+        <h2>Um clube dentro de casa</h2>
+        <p>Áreas comuns entregues equipadas e decoradas.</p>
+      </div>
+      <div class="gallery" aria-roledescription="carrossel" aria-label="Fotos do lazer">
+        <div class="track" id="track" tabindex="0"></div>
+        <button class="nav prev" id="prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="nav next" id="next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="count" id="count" aria-live="polite"></div>
+      </div>
+      <div class="thumbs" id="thumbs" aria-label="Miniaturas"></div>
+      <ul class="chips">
+        <li class="hl">Piscina coberta e aquecida, com raia</li><li class="hl">Quadra de squash</li><li class="hl">Home cinema</li><li>Piscinas adulto e infantil</li><li>Deck molhado e solarium</li><li>Sauna</li><li>Fitness</li><li>Salão de festas</li><li>Espaço grill</li><li>Confraria</li><li>Salão de jogos</li><li>Brinquedoteca</li><li>Playground</li><li>Quadra esportiva</li><li>Praça de leitura</li><li>Playground pet</li><li>Porte-cochère</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="loc" id="localizacao">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Localização</span>
+        <h2>No Alto do Ipê, zona sul</h2>
+        <p>Bairro residencial e sossegado, cercado por condomínios, com malha viária que liga os principais bairros da zona sul.</p>
+      </div>
+      <div class="loc-grid">
+        <div class="addr">
+          <span class="street">Alameda Eduardo Campos, 650<br>Alto do Ipê · Ribeirão Preto</span>
+          <a class="btn btn-line" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&query=Alameda%20Eduardo%20Campos%2C%20650%20-%20Alto%20do%20Ip%C3%AA%2C%20Ribeir%C3%A3o%20Preto%20-%20SP" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+        <ul class="near" aria-label="Pontos próximos">
+          <li><span>Escola Concept</span><span>ao lado</span></li>
+          <li><span>Shopping Iguatemi</span><span>próximo</span></li>
+          <li><span>Pão de Açúcar</span><span>próximo</span></li>
+          <li><span>Liceu Albert Sabin</span><span>próximo</span></li>
+          <li><span>Ipê Golf Club</span><span>na região</span></li>
+        </ul>
+      </div>
+      <button class="impl" id="impl-open" aria-label="Ampliar implantação"><img src="img/implantacao.jpg" alt="Implantação do térreo com o lazer do Mirante do Ipê" width="2000" height="1429" loading="lazy"></button>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Diferenciais</span><h2>Os detalhes do projeto</h2></div>
+      <ul class="check cols">
+        <li>Infraestrutura de ar-condicionado na sala, varanda e dormitórios</li>
+        <li>Janelas black-out automatizadas nos dormitórios</li>
+        <li>Porcelanato 80 x 80 cm na área social</li>
+        <li>Churrasqueira com grelha argentina</li>
+        <li>Moldura de gesso em todo o apartamento</li>
+        <li>Batentes em madeira maciça com borracha antirruído</li>
+        <li>Porta pivotante na entrada</li>
+        <li>Medição individual de gás, energia e água</li>
+        <li>Infraestrutura de aquecimento a gás e de automação residencial</li>
+        <li>Depósito privativo</li>
+        <li>Gerador de energia e projeto paisagístico</li>
+        <li>Infraestrutura para placas fotovoltaicas e reuso de água da chuva</li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:8px">
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="eyebrow">Ficha técnica</span><h2>O empreendimento</h2></div>
+      <dl class="ficha">
+        <div><dt>Incorporação e construção</dt><dd>Tecnoart Engenharia</dd></div>
+        <div><dt>Arquitetura</dt><dd>Carlos Trocca</dd></div>
+        <div><dt>Unidades</dt><dd>80 apartamentos tipo de 195 m² e 4 coberturas duplex</dd></div>
+        <div><dt>Endereço</dt><dd>Alameda Eduardo Campos, 650 · Alto do Ipê</dd></div>
+        <div><dt>Situação</dt><dd>Pronto para morar</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap narrow">
+      <div class="me">
+        <img src="/img/lucas-jessica.jpg" alt="Lucas e Jéssica, corretores da Kairós Negócios Imobiliários" width="900" height="900" loading="lazy">
+        <div class="me-t">
+          <span class="eyebrow">Seus corretores</span>
+          <span class="me-name">Lucas e Jéssica</span>
+          <span class="me-sub">Kairós Negócios Imobiliários</span>
+          <span class="me-creci">Lucas · CRECI 190.339-F<br>Jéssica · CRECI 184.014-F<br>Kairós · CRECI 40.488-J</span>
+        </div>
+      </div>
+      <p>Eu e a Jéssica somos casados e trabalhamos juntos na Kairós. Estou há 10 anos no mercado imobiliário de Ribeirão Preto, de lançamentos a imóveis de alto padrão. Somos premiados pela construtora Tarraf como corretores destaque no ano 2025/26.</p>
+      <p>O prédio já está pronto: dá para visitar o apartamento e nadar na piscina aquecida de verdade, sem depender só de perspectiva. Te passo todos os detalhes desta unidade e marco a visita quando for melhor para você.</p>
+      <div class="cta-row"><a class="btn btn-wa" id="wa-end" href="#" target="_blank" rel="noopener">Falar com o Lucas no WhatsApp</a></div>
+      <div class="phone-num"><code id="phone">(16) 99455-8101</code><button class="btn btn-line btn-sm" id="copy" type="button">Copiar número</button></div>
+      <p class="legal">Imagens do book do empreendimento, meramente ilustrativas. Móveis, objetos e decoração são sugestões e não fazem parte do imóvel. Valor e disponibilidade sujeitos a confirmação.</p>
+    </div>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Contato">
+  <div class="in">
+    <a class="btn btn-olive" id="wa-dock-cond" href="#" target="_blank" rel="noopener">Agendar visita</a>
+    <a class="btn btn-wa" id="wa-dock" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3c-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.8c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></svg>WhatsApp</a>
+  </div>
+</nav>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <div class="lb-bar"><span id="lb-cap"></span><button class="lb-close" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lb-track" id="lb-track"></div>
+</div>
+<script>
+(function(){
+  var PHONE="5516994558101";
+  function wa(m){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);}
+  var hello="Oi Lucas! Vi o apartamento de 195 m² no Mirante do Ipê e quero saber mais.";
+  var cond="Oi Lucas! Vi o apartamento no Mirante do Ipê e quero agendar uma visita.";
+  ["wa-top","wa-end","wa-dock"].forEach(function(id){document.getElementById(id).href=wa(hello);});
+  ["wa-cond","wa-dock-cond"].forEach(function(id){document.getElementById(id).href=wa(cond);});
+
+  var lb=document.getElementById("lb"),lbt=document.getElementById("lb-track"),lbc=document.getElementById("lb-cap"),items=[],last;
+  function openLB(list,start){items=list;last=document.activeElement;lbt.innerHTML="";
+    list.forEach(function(it){var s=document.createElement("div");s.className="lb-slide";var im=document.createElement("img");im.src=it[0];im.alt=it[1];s.appendChild(im);lbt.appendChild(s);});
+    lb.hidden=false;document.body.style.overflow="hidden";
+    requestAnimationFrame(function(){lbt.scrollLeft=start*lbt.clientWidth;cap(start);document.getElementById("lb-close").focus();});}
+  function cap(i){if(items[i])lbc.textContent=items[i][1]+"  ·  "+(i+1)+" / "+items.length;}
+  lbt.addEventListener("scroll",function(){cap(Math.round(lbt.scrollLeft/lbt.clientWidth));});
+  function closeLB(){lb.hidden=true;document.body.style.overflow="";if(last)last.focus();}
+  document.getElementById("lb-close").onclick=closeLB;
+  document.addEventListener("keydown",function(e){if(lb.hidden)return;if(e.key==="Escape")closeLB();
+    if(e.key==="ArrowRight")lbt.scrollBy({left:lbt.clientWidth,behavior:"smooth"});if(e.key==="ArrowLeft")lbt.scrollBy({left:-lbt.clientWidth,behavior:"smooth"});});
+
+  var facade=[["img/torre.jpg","Fachada"],["img/aerea.jpg","Vista aérea do lazer"]];
+  document.getElementById("hero-img").addEventListener("click",function(){openLB(facade,0);});
+  document.getElementById("view-img").addEventListener("click",function(){openLB([["img/panorama.jpg","Vista do Alto do Ipê"],["img/vista.jpg","A cidade vista do bairro"]],0);});
+  var aps=[["img/sala.jpg","Sala"],["img/varanda.jpg","Varanda gourmet"],["img/suite.jpg","Suíte master"],["img/closet.jpg","Closet da suíte master"]];
+  document.querySelectorAll("#aps button").forEach(function(b){b.addEventListener("click",function(){openLB(aps,+b.dataset.i);});});
+  document.getElementById("raia-img").addEventListener("click",function(){openLB([["img/raia.jpg","Piscina coberta e aquecida"]],0);});
+  document.getElementById("impl-open").addEventListener("click",function(){openLB([["img/implantacao.jpg","Implantação do térreo"]],0);});
+  document.getElementById("plan-open").addEventListener("click",function(){openLB([["img/planta.jpg","Planta do apartamento tipo · 195 m²"]],0);});
+
+  var photos=[
+    ["raia","Piscina coberta e aquecida","Raia climatizada para nadar o ano todo, com sauna ao lado"],
+    ["piscina","Piscinas externas","Adulto, infantil, deck molhado e solarium"],
+    ["hall","Hall social",""],
+    ["festas","Salão de festas",""],
+    ["grill","Espaço grill",""],
+    ["confraria","Confraria",""],
+    ["jogos","Salão de jogos",""],
+    ["cinema","Home cinema",""],
+    ["squash","Quadra de squash",""],
+    ["fitness","Fitness",""],
+    ["brinquedoteca","Brinquedoteca",""],
+    ["festas-externo","Área externa do salão de festas",""]
+  ];
+  var track=document.getElementById("track"),thumbs=document.getElementById("thumbs"),count=document.getElementById("count");
+  var full=photos.map(function(q){return ["img/"+q[0]+".jpg",q[1]];});
+  photos.forEach(function(p,i){
+    var f=document.createElement("figure");f.className="slide";f.setAttribute("aria-label",(i+1)+" de "+photos.length);
+    var im=document.createElement("img");im.src="img/"+p[0]+".jpg";im.alt=p[1]+(p[2]?": "+p[2]:"");im.loading=i<1?"eager":"lazy";im.decoding="async";
+    im.addEventListener("click",function(){openLB(full,i);});
+    var c=document.createElement("figcaption");c.innerHTML="<b></b><span></span>";c.firstChild.textContent=p[1];c.lastChild.textContent=p[2];
+    f.appendChild(im);f.appendChild(c);track.appendChild(f);
+    var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Ver foto "+(i+1)+": "+p[1]);
+    var ti=document.createElement("img");ti.src="img/"+p[0]+".jpg";ti.alt="";ti.loading="lazy";b.appendChild(ti);
+    b.addEventListener("click",function(){go(i);});thumbs.appendChild(b);
+  });
+  var cur=-1;
+  function go(i){i=(i+photos.length)%photos.length;track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});}
+  function mark(i){if(i===cur)return;cur=i;count.textContent=(i+1)+" / "+photos.length;
+    Array.prototype.forEach.call(thumbs.children,function(b,k){b.setAttribute("aria-current",k===i?"true":"false");});
+    var t=thumbs.children[i];if(t)thumbs.scrollTo({left:t.offsetLeft-thumbs.clientWidth/2+t.clientWidth/2,behavior:"smooth"});}
+  var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){mark(Math.round(track.scrollLeft/track.clientWidth));});});
+  document.getElementById("prev").onclick=function(){go(cur-1);};
+  document.getElementById("next").onclick=function(){go(cur+1);};
+  track.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){go(cur+1);e.preventDefault();}if(e.key==="ArrowLeft"){go(cur-1);e.preventDefault();}});
+  mark(0);
+
+  var cb=document.getElementById("copy");
+  cb.addEventListener("click",function(){
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("phone"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText("16994558101").then(function(){cb.textContent="Número copiado";setTimeout(function(){cb.textContent="Copiar número";},2000);},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
